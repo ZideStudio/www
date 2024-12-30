@@ -1,0 +1,79 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+
+env:
+  IMAGE_NAME: zide-website
+  STG_ENVIRONMENT_URL: https://stg.zide.fr
+  PRD_ENVIRONMENT_URL: https://zide.fr
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+  build-staging:
+    name: Build Staging Image
+    needs: setup
+    if: github.ref == 'refs/heads/main'
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create .env for staging
+        run: echo "${{ secrets.ENV_STG }}" > .env
+
+      - name: Build Docker Image
+        run: |
+          export ENVIRONMENT_URL=$(echo $STG_ENVIRONMENT_URL | sed 's|http[s]*://||')
+          docker build -t stg-${IMAGE_NAME}:${{ github.sha }} .
+
+  deploy-staging:
+    name: Deploy to Staging
+    needs: build-staging
+    if: github.ref == 'refs/heads/main'
+    runs-on: self-hosted
+    steps:
+      - name: Pull & Deploy
+        run: |
+          export ENVIRONMENT_URL=$(echo $STG_ENVIRONMENT_URL | sed 's|http[s]*://||')
+          export PROJECT_NAME=zide-website-stg
+          export IMAGE_NAME=stg-${IMAGE_NAME}:${{ github.sha }}
+          docker-compose -f docker-compose-stg.yml up -d
+
+  build-production:
+    name: Build Production Image
+    needs: setup
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create .env for production
+        run: echo "${{ secrets.ENV_PRD }}" > .env
+
+      - name: Build Docker Image
+        run: |
+          export ENVIRONMENT_URL=$(echo $PRD_ENVIRONMENT_URL | sed 's|http[s]*://||')
+          docker build -t prd-${IMAGE_NAME}:${{ github.ref_name }} .
+
+  deploy-production:
+    name: Deploy to Production
+    needs: build-production
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: self-hosted
+    steps:
+      - name: Pull & Deploy
+        run: |
+          export ENVIRONMENT_URL=$(echo $PRD_ENVIRONMENT_URL | sed 's|http[s]*://||')
+          export PROJECT_NAME=zide-website-prd
+          export IMAGE_NAME=prd-${IMAGE_NAME}:${{ github.ref_name }}
+          docker-compose -f docker-compose-prd.yml up -d

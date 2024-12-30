@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  stg_server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: zide-website-stg
+    image: $IMAGE_NAME
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=zide-traefik-n"
+      - "traefik.http.services.${PROJECT_NAME}.loadbalancer.server.port=80"
+
+      - "traefik.http.routers.${PROJECT_NAME}-https.rule=Host(`${ENVIRONMENT_URL}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-https.entrypoints=websecure"
+      - "traefik.http.routers.${PROJECT_NAME}-https.tls.certresolver=zideresolver"
+      - "traefik.http.routers.${PROJECT_NAME}-https.service=${PROJECT_NAME}"
+      - "traefik.http.routers.${PROJECT_NAME}-https.middlewares=stg-whitelist@docker"
+
+      - "traefik.http.routers.${PROJECT_NAME}-http.rule=Host(`${ENVIRONMENT_URL}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-http.entrypoints=web"
+      - "traefik.http.routers.${PROJECT_NAME}-http.service=${PROJECT_NAME}"
+      - "traefik.http.routers.${PROJECT_NAME}-http.middlewares=stg-whitelist@docker"
+
+      - "io.portainer.accesscontrol.teams=zide"
+    networks:
+      - zide-traefik-n
+
+networks:
+  zide-traefik-n:
+    external: true
