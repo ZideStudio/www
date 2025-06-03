@@ -26,20 +26,18 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, setPr
     <div className="min-h-screen w-screen relative flex flex-col">
       <BackgroundGrid interactible={false} />
 
-      <div className="pt-20">
-        <p className="text-gray-400">
+      <div className="pt-20 pb-10">
+        <p className="text-gray-400 px-5 md:px-0">
           Zide is working on several projects, most of which are open source,
           <br />
           with the aim of offering innovative and useful tools to our users
         </p>
 
-        <div className="flex flex-wrap">
-          <ul className="flex flex-wrap pt-5 px-6 gap-y-6">
-            {projects?.map((project, index) => (
-              <ProjectBloc key={project.id} project={project} index={index} open_card={() => {}} />
-            ))}
-          </ul>
-        </div>
+        <ul className="flex flex-wrap justify-center pt-5 px-3 md:px-6 gap-y-6">
+          {projects?.map((project, index) => (
+            <ProjectBloc key={project.id} project={project} index={index} open_card={() => {}} />
+          ))}
+        </ul>
       </div>
     </div>
   );

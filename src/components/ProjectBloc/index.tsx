@@ -14,11 +14,9 @@ export const ProjectBloc: React.FC<ProjectBlocProps> = ({ project, open_card, in
   const card_color = project.title_color === ProjectTitleColor.WHITE ? 'text-white' : 'text-black';
 
   const isLargeCard = index % 4 === 0 || (index + 1) % 4 === 0;
-  const cardWidth = isLargeCard ? 'w-[60%]' : 'w-[40%]';
-  const paddingSide = index % 2 === 0 ? 'pr-0 pl-0 sm:pl-[0px] sm:pr-[25px]' : 'pl-0 pr-0 sm:pr-[0px] sm:pl-[25px]';
 
   return (
-    <li className={`relative p-[25px] h-[460px] ${cardWidth} ${paddingSide} flex-shrink-0`} onClick={() => open_card(project.id)}>
+    <li className={`relative p-[25px] h-[460px] w-[100%] ${isLargeCard ? 'md:w-[60%]' : 'md:w-[40%]'} flex-shrink-0`} onClick={() => open_card(project.id)}>
       <div className="w-full h-full relative block pointer-events-none">
         <motion.div style={{ boxShadow: 'inset 0px 0px 10px' }} className="relative rounded-[20px] bg-[#1c1c1e] w-full h-full overflow-hidden pointer-events-auto" layoutId={`card-container-${project.slug}`}>
           <div className="relative w-full h-full overflow-hidden">
@@ -38,7 +36,7 @@ export const ProjectBloc: React.FC<ProjectBlocProps> = ({ project, open_card, in
             <ul className="flex space-x-3">
               {project.labels.map((label, index) => (
                 // biome-ignore lint/suspicious/noArrayIndexKey: no id
-                <li key={index} className={`uppercase text-xs ${card_color} bg-black/75 rounded px-3 py-1`}>
+                <li key={index} className={`uppercase text-xs ${card_color} bg-black/75 rounded px-3 py-1 ${index > 1 ? 'hidden md:inline' : ''}`}>
                   {label}
                 </li>
               ))}

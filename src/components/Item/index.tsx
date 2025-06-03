@@ -34,8 +34,8 @@ export const Item: React.FC<ItemProps> = ({ partial_project }) => {
   if (!project) return <></>;
 
   return (
-    <div className="fixed inset-0 z-20 pt-5 mt-10">
-      <motion.div ref={cardRef} className="relative mx-auto w-full max-w-[700px] overflow-hidden rounded-2xl bg-[#1c1c1e] pointer-events-auto" layoutId={`card-container-${partial_project.slug}`}>
+    <div className="fixed inset-0 z-20 mt-12 md:mt-16">
+      <motion.div ref={cardRef} className="relative mx-auto h-full md:h-auto w-full max-w-[700px] overflow-hidden md:rounded-2xl bg-[#1c1c1e] pointer-events-auto" layoutId={`card-container-${partial_project.slug}`}>
         <motion.div className="absolute h-[420px] w-full z-[1]" layoutId={`card-image-container-${project.id}`}>
           <img src={project.image_link} alt="" className="w-full h-full object-cover object-center" />
           <div className="flex flex-col justify-center absolute bottom-[15px] left-[15px] space-y-2">
@@ -71,14 +71,14 @@ export const Item: React.FC<ItemProps> = ({ partial_project }) => {
           <ul className="flex space-x-3">
             {project.labels.map((label, index) => (
               // biome-ignore lint/suspicious/noArrayIndexKey: no id
-              <li key={index} className={`uppercase text-xs ${card_color} bg-black/75 rounded px-3 py-1`}>
+              <li key={index} className={`uppercase text-xs ${card_color} bg-black/75 rounded px-3 py-1 ${index > 1 ? 'hidden md:inline' : ''}`}>
                 {label}
               </li>
             ))}
           </ul>
         </motion.div>
 
-        <motion.div className="pt-[460px] px-[35px] pb-[35px] max-w-[700px] w-[90vw] max-h-[calc(100vh-5rem)] overflow-y-auto text-white space-y-3" animate>
+        <motion.div className="pt-[460px] px-[35px] pb-[35px] max-w-[700px] md:w-[90vw] max-h-[calc(100vh-5rem)] overflow-y-auto text-white space-y-3" animate>
           <div className="" dangerouslySetInnerHTML={{ __html: project.content }} />
           {project.link?.github && (
             <div className="flex items-center justify-center pt-5">
