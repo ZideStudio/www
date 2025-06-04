@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Footer } from '../../components/Footer';
 import { Item } from '../../components/Item';
@@ -50,55 +51,67 @@ export const Home = () => {
   }, [projectSlug]);
 
   return (
-    <div className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-      <AnimatePresence>
-        {!isInWelcome && (
-          <motion.div
-            key="navbar"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.5, ease: 'easeOut' },
-              },
-              exit: {
-                opacity: 0,
-                y: -20,
-                transition: { duration: 0.3, ease: 'easeIn' },
-              },
-            }}
-            className="fixed top-0 w-full z-50"
-          >
-            <NavBar title="Our projects" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <>
+      <Helmet>
+        <title>Zide – {isInWelcome ? 'Home' : 'Projects'}</title>
+        <meta name="description" content={isInWelcome ? 'Digital simplicity, greater efficiency.' : 'Explore our innovative projects designed for a greater efficiency and digital simplicity.'} />
+        <meta property="og:title" content={`Zide${isInWelcome ? '' : ' – Projects'}`} />
+        <meta property="og:description" content={isInWelcome ? "Digital simplicity, greater efficiency. We're producing innovative and useful tools for our users." : "Discover the tools and solutions we're creating to enhance user experiences and drive innovation."} />
+        <meta property="og:image" content="/assets/logo/zide_complete.png" />
+        <meta name="google-site-verification" content="oSycr6s-tbcxcGBjTexUhsgH0NinsvxBXBhOokbBPRk" />
+        <link rel="canonical" href="https://zide.fr/" />
+      </Helmet>
 
-      <section ref={welcomeRef} className="h-screen snap-start">
-        <Welcome />
-      </section>
+      <div className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <AnimatePresence>
+          {!isInWelcome && (
+            <motion.div
+              key="navbar"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={{
+                hidden: { opacity: 0, y: -20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5, ease: 'easeOut' },
+                },
+                exit: {
+                  opacity: 0,
+                  y: -20,
+                  transition: { duration: 0.3, ease: 'easeIn' },
+                },
+              }}
+              className="fixed top-0 w-full z-50"
+            >
+              <NavBar title="Our projects" />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-      <section ref={projectsRef} className="min-h-screen snap-start">
-        {projectLoading ? (
-          <Projects projects={projects} setProjects={setProjects} setProjectLoading={setProjectLoading} />
-        ) : (
-          <div className="flex flex-col">
-            <div className="flex flex-row">
-              <Projects projects={projects} setProjects={setProjects} setProjectLoading={setProjectLoading} />
-              {selectedProject && (
-                <AnimatePresence>
-                  <Item partial_project={selectedProject} key={selectedProject.id} />
-                </AnimatePresence>
-              )}
+        <section ref={welcomeRef} className="h-screen snap-start">
+          <Welcome />
+        </section>
+
+        <section ref={projectsRef} className="min-h-screen snap-start">
+          {projectLoading ? (
+            <Projects projects={projects} setProjects={setProjects} setProjectLoading={setProjectLoading} />
+          ) : (
+            <div className="flex flex-col">
+              <div className="flex flex-row">
+                <Projects projects={projects} setProjects={setProjects} setProjectLoading={setProjectLoading} />
+                {selectedProject && (
+                  <AnimatePresence>
+                    <Item partial_project={selectedProject} key={selectedProject.id} />
+                  </AnimatePresence>
+                )}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        )}
-      </section>
-    </div>
+          )}
+        </section>
+      </div>
+    </>
   );
 };

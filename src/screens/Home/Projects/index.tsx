@@ -35,7 +35,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, setPr
 
         <ul className="flex flex-wrap justify-center pt-5 px-3 md:px-6 gap-y-6">
           {projects?.map((project, index) => (
-            <ProjectBloc key={project.id} project={project} index={index} open_card={() => {}} />
+            <ProjectBloc key={project.id} project={project} index={index} />
           ))}
         </ul>
       </div>
