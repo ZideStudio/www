@@ -13,7 +13,7 @@ type ProjectsProps = {
 
 export const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, setProjectLoading }) => {
   const fetchProjects = async () => {
-    const data = await projectsService.getProjects();
+    const data = projectsService.getProjects();
     setProjects(data);
     setProjectLoading(false);
   };
@@ -24,14 +24,15 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, setPr
 
   return (
     <div className="min-h-screen w-screen relative flex flex-col">
+      <h1 className="sr-only">Our projects</h1>
       <BackgroundGrid interactible={false} />
 
       <div className="pt-20 pb-10">
-        <p className="text-gray-400 px-5 md:px-0">
+        <h2 className="text-gray-400 px-5 md:px-0">
           Zide is working on several projects, most of which are open source,
           <br />
           with the aim of offering innovative and useful tools to our users
-        </p>
+        </h2>
 
         <ul className="flex flex-wrap justify-center pt-5 px-3 md:px-6 gap-y-6">
           {projects?.map((project, index) => (

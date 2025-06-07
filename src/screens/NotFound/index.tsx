@@ -1,7 +1,7 @@
-import React from 'react';
+import type React from 'react';
 
 export const NotFound: React.FC = () => (
   <div className="h-screen w-screen flex items-center justify-center">
-    <h1 className="text-4xl">404 Not Found</h1>
+    <h1 className="text-white text-4xl">404 - Not Found</h1>
   </div>
 );

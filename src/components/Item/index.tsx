@@ -21,7 +21,7 @@ export const Item: React.FC<ItemProps> = ({ partial_project }) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
-        navigate('/');
+        navigate('/projects');
       }
     };
 

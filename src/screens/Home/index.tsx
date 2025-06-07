@@ -2,10 +2,11 @@ import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Footer } from '../../components/Footer';
 import { Item } from '../../components/Item';
 import { NavBar } from '../../components/NavBar';
+import { PROJECT_LOCATION } from '../../constants/project.const';
 import type { ProjectPartial } from '../../models/project.model';
 import { Projects } from './Projects';
 import { Welcome } from './Welcome';
@@ -17,16 +18,22 @@ export const Home = () => {
   const [projects, setProjects] = useState<ProjectPartial[] | undefined>();
   const [projectLoading, setProjectLoading] = useState<boolean>(true);
   const [isInWelcome, setIsInWelcome] = useState(true);
+  const [baseLocation, setBaseLocation] = useState<string | undefined>(window.location.pathname);
 
   const selectedProject: ProjectPartial | undefined = projectSlug && !projectLoading ? projects?.find((project) => project.slug === projectSlug) : undefined;
 
   const welcomeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInWelcome(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setBaseLocation(undefined);
+        }
       },
       {
         root: null,
@@ -45,10 +52,19 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (projectSlug && projectsRef.current) {
+    if ((projectSlug || baseLocation === PROJECT_LOCATION) && projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [projectSlug]);
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    if (!isInWelcome && currentPath === '/') {
+      navigate(PROJECT_LOCATION, { replace: true });
+    } else if (isInWelcome && currentPath === PROJECT_LOCATION && baseLocation !== PROJECT_LOCATION) {
+      navigate('/', { replace: true });
+    }
+  }, [isInWelcome, navigate]);
 
   return (
     <>
