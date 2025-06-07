@@ -24,13 +24,13 @@ export const ProjectBloc: React.FC<ProjectBlocProps> = ({ project, index }) => {
 
           <motion.div className="absolute top-[15px] left-[15px] flex flex-col items-start">
             <div className="flex flex-row space-x-3 items-center">
-              <h2 style={{ textShadow: '#aa0 1px 0 5px' }} className={`text-shadow-lg/30 font-extrabold text-lg m-2 ${card_color}`}>
+              <h3 style={{ textShadow: '#aa0 1px 0 5px' }} className={`text-shadow-lg/30 font-extrabold text-lg m-2 ${card_color}`}>
                 {project.title}
-              </h2>
+              </h3>
 
-              <h2 style={{ textShadow: '#aa0 1px 0 10px' }} className={`italic text-sm font-bold text-shadow-lg/30 m-2 ${project.target === ProjectTarget.DEVELOPERS ? 'text-blue-500' : 'text-green-500'}`}>
+              <p style={{ textShadow: '#aa0 1px 0 10px' }} className={`italic text-sm font-bold text-shadow-lg/30 m-2 ${project.target === ProjectTarget.DEVELOPERS ? 'text-blue-500' : 'text-green-500'}`}>
                 Made for {project.target === ProjectTarget.DEVELOPERS ? 'developers' : 'everyone'}
-              </h2>
+              </p>
             </div>
             <ul className="flex space-x-3">
               {project.labels.map((label, index) => (
