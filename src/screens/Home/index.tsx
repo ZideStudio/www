@@ -69,7 +69,7 @@ export const Home = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <Head screen={isInWelcome ? Screen.WELCOME : selectedProject ? Screen.PROJECT : Screen.PROJECTS} title={selectedProject ? selectedProject.title : undefined} description={selectedProject ? selectedProject.metaDescription : undefined} />
+      <Head screen={isInWelcome ? Screen.WELCOME : selectedProject ? Screen.PROJECT : Screen.PROJECTS} pathLocation={window.location.pathname ?? '/'} title={selectedProject ? selectedProject.title : undefined} description={selectedProject ? selectedProject.metaDescription : undefined} />
 
       <div className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
         <AnimatePresence>
