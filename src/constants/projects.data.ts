@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     type: ProjectType.CLI,
     isOpenSource: true,
     link: {
-      github: 'https://github.com/ZideCompany/avm',
+      github: 'https://github.com/ZideStudio/avm',
     },
   },
   {
