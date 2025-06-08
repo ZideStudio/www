@@ -57,17 +57,20 @@ export const Item = ({ partial_project }: ItemProps) => {
           )}
         </motion.div>
 
-        <motion.div className="absolute top-[30px] left-[30px] z-[1]" layoutId={`title-container-${project.id}`}>
-          <div className="flex flex-row space-x-3 items-center">
-            <h4 style={{ textShadow: '#aa0 1px 0 5px' }} className={`font-extrabold text-lg m-2 ${card_color}`}>
+        <motion.div className="absolute top-[0.8rem] right-[0.8rem] md:hidden z-[1]" onClick={() => navigate('/projects')}>
+          <i className="pi pi-times text-white" style={{ fontSize: '2rem' }} />
+        </motion.div>
+        <motion.div className="absolute top-[0.5rem] left-[0.5rem] md:top-[30px] md:left-[30px] z-[1]" layoutId={`title-container-${project.id}`}>
+          <div className="flex flex-col md:flex-row md:space-x-3 items-start md:items-center">
+            <h4 style={{ textShadow: '#aa0 1px 0 5px' }} className={`font-extrabold text-lg md:m-2 ${card_color}`}>
               {project.title}
             </h4>
 
-            <p style={{ textShadow: '#aa0 1px 0 10px' }} className={`italic text-sm font-bold text-shadow-lg/30 m-2 ${project.target === ProjectTarget.DEVELOPERS ? 'text-blue-500' : 'text-green-500'}`}>
+            <p style={{ textShadow: '#aa0 1px 0 10px' }} className={`italic text-sm font-bold text-shadow-lg/30 md:m-2 ${project.target === ProjectTarget.DEVELOPERS ? 'text-blue-500' : 'text-green-500'}`}>
               Made for {project.target === ProjectTarget.DEVELOPERS ? 'developers' : 'everyone'}
             </p>
           </div>
-          <ul className="flex space-x-3">
+          <ul className="flex mt-2 md:mt-0 space-x-3">
             {project.labels.map((label, index) => (
               // biome-ignore lint/suspicious/noArrayIndexKey: no id
               <li key={index} className={`uppercase text-xs ${card_color} bg-black/75 rounded px-3 py-1 ${index > 1 ? 'hidden md:inline' : ''}`}>
