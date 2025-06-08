@@ -1,13 +1,14 @@
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Footer } from '../../components/Footer';
+import { Head } from '../../components/Head';
 import { Item } from '../../components/Item';
 import { NavBar } from '../../components/NavBar';
 import { PROJECT_LOCATION } from '../../constants/project.const';
 import type { ProjectPartial } from '../../models/project.model';
+import { Screen } from '../../models/screen.model';
 import { Projects } from './Projects';
 import { Welcome } from './Welcome';
 
@@ -68,15 +69,7 @@ export const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Zide – {isInWelcome ? 'Home' : 'Projects'}</title>
-        <meta name="description" content={isInWelcome ? 'Digital simplicity, greater efficiency.' : 'Explore our innovative projects designed for a greater efficiency and digital simplicity.'} />
-        <meta property="og:title" content={`Zide${isInWelcome ? '' : ' – Projects'}`} />
-        <meta property="og:description" content={isInWelcome ? "Digital simplicity, greater efficiency. We're producing innovative and useful tools for our users." : "Discover the tools and solutions we're creating to enhance user experiences and drive innovation."} />
-        <meta property="og:image" content="/assets/logo/zide_complete.png" />
-        <meta name="google-site-verification" content="oSycr6s-tbcxcGBjTexUhsgH0NinsvxBXBhOokbBPRk" />
-        <link rel="canonical" href="https://zide.fr/" />
-      </Helmet>
+      <Head screen={isInWelcome ? Screen.WELCOME : selectedProject ? Screen.PROJECT : Screen.PROJECTS} title={selectedProject ? selectedProject.title : undefined} description={selectedProject ? selectedProject.metaDescription : undefined} />
 
       <div className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
         <AnimatePresence>

@@ -1,4 +1,3 @@
-import type React from 'react';
 import { type HTMLProps, useEffect, useState } from 'react';
 
 interface BackgroundGridProps {
@@ -10,7 +9,7 @@ interface BackgroundGridProps {
   fade?: boolean;
 }
 
-const BackgroundGrid: React.FC<BackgroundGridProps> = ({ interactible, defaultColor = '#fb3a5d', cellSize = '5px', strokeWidth = '5px', fade = true }: Partial<BackgroundGridProps> & HTMLProps<HTMLDivElement>) => {
+const BackgroundGrid = ({ interactible, defaultColor = '#fb3a5d', cellSize = '5px', strokeWidth = '5px', fade = true }: Partial<BackgroundGridProps> & HTMLProps<HTMLDivElement>) => {
   const [dynamicColor, setDynamicColor] = useState(defaultColor);
   const [cursorPosition, setCursorPosition] = useState({ x: 50, y: 50 });
 

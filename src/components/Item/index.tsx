@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import type React from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +10,7 @@ type ItemProps = {
   partial_project: ProjectPartial;
 };
 
-export const Item: React.FC<ItemProps> = ({ partial_project }) => {
+export const Item = ({ partial_project }: ItemProps) => {
   const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement>(null);
 

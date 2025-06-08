@@ -4,6 +4,7 @@ export type Project = {
   slug: string;
   title_color: ProjectTitleColor;
   content: string;
+  metaDescription: string;
   image_link: string;
   labels: string[];
   release_date?: string;

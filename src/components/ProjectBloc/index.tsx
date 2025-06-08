@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import type React from 'react';
 import { Link } from 'react-router-dom';
 import { projectStatusLabels } from '../../constants/projects.data';
 import { type ProjectPartial, ProjectTarget, ProjectTitleColor } from '../../models/project.model';
@@ -9,7 +8,7 @@ type ProjectBlocProps = {
   index: number;
 };
 
-export const ProjectBloc: React.FC<ProjectBlocProps> = ({ project, index }) => {
+export const ProjectBloc = ({ project, index }: ProjectBlocProps) => {
   const card_color = project.title_color === ProjectTitleColor.WHITE ? 'text-white' : 'text-black';
 
   const isLargeCard = index % 4 === 0 || (index + 1) % 4 === 0;

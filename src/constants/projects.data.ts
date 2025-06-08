@@ -17,6 +17,7 @@ export const PROJECTS: Project[] = [
         .RC and Dockerfile files are used to determine which version to use.
         <br /><br /><br />
         The project was, as planned, <strong>released in early 2025</strong><br/><i><em>It will continue to be updated regularly with new features and bug fixes.<em/>`,
+    metaDescription: 'A CLI to manage your versions managers automatically. Compatible with NVM, GVM, Rustup, and more!',
     image_link: 'https://i.imgur.com/ilstnBg.jpeg',
     release_date: '2025-03-16',
     labels: ['Version Manager', 'CLI tool'],
@@ -45,6 +46,7 @@ export const PROJECTS: Project[] = [
       </ul>
       <br/><br/>
 	    The project is currently under development, and will be launched in public beta by the end of 2025!`,
+    metaDescription: 'A website for sharing information securely and anonymously. Features secure pastebin, cryptography tool and steganography.',
     image_link: 'https://i.imgur.com/ouC8WB5.png',
     labels: ['Website', 'Secure pastebin', 'Cryptography'],
     status: ProjectStatus.IN_PROGRESS,
@@ -64,6 +66,7 @@ export const PROJECTS: Project[] = [
         <br/><br/>
 
         We won't say more for the moment. This project is still under development and will be launched in beta version by the end of 2026!`,
+    metaDescription: 'SQL client software, with a lot of features and a simple intuitive interface.',
     image_link: 'https://i.imgur.com/ZMdgiRi.png',
     labels: ['SQL Client', 'Database Management', 'Software'],
     status: ProjectStatus.IN_PROGRESS,
@@ -73,13 +76,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '4',
-    title: 'TBD',
-    slug: 'project-tb',
+    title: 'Project B',
+    slug: 'project-b',
     title_color: ProjectTitleColor.WHITE,
     content: `<h2>That's.. a secret project?</h2>
 	    That project will be revealed later, but I can't say more for now...
       <br/><br/>
 	    This is one of the most ambitious project, and I can't give you more details for now.`,
+    metaDescription: 'Secret project that will be revealed later...',
     image_link: 'https://cdn.pixabay.com/photo/2017/08/01/01/16/laptop-2562559_1280.jpg',
     labels: ['Software'],
     status: ProjectStatus.PLANNED,

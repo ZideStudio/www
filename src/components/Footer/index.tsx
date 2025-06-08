@@ -6,7 +6,8 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto flex flex-col items-center space-y-10 md:flex-row md:justify-between md:space-y-0">
         <div className="w-4/5 md:w-1/2">
           <p className="text-2xl font-bold">Zide</p>
-          <p className="mt-2">Zide is a software development company that creates innovative projects for everyone!</p>
+          <p className="mt-2">Zide is a software development collective creating innovative tools for everyone. We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows.</p>
+          <p className="mt-1 text-xs text-gray-500">Driven by passion and curiosity, we design with purpose: to make technology feel seamless, personal, and empowering.</p>
         </div>
         <div className="w-4/5 md:w-1/2">
           <p className="text-xl font-semibold">Contact</p>

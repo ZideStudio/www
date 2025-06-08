@@ -11,7 +11,7 @@ type ProjectsProps = {
   setProjectLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, setProjectLoading }) => {
+export const Projects = ({ projects, setProjects, setProjectLoading }: ProjectsProps) => {
   const fetchProjects = async () => {
     const data = projectsService.getProjects();
     setProjects(data);
@@ -29,9 +29,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, setPr
 
       <div className="pt-20 pb-10">
         <h2 className="text-gray-400 px-5 md:px-0">
-          Zide is working on several projects, most of which are open source,
+          At Zide, we build digital tools that are efficient, intuitive and highly customizable,
           <br />
-          with the aim of offering innovative and useful tools to our users
+          offering simplicity of use with gains in productivity.
         </h2>
 
         <ul className="flex flex-wrap justify-center pt-5 px-3 md:px-6 gap-y-6">
