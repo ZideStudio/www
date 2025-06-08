@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import type React from 'react';
 import './index.css';
 import BackgroundGrid from '../../../components/BackgroundGrid';
 
-export const Welcome: React.FC = () => {
+export const Welcome = () => {
   return (
     <div className="h-screen w-screen relative flex flex-col items-center justify-center antiSelect">
       <BackgroundGrid interactible />

@@ -1,23 +1,70 @@
-import type React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { PROJECTS } from '../../constants/projects.data';
+import { ProjectStatus } from '../../models/project.model';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
+  const navigate = useNavigate();
+
   return (
-    <footer className="bg-[#1A1A1A] text-white py-10">
-      <div className="container mx-auto flex flex-col items-center space-y-10 md:flex-row md:justify-between md:space-y-0">
-        <div className="w-4/5 md:w-1/2">
-          <p className="text-2xl font-bold">Zide</p>
-          <p className="mt-2">Zide is a software development collective creating innovative tools for everyone. We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows.</p>
-          <p className="mt-1 text-xs text-gray-500">Driven by passion and curiosity, we design with purpose: to make technology feel seamless, personal, and empowering.</p>
+    <footer className="bg-[#1A1A1A] text-white">
+      <div className="container py-10 mx-auto flex flex-col space-y-10 md:flex-row md:justify-between md:space-y-0">
+        {/* Logo */}
+        <div className="w-full px-12 md:px-0 md:w-[13rem]">
+          <img src="/assets/logo/zide_complete.png" alt="Zide" className="text-white h-12 antiSelect" />
         </div>
-        <div className="w-4/5 md:w-1/2">
-          <p className="text-xl font-semibold">Contact</p>
-          <p className="mt-2">
-            <a href="mailto:contact@zide.fr" className="text-blue-400">
-              contact@zide.fr
-            </a>
+        {/* Zide */}
+        <div className="w-full px-12 md:px-0 md:w-[13rem]">
+          <p className="text-start text-xl font-semibold">Collective</p>
+          <hr className="border-gray-600 my-4 w-1/3" />
+          <p className="text-start mt-2">Zide is a software development collective creating innovative tools for everyone.</p>
+          <p className="text-start mt-1 text-xs text-gray-400">Driven by passion and curiosity, We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows.</p>
+        </div>
+        {/* Projects */}
+        <div className="w-full px-12 md:px-0 md:w-[13rem]">
+          <p className="text-start text-xl font-semibold">Projects</p>
+          <hr className="border-gray-600 my-4 w-1/3" />
+          {PROJECTS.map((project) => (
+            <div key={project.id} className="flex mt-2">
+              <a
+                className={`text-start font-semibold ${project.status === ProjectStatus.RELEASED ? 'text-white' : 'text-gray-300'} hover:text-blue-400 transition-colors duration-300`}
+                href={`/project/${project.slug}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/project/${project.slug}`);
+                }}
+              >
+                {project.title}
+              </a>
+            </div>
+          ))}
+        </div>
+        {/* Contact */}
+        <div className="w-full px-12 md:px-0 md:w-[13rem]">
+          <p className="text-start text-xl font-semibold">Contact</p>
+          <hr className="border-gray-600 my-4 w-1/3" />
+          <p className="text-start mt-2">
+            <div className="flex flex-row items-center space-x-3 mt-2">
+              <i className="pi pi-home" style={{ fontSize: '1rem' }} />
+              <p>France</p>
+            </div>
+            <div className="flex flex-row items-center space-x-3 mt-2">
+              <i className="pi pi-twitter" style={{ fontSize: '1rem' }} />
+              <a href="https://x.com/ZideStudio" className="text-blue-400">
+                @ZideStudio
+              </a>
+            </div>
+            <div className="flex flex-row items-center space-x-3 mt-2">
+              <i className="pi pi-envelope" style={{ fontSize: '1rem' }} />
+              <a href="mailto:contact@zide.fr" className="text-blue-400">
+                contact@zide.fr
+              </a>
+            </div>
           </p>
-          <p className="mt-2">© 2024-{new Date().getFullYear()} Zide. All rights reserved.</p>
         </div>
+      </div>
+      <div className="bg-[#1F1F1F] py-2 flex flex-row space-x-2 justify-center">
+        <p className="text-start">© 2024-{new Date().getFullYear()} Zide.</p>
+        <p className="text-start">All rights reserved.</p>
       </div>
     </footer>
   );
