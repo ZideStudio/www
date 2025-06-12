@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Footer } from '../../components/Footer';
 import { Head } from '../../components/Head';
 import { Item } from '../../components/Item';
@@ -14,7 +14,9 @@ import { Welcome } from './Welcome';
 
 export const Home = () => {
   const params = useParams();
+  const { state } = useLocation();
   const projectSlug = params.slug;
+  const [isScrollDisabled, setIsScrollDisabled] = useState(false);
 
   const [projects, setProjects] = useState<ProjectPartial[] | undefined>();
   const [projectLoading, setProjectLoading] = useState<boolean>(true);
@@ -53,6 +55,7 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
+    if (isScrollDisabled) return;
     if ((projectSlug || baseLocation === PROJECT_LOCATION) && projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -66,6 +69,13 @@ export const Home = () => {
       navigate('/', { replace: true });
     }
   }, [isInWelcome, navigate]);
+
+  useEffect(() => {
+    const value = sessionStorage.getItem('disableScroll');
+    if (value === 'true') {
+      setIsScrollDisabled(true);
+    }
+  }, []);
 
   return (
     <>

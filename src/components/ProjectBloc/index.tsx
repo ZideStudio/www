@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { projectStatusLabels } from '../../constants/projects.data';
 import { type ProjectPartial, ProjectTarget, ProjectTitleColor } from '../../models/project.model';
 
@@ -9,12 +9,18 @@ type ProjectBlocProps = {
 };
 
 export const ProjectBloc = ({ project, index }: ProjectBlocProps) => {
-  const card_color = project.title_color === ProjectTitleColor.WHITE ? 'text-white' : 'text-black';
+  const navigate = useNavigate();
 
+  const openProject = () => {
+    sessionStorage.setItem('disableScroll', 'true');
+    navigate(`/project/${project.slug}`);
+  };
+
+  const card_color = project.title_color === ProjectTitleColor.WHITE ? 'text-white' : 'text-black';
   const isLargeCard = index % 4 === 0 || (index + 1) % 4 === 0;
 
   return (
-    <li className={`relative p-[25px] h-[460px] w-[100%] ${isLargeCard ? 'md:w-[60%]' : 'md:w-[40%]'} flex-shrink-0`}>
+    <li className={`relative p-[25px] h-[460px] w-[100%] ${isLargeCard ? 'md:w-[60%]' : 'md:w-[40%]'} flex-shrink-0`} onClick={openProject} onKeyUp={openProject}>
       <div className="w-full h-full relative block pointer-events-none">
         <motion.div style={{ boxShadow: 'inset 0px 0px 10px' }} className="relative rounded-[20px] bg-[#1c1c1e] w-full h-full overflow-hidden pointer-events-auto" layoutId={`card-container-${project.slug}`}>
           <div className="relative w-full h-full overflow-hidden">
@@ -51,7 +57,6 @@ export const ProjectBloc = ({ project, index }: ProjectBlocProps) => {
           </motion.div>
         </motion.div>
       </div>
-      <Link to={`/project/${project.slug}`} className="absolute inset-0" />
     </li>
   );
 };
