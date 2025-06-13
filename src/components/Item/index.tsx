@@ -80,7 +80,7 @@ export const Item = ({ partial_project }: ItemProps) => {
           </ul>
         </motion.div>
 
-        <motion.div className="pt-[460px] px-[35px] pb-[35px] max-w-[700px] md:w-[90vw] max-h-[calc(100vh-5rem)] overflow-y-auto text-white space-y-3" animate>
+        <motion.div className="pt-[460px] px-[35px] pb-[35px] max-w-[700px] md:w-[90vw] max-h-[calc(100vh-3rem)] md:max-h-[calc(100vh-5rem)] overflow-y-auto text-white space-y-3" animate>
           <div className="" dangerouslySetInnerHTML={{ __html: project.content }} />
           {project.link?.github && (
             <div className="flex items-center justify-center pt-5">
