@@ -35,6 +35,7 @@ export enum ProjectType {
 export enum ProjectStatus {
   PLANNED = 'PLANNED',
   IN_PROGRESS = 'IN_PROGRESS',
+  PAUSED = 'PAUSED',
   RELEASED = 'RELEASED',
 }
 

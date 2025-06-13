@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
     metaDescription: 'SQL client software, with a lot of features and a simple intuitive interface.',
     image_link: 'https://i.imgur.com/ZMdgiRi.png',
     labels: ['SQL Client', 'Database Management', 'Software'],
-    status: ProjectStatus.IN_PROGRESS,
+    status: ProjectStatus.PAUSED,
     target: ProjectTarget.DEVELOPERS,
     type: ProjectType.APPLICATION,
     isOpenSource: true,
@@ -102,8 +102,12 @@ export const projectStatusLabels: Record<ProjectStatus, { label: string; color: 
     label: 'In progress',
     color: 'bg-blue-300/50',
   },
+  PAUSED: {
+    label: 'Paused',
+    color: 'bg-black/50',
+  },
   RELEASED: {
-    label: 'Released',
+    label: '🎉 Released',
     color: 'bg-green-500',
   },
 };
