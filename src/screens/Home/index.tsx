@@ -1,12 +1,13 @@
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Footer } from '../../components/Footer';
 import { Head } from '../../components/Head';
 import { Item } from '../../components/Item';
 import { NavBar } from '../../components/NavBar';
 import { PROJECT_LOCATION } from '../../constants/project.const';
+import type { Page } from '../../models/pages.model';
 import type { ProjectPartial } from '../../models/project.model';
 import { Screen } from '../../models/screen.model';
 import { Projects } from './Projects';
@@ -14,7 +15,6 @@ import { Welcome } from './Welcome';
 
 export const Home = () => {
   const params = useParams();
-  const { state } = useLocation();
   const projectSlug = params.slug;
   const [isScrollDisabled, setIsScrollDisabled] = useState(false);
 
@@ -29,6 +29,19 @@ export const Home = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
+
+  const pages: Page[] = [
+    {
+      title: 'Home',
+      ref: welcomeRef,
+      isSelected: isInWelcome,
+    },
+    {
+      title: 'Projects',
+      ref: projectsRef,
+      isSelected: !isInWelcome,
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -83,34 +96,27 @@ export const Home = () => {
 
       <div className="h-screen w-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth">
         <AnimatePresence>
-          {!isInWelcome && (
-            <motion.div
-              key="navbar"
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5, ease: 'easeOut' },
-                },
-                exit: {
-                  opacity: 0,
-                  y: -20,
-                  transition: { duration: 0.3, ease: 'easeIn' },
-                },
-              }}
-              className="fixed top-0 w-full z-50"
-            >
-              <NavBar title="Our projects" />
-            </motion.div>
-          )}
+          <motion.div
+            key="navbar"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, ease: 'backOut' },
+              },
+            }}
+            className="fixed top-0 w-full z-50"
+          >
+            <NavBar pages={pages} withEntireLogo={!isInWelcome} />
+          </motion.div>
         </AnimatePresence>
 
         <section ref={welcomeRef} className="h-screen snap-start">
-          <Welcome />
+          <Welcome disabled={!isInWelcome} />
         </section>
 
         <section ref={projectsRef} className="min-h-screen snap-start">

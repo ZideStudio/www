@@ -2,7 +2,11 @@ import { motion } from 'framer-motion';
 import './index.css';
 import BackgroundGrid from '../../../components/BackgroundGrid';
 
-export const Welcome = () => {
+interface WelcomeProps {
+  disabled: boolean;
+}
+
+export const Welcome = ({ disabled }: WelcomeProps) => {
   return (
     <div className="h-screen w-screen relative flex flex-col items-center justify-center antiSelect">
       <BackgroundGrid interactible />
@@ -12,27 +16,35 @@ export const Welcome = () => {
           src="/assets/logo/zide_complete.png"
           alt="ZIDE"
           className="text-white h-48 md:h-64 antiSelect"
-          initial={{ opacity: 0, scale: 0.8, y: -50 }}
-          animate={{
-            opacity: 1,
-            scale: [1, 1.025, 1],
-            rotate: [0, 1, 0],
-          }}
-          transition={{
-            opacity: { duration: 2, ease: 'easeOut' },
-            scale: {
-              duration: 3,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: 'mirror',
-              ease: 'easeInOut',
-            },
-            rotate: {
-              duration: 5,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: 'mirror',
-              ease: 'easeInOut',
-            },
-          }}
+          initial={disabled ? {} : { opacity: 0, scale: 0.8, y: -50 }}
+          animate={
+            disabled
+              ? {}
+              : {
+                  opacity: 1,
+                  scale: [1, 1.025, 1],
+                  rotate: [0, 1, 0],
+                }
+          }
+          transition={
+            disabled
+              ? {}
+              : {
+                  opacity: { duration: 2, ease: 'easeOut' },
+                  scale: {
+                    duration: 3,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: 'mirror',
+                    ease: 'easeInOut',
+                  },
+                  rotate: {
+                    duration: 5,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: 'mirror',
+                    ease: 'easeInOut',
+                  },
+                }
+          }
           style={{ color: 'white' }}
         />
         <h1 className="sr-only">Zide Company</h1>
