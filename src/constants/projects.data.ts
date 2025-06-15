@@ -6,25 +6,7 @@ export const PROJECTS: Project[] = [
     title: 'Auto Version Manager',
     slug: 'avm',
     title_color: ProjectTitleColor.WHITE,
-    content: `<h1 class="text-2xl font-extrabold">Auto Version Manager CLI</h1>
-        <p class="font-semibold">
-        A CLI to manage your versions managers automatically
-        Compatible with NVM, GVM, Rustup, and more!
-        </p>
-        <br /><br />
-        The project analyzes the files in your directory as soon as you open your terminal, and automatically changes the version of your language via your version manager, according to the configuration file in the current directory.
-        <br /><br />
-        .RC and Dockerfile files are used to determine which version to use.
-        <br /><br /><br />
-        <p class="font-semibold">
-        A CLI to manage your versions managers automatically
-        Compatible with NVM, GVM, Rustup, and more!
-        </p>
-        <br /><br />
-        The project analyzes the files in your directory as soon as you open your terminal, and automatically changes the version of your language via your version manager, according to the configuration file in the current directory.
-        <br /><br />
-        .RC and Dockerfile files are used to determine which version to use.
-        <br /><br /><br />
+    content: `<h3 class="text-2xl font-extrabold">Auto Version Manager CLI</h3>
         <p class="font-semibold">
         A CLI to manage your versions managers automatically
         Compatible with NVM, GVM, Rustup, and more!
@@ -53,7 +35,7 @@ export const PROJECTS: Project[] = [
     slug: 'cryptforme',
     title_color: ProjectTitleColor.WHITE,
     content: `
-      <h1 class="text-2xl font-extrabold">Crypt For Me</h1>
+      <h3 class="text-2xl font-extrabold">Crypt For Me</h3>
       Online website for sharing information securely and anonymously.
       <br/><br/>
       The website will feature tools such as:
@@ -80,8 +62,8 @@ export const PROJECTS: Project[] = [
     title: 'Zequel',
     slug: 'zequel',
     title_color: ProjectTitleColor.WHITE,
-    content: `<h1 class="text-2xl font-extrabold">Zequel</h1>
-        <h2 class="text-lg font-bold">A new way to manage your SQL databases</h2>
+    content: `<h3 class="text-2xl font-extrabold">Zequel</h3>
+        <h4 class="text-lg font-bold">A new way to manage your SQL databases</h4>
         <br/><br/>
         Zequel is a SQL client software, with a lot of features with a simple and intuitive interface.
         <br/><br/>
@@ -100,7 +82,7 @@ export const PROJECTS: Project[] = [
     title: 'Project B',
     slug: 'project-b',
     title_color: ProjectTitleColor.WHITE,
-    content: `<h2>That's.. a secret project?</h2>
+    content: `<h3>That's.. a secret project?</h3>
 	    That project will be revealed later, but I can't say more for now...
       <br/><br/>
 	    This is one of the most ambitious project, and I can't give you more details for now.`,
