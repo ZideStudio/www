@@ -16,6 +16,24 @@ export const PROJECTS: Project[] = [
         <br /><br />
         .RC and Dockerfile files are used to determine which version to use.
         <br /><br /><br />
+        <p class="font-semibold">
+        A CLI to manage your versions managers automatically
+        Compatible with NVM, GVM, Rustup, and more!
+        </p>
+        <br /><br />
+        The project analyzes the files in your directory as soon as you open your terminal, and automatically changes the version of your language via your version manager, according to the configuration file in the current directory.
+        <br /><br />
+        .RC and Dockerfile files are used to determine which version to use.
+        <br /><br /><br />
+        <p class="font-semibold">
+        A CLI to manage your versions managers automatically
+        Compatible with NVM, GVM, Rustup, and more!
+        </p>
+        <br /><br />
+        The project analyzes the files in your directory as soon as you open your terminal, and automatically changes the version of your language via your version manager, according to the configuration file in the current directory.
+        <br /><br />
+        .RC and Dockerfile files are used to determine which version to use.
+        <br /><br /><br />
         The project was, as planned, <strong>released in early 2025</strong><br/><i><em>It will continue to be updated regularly with new features and bug fixes.<em/>`,
     metaDescription: 'A CLI to manage your versions managers automatically. Compatible with NVM, GVM, Rustup, and more!',
     image_link: 'https://i.imgur.com/ilstnBg.jpeg',

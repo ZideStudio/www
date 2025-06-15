@@ -116,7 +116,7 @@ export const Home = () => {
             }}
             className="fixed top-0 w-full z-50"
           >
-            <NavBar pages={pages} withEntireLogo={!isInWelcome} />
+            <NavBar pages={pages} withEntireLogo={!isInWelcome} withRoundedCorners={!selectedProject} />
           </motion.div>
         </AnimatePresence>
 

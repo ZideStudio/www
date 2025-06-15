@@ -5,9 +5,10 @@ import type { Page } from '../../models/pages.model';
 type NavBarProps = {
   pages: Page[];
   withEntireLogo: boolean;
+  withRoundedCorners: boolean;
 };
 
-export const NavBar = ({ pages, withEntireLogo }: NavBarProps) => {
+export const NavBar = ({ pages, withEntireLogo, withRoundedCorners }: NavBarProps) => {
   const redirectToHome = () => {
     if (!withEntireLogo) return; // only on home page
 
@@ -22,7 +23,12 @@ export const NavBar = ({ pages, withEntireLogo }: NavBarProps) => {
   };
 
   return (
-    <div className="fixed flex flex-row justify-between w-full z-20 align-middle backdrop-blur-sm shadow-xs shadow-black md:border-x border-b border-gray-300 md:rounded-b-xl px-3 md:px-10 py-2">
+    <motion.div
+      initial={{ borderRadius: withRoundedCorners ? '0px' : '0px' }}
+      animate={{ borderRadius: withRoundedCorners ? '0px 0px 16px 16px' : '0px' }}
+      transition={{ duration: 0.5 }}
+      className="fixed flex flex-row justify-between w-full z-20 align-middle backdrop-blur-sm shadow-xs shadow-black md:border-x border-b border-gray-300 px-3 md:px-10 py-2"
+    >
       <div className="flex justify-start w-14" onClick={redirectToHome} onKeyUp={redirectToHome}>
         <AnimatePresence mode="wait">
           {withEntireLogo ? (
@@ -81,6 +87,6 @@ export const NavBar = ({ pages, withEntireLogo }: NavBarProps) => {
       <a className="flex justify-end w-14" href="https://github.com/ZideStudio" target="_blank" rel="noopener noreferrer">
         <img src="/assets/brand/github.png" alt="GitHub" className="h-8 antiSelect" />
       </a>
-    </div>
+    </motion.div>
   );
 };
