@@ -110,9 +110,9 @@ export const Item = ({ partial_project }: ItemProps) => {
             >
               <div className="flex flex-col cursor-pointer" {...openLinkProps}>
                 <div className="flex flex-col md:flex-row md:space-x-3 items-start md:items-center">
-                  <h1 className={`font-extrabold text-lg md:m-2 ${card_color}`} style={{ textShadow: '#aa0 1px 0 5px' }}>
+                  <p className={`font-extrabold text-lg md:m-2 ${card_color}`} style={{ textShadow: '#aa0 1px 0 5px' }}>
                     {project.title}
-                  </h1>
+                  </p>
                   <p
                     className={`italic text-sm font-bold ${project.target === ProjectTarget.DEVELOPERS ? 'text-blue-500' : 'text-green-500'}`}
                     style={{ textShadow: '#aa0 1px 0 10px' }}
@@ -152,12 +152,12 @@ export const Item = ({ partial_project }: ItemProps) => {
           </motion.div>
 
           {/* Main content */}
-          <div className="pt-10 px-[35px] pb-10 text-white space-y-6">
+          <div className="py-10 px-5 pb-10 text-white space-y-6">
             {project.ContentComponent && <project.ContentComponent />}
             {project.link?.github && (
               <div className="flex items-center justify-center pt-5">
                 <button type="button" {...openLinkProps} className="flex items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded">
-                  <span className="uppercase font-bold">Open on github</span>
+                  <span className="uppercase font-bold">Find out more</span>
                   <i className="pi pi-external-link" />
                 </button>
               </div>
