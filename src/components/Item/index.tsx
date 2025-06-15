@@ -59,7 +59,7 @@ export const Item = ({ partial_project }: ItemProps) => {
               <button
                 type="button"
                 onClick={() => window.open(project.link?.github, '_blank')}
-                className="flex items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded"
+                className="flex animate-pulse items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded"
               >
                 <span className="uppercase font-bold">Open on github</span>
                 <i className="pi pi-external-link" style={{ fontSize: '1rem' }} />

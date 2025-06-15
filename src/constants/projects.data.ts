@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
       Online website for sharing information securely and anonymously.
       <br/><br/>
       The website will feature tools such as:
-      <ul class="">
+      <ul>
         <li>Secure pastebin (texts)</li>
         <li>Cryptography tool (pictures)</li>
         <li>Steganography (pictures)</li>
@@ -53,6 +53,9 @@ export const PROJECTS: Project[] = [
     target: ProjectTarget.EVERYONE,
     type: ProjectType.WEBSITE,
     isOpenSource: false,
+    link: {
+      github: 'https://github.com/ZideStudio/CryptForMe',
+    },
   },
   {
     id: '3',

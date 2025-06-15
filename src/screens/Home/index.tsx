@@ -130,7 +130,7 @@ export const Home = () => {
           ) : (
             <div className="flex flex-col">
               <div className="flex flex-row">
-                <Projects projects={projects} setProjects={setProjects} setProjectLoading={setProjectLoading} />
+                <Projects projects={projects} projectSlugSelected={selectedProject?.slug} setProjects={setProjects} setProjectLoading={setProjectLoading} />
                 {selectedProject && (
                   <AnimatePresence>
                     <Item partial_project={selectedProject} key={selectedProject.id} />

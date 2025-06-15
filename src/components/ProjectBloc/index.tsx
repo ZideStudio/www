@@ -5,10 +5,11 @@ import { type ProjectPartial, ProjectStatus, ProjectTarget, ProjectTitleColor } 
 
 type ProjectBlocProps = {
   project: ProjectPartial;
+  isVisible: boolean;
   index: number;
 };
 
-export const ProjectBloc = ({ project, index }: ProjectBlocProps) => {
+export const ProjectBloc = ({ project, isVisible, index }: ProjectBlocProps) => {
   const navigate = useNavigate();
 
   const openProject = () => {
@@ -21,7 +22,7 @@ export const ProjectBloc = ({ project, index }: ProjectBlocProps) => {
   const isReleased = project.status === ProjectStatus.RELEASED;
 
   return (
-    <li className={`relative p-6 h-[460px] w-[100%] ${isLargeCard ? 'md:w-[60%]' : 'md:w-[40%]'} flex-shrink-0`}>
+    <li className={`relative p-6 h-[460px] w-[100%] ${isLargeCard ? 'md:w-[60%]' : 'md:w-[40%]'} flex-shrink-0 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <div onClick={openProject} onKeyUp={openProject} className="w-full h-full relative cursor-pointer block pointer-events-none">
         <motion.div
           style={{ boxShadow: 'inset 0px 0px 10px' }}

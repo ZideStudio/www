@@ -26,9 +26,27 @@ export const NavBar = ({ pages, withEntireLogo }: NavBarProps) => {
       <div className="flex justify-start w-14" onClick={redirectToHome} onKeyUp={redirectToHome}>
         <AnimatePresence mode="wait">
           {withEntireLogo ? (
-            <motion.img key="complete-logo" src="/assets/logo/zide_complete.png" alt="Zide" className="text-white h-8 antiSelect" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.3 }} />
+            <motion.img
+              key="complete-logo"
+              src="/assets/logo/zide_complete.png"
+              alt="Zide"
+              className="text-white h-8 antiSelect"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+            />
           ) : (
-            <motion.img key="simple-logo" src="/assets/logo/zide.png" alt="Zide" className="text-white h-8 antiSelect" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.3 }} />
+            <motion.img
+              key="simple-logo"
+              src="/assets/logo/zide.png"
+              alt="Zide"
+              className="text-white h-8 antiSelect"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+            />
           )}
         </AnimatePresence>
       </div>
@@ -45,9 +63,17 @@ export const NavBar = ({ pages, withEntireLogo }: NavBarProps) => {
             }}
           >
             <motion.div className="relative inline-block cursor-pointer group" onClick={() => openPage(page)} onKeyUp={() => openPage(page)}>
-              <span className="font-bebas text-gray-300 text-3xl font-bold text-center group-hover:text-blue-400 transition-colors duration-300">{page.title}</span>
+              <span className="font-lubri text-gray-300 text-3xl font-bold text-center group-hover:text-blue-400 transition-colors duration-300">
+                {page.title}
+              </span>
 
-              <motion.div layout className={`absolute ${i + 1 < a.length ? 'left-0' : 'right-0'} bottom-0 h-0.5 bg-gray-300 group-hover:bg-blue-400 transition-colors duration-300`} initial={{ width: 0 }} animate={{ width: page.isSelected ? '100%' : '0%' }} transition={{ duration: 0.3 }} />
+              <motion.div
+                layout
+                className={`absolute ${i + 1 < a.length ? 'left-0' : 'right-0'} bottom-0 h-0.5 bg-gray-300 group-hover:bg-blue-400 transition-colors duration-300`}
+                initial={{ width: 0 }}
+                animate={{ width: page.isSelected ? '100%' : '0%' }}
+                transition={{ duration: 0.3 }}
+              />
             </motion.div>
           </div>
         ))}

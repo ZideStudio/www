@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        bebas: ['"Bebas Neue"', 'sans-serif'],
+        lubri: ['"WDXL Lubrifont SC"', 'sans-serif'],
       },
     },
   },
