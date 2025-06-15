@@ -47,9 +47,14 @@ export const Welcome = ({ disabled }: WelcomeProps) => {
           }
           style={{ color: 'white' }}
         />
-        <h1 className="sr-only">Zide Company</h1>
+        <h1 className="sr-only">Zide Studio</h1>
 
-        <motion.h2 className="kanit-regular text-2xl px-20 md:px-0 mt-6 text-center text-[#00579F] drop-shadow-lg shadow-black" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 1, ease: 'easeOut' }}>
+        <motion.h2
+          className="kanit-regular text-2xl px-20 md:px-0 mt-6 text-center text-[#00579F] drop-shadow-lg shadow-black"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
+        >
           Digital simplicity, greater efficiency
         </motion.h2>
 
