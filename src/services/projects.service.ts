@@ -1,4 +1,4 @@
-import { PROJECTS } from '../constants/projects.data';
+import { PROJECTS } from '../constants/projects/projects.data';
 import type { Project, ProjectPartial } from '../models/project.model';
 
 class ProjectsService {

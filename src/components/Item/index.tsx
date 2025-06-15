@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { projectStatusLabels } from '../../constants/projects.data';
+import { projectStatusLabels } from '../../constants/projects/projects.data';
 import { type ProjectPartial, ProjectTarget, ProjectTitleColor } from '../../models/project.model';
 import projectsService from '../../services/projects.service';
 
@@ -153,7 +153,7 @@ export const Item = ({ partial_project }: ItemProps) => {
 
           {/* Main content */}
           <div className="pt-10 px-[35px] pb-10 text-white space-y-6">
-            <div dangerouslySetInnerHTML={{ __html: project.content }} />
+            {project.ContentComponent && <project.ContentComponent />}
             {project.link?.github && (
               <div className="flex items-center justify-center pt-5">
                 <button type="button" {...openLinkProps} className="flex items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded">

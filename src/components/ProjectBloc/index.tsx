@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { projectStatusLabels } from '../../constants/projects.data';
+import { projectStatusLabels } from '../../constants/projects/projects.data';
 import { type ProjectPartial, ProjectStatus, ProjectTarget, ProjectTitleColor } from '../../models/project.model';
 
 type ProjectBlocProps = {

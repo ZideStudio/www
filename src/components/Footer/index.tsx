@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { PROJECTS } from '../../constants/projects.data';
+import { PROJECTS } from '../../constants/projects/projects.data';
 import { ProjectStatus } from '../../models/project.model';
 
 export const Footer = () => {
@@ -18,7 +18,10 @@ export const Footer = () => {
           <hr className="border-gray-600 my-4 w-1/3" />
           <ul>
             <li className="text-start mt-2">Zide is a software development collective creating innovative tools for everyone.</li>
-            <li className="text-start mt-1 text-xs text-gray-400">Driven by passion and curiosity, We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows.</li>
+            <li className="text-start mt-1 text-xs text-gray-400">
+              Driven by passion and curiosity, We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user
+              experience while unlocking powerful workflows.
+            </li>
           </ul>
         </div>
         {/* Projects */}

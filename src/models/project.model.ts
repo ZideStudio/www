@@ -1,9 +1,11 @@
+import type React from 'react';
+
 export type Project = {
   id: string;
   title: string;
   slug: string;
   title_color: ProjectTitleColor;
-  content: string;
+  ContentComponent: React.FC;
   metaDescription: string;
   image_link: string;
   labels: string[];
