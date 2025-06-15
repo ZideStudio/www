@@ -1,4 +1,4 @@
-export const Avm = () => {
+export const AvmAbout = () => {
   const fileExamples = {
     Node: ['.nvmrc', '.node-version', 'package.json'],
     Go: ['go.mod'],
@@ -21,16 +21,7 @@ export const Avm = () => {
     ));
 
   return (
-    <div className="flex flex-col md:px-10 space-y-6">
-      <header className="text-center space-y-2">
-        <h1 className="text-2xl font-extrabold underline">Auto Version Manager</h1>
-        <h2 className="font-bold">
-          A CLI to manage your version managers automatically.
-          <br />
-          Compatible with NVM, GVM, Rustup, and more!
-        </h2>
-      </header>
-
+    <>
       <img src="https://i.imgur.com/xS2XYlA.png" alt="CLI auto execution" className="w-full md:w-1/2 h-auto mx-auto rounded shadow" />
 
       <section className="pb-10 space-y-10">
@@ -44,7 +35,7 @@ export const Avm = () => {
 
         <article>
           <p className="mb-1 font-medium">Language versions can be identified from the following files:</p>
-          <ul className="list-disc list-inside text-left space-y-1 mx-auto md:max-w-md">{renderFileList()}</ul>
+          <ul className="list-disc list-inside text-left space-y-1 mx-auto w-fit">{renderFileList()}</ul>
         </article>
       </section>
 
@@ -54,6 +45,6 @@ export const Avm = () => {
       </section>
 
       <img src="https://i.imgur.com/DxL4ViJ.png" alt="CLI help command" className="w-full md:w-3/4 h-auto mx-auto rounded shadow" />
-    </div>
+    </>
   );
 };
