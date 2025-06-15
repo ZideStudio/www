@@ -1,7 +1,9 @@
 export const Zequel = () => (
   <>
-    <h3 className="text-2xl font-extrabold">Zequel</h3>
-    <h4 className="text-lg font-bold">A new way to manage your SQL databases</h4>
+    <header className="text-center space-y-2">
+      <h1 className="text-2xl font-extrabold underline">Zequel</h1>
+      <h2 className="font-bold">A new way to manage your SQL databases</h2>
+    </header>
     <br />
     <br />
     Zequel is a SQL client software, with a lot of features with a simple and intuitive interface.

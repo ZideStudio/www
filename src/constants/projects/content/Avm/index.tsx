@@ -39,10 +39,18 @@ export const Avm = () => {
       </header>
 
       <nav className="flex justify-center space-x-6 text-lg font-semibold">
-        <button type="button" onClick={() => handleTabChange('about')} className={`hover:underline ${selectedTab === 'about' ? 'underline' : ''}`}>
+        <button
+          type="button"
+          onClick={() => handleTabChange('about')}
+          className={`text-blue-300 hover:text-blue-500 ${selectedTab === 'about' ? 'underline' : ''}`}
+        >
           About
         </button>
-        <button type="button" onClick={() => handleTabChange('install')} className={`hover:underline ${selectedTab === 'install' ? 'underline' : ''}`}>
+        <button
+          type="button"
+          onClick={() => handleTabChange('install')}
+          className={`text-blue-300 hover:text-blue-500 ${selectedTab === 'install' ? 'underline' : ''}`}
+        >
           Install
         </button>
       </nav>
