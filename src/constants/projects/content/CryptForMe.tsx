@@ -5,9 +5,8 @@ export const CryptForMe = () => (
       <h2 className="font-bold">Online website for sharing information securely and anonymously.</h2>
     </header>
     <div className="space-y-4">
-      <p>The website will feature tools such as:</p>
       <article>
-        <p className="mb-1 font-medium">Language versions can be identified from the following files:</p>
+        <p>The website will feature tools such as:</p>
         <ul className="list-disc list-inside text-left space-y-1 mx-auto w-fit">
           <li>
             <span className="mr-1">Secure pastebin (texts)</span>

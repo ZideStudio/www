@@ -76,6 +76,17 @@ export const Item = ({ partial_project }: ItemProps) => {
                   <div className="flex flex-row justify-start items-center space-x-2">
                     <i className="pi pi-external-link text-xs text-white" />
                     <span className={`font-bold text-sm ${card_color}`}>{project.title}</span>
+                    <div className="hidden md:inline space-x-2">
+                      <span className="text-white/50">•</span>
+                      <span className={'text-white/50'}>
+                        {project.release_date_planned && <p className="mr-1">Planned for</p>}
+                        {project.release_date
+                          ? new Date(project.release_date).toLocaleDateString()
+                          : project.release_date_planned
+                            ? new Date(project.release_date_planned).toLocaleDateString()
+                            : null}
+                      </span>
+                    </div>
                   </div>
                   <ul className="flex space-x-2">
                     <li className={`uppercase font-bold text-xs text-white px-3 py-1 rounded ${projectStatusLabels[project.status].color}`}>
@@ -133,9 +144,23 @@ export const Item = ({ partial_project }: ItemProps) => {
 
             <div className="flex flex-col justify-center absolute bottom-[15px] left-[15px] space-y-2">
               {project.isOpenSource && <motion.div className="text-xs bg-black/50 text-gray-400 px-3 py-1 rounded">Open Source</motion.div>}
-              <motion.div className={`uppercase font-bold text-xs text-white px-3 py-1 rounded ${projectStatusLabels[project.status].color}`}>
-                {projectStatusLabels[project.status].label}
-              </motion.div>
+              <div className="flex flex-row">
+                <div
+                  className={`uppercase font-bold text-xs text-white px-3 py-1 ${project.release_date || project.release_date_planned ? 'rounded-l' : 'rounded'} ${projectStatusLabels[project.status].color}`}
+                >
+                  {projectStatusLabels[project.status].label}
+                </div>
+                {(project.release_date || project.release_date_planned) && (
+                  <div className="flex flex-row px-3 text-white bg-black rounded-r">
+                    {project.release_date_planned && <p className="mr-1">Planned for</p>}
+                    {project.release_date
+                      ? new Date(project.release_date).toLocaleDateString()
+                      : project.release_date_planned
+                        ? new Date(project.release_date_planned).toLocaleDateString()
+                        : null}
+                  </div>
+                )}
+              </div>
             </div>
             {project.link?.github && (
               <div className="flex flex-row absolute bottom-[15px] right-[15px] space-x-3 items-center">
