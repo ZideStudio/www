@@ -116,7 +116,7 @@ export const Item = ({ partial_project }: ItemProps) => {
           <motion.div className="relative h-72 w-full z-[1]" layoutId={`card-image-container-${project.id}`}>
             <img src={project.image_link} alt="" className="w-full h-full object-cover object-center" />
             <motion.div
-              className="absolute flex flex-row items-center pr-16 justify-between top-[0.5rem] left-[0.5rem] md:top-[30px] md:left-[30px] w-full z-[1]"
+              className="absolute flex flex-row items-center pr-5 md:pr-8 justify-between top-[0.5rem] left-[0.5rem] md:top-[15px] md:left-[15px] w-full z-[1]"
               layoutId={`title-container-${project.id}`}
             >
               <div className="flex flex-col cursor-pointer" {...openLinkProps}>
@@ -142,7 +142,7 @@ export const Item = ({ partial_project }: ItemProps) => {
               <i className="pi pi-arrow-down-left-and-arrow-up-right-to-center cursor-pointer text-3xl text-white" {...goBackProps} />
             </motion.div>
 
-            <div className="flex flex-col justify-center absolute bottom-[15px] left-[15px] space-y-2">
+            <div className="flex flex-col justify-center absolute bottom-[0.5rem] left-[0.5rem] md:bottom-[15px] md:left-[15px] space-y-2">
               {project.isOpenSource && <motion.div className="text-xs bg-black/50 text-gray-400 px-3 py-1 rounded">Open Source</motion.div>}
               <div className="flex flex-row">
                 <div
@@ -163,13 +163,14 @@ export const Item = ({ partial_project }: ItemProps) => {
               </div>
             </div>
             {project.link?.github && (
-              <div className="flex flex-row absolute bottom-[15px] right-[15px] space-x-3 items-center">
+              <div className="flex flex-row absolute bottom-[0.5rem] right-[0.5rem] md:bottom-[15px] md:right-[15px] space-x-3 items-center">
                 <button
                   type="button"
                   {...openLinkProps}
                   className="flex animate-pulse items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded"
                 >
-                  <span className="uppercase font-bold">Open on github</span>
+                  <span className="uppercase font-bold md:inline hidden">Open on Github</span>
+                  <span className="uppercase font-bold md:hidden inline">Open</span>
                   <i className="pi pi-external-link" />
                 </button>
               </div>
@@ -177,7 +178,7 @@ export const Item = ({ partial_project }: ItemProps) => {
           </motion.div>
 
           {/* Main content */}
-          <div className="py-10 px-5 pb-10 text-white space-y-6">
+          <div className="py-10 px-10 md:px-48 lg:px-96 pb-10 text-white space-y-6">
             {project.ContentComponent && <project.ContentComponent />}
             {project.link?.github && (
               <div className="flex items-center justify-center pt-5">
