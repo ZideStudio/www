@@ -79,7 +79,6 @@ export const Item = ({ partial_project }: ItemProps) => {
                     <div className="hidden md:inline space-x-2">
                       <span className="text-white/50">•</span>
                       <span className={'text-white/50'}>
-                        {project.release_date_planned && <p className="mr-1">Planned for</p>}
                         {project.release_date
                           ? new Date(project.release_date).toLocaleDateString()
                           : project.release_date_planned
