@@ -29,7 +29,7 @@ export const Projects = ({ projects, projectSlugSelected, setProjects, setProjec
       <BackgroundGrid interactible={false} />
 
       <div className="pt-20 pb-10">
-        <h2 className="text-gray-400 px-5 md:px-0">
+        <h2 className="article text-sm md:text-xl text-gray-400 px-5 md:px-0">
           At Zide, we build digital tools that are efficient, intuitive and highly customizable,
           <br />
           offering simplicity of use with gains in productivity.

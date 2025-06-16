@@ -6,6 +6,6 @@ export const ProjectB = () => (
     </header>
     <br />
     <br />
-    This is one of the most ambitious project, and I can't give you more details for now.
+    <p className="article">This is one of the most ambitious project, and I can't give you more details for now.</p>
   </>
 );

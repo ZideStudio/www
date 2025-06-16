@@ -6,6 +6,10 @@ const config: Config = {
     extend: {
       fontFamily: {
         lubri: ['"WDXL Lubrifont SC"', 'sans-serif'],
+        article: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      },
+      fontSize: {
+        article: '1.25rem',
       },
     },
   },

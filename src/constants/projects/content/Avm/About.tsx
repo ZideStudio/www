@@ -12,8 +12,8 @@ export const AvmAbout = () => {
       <li key={lang}>
         {lang}:{' '}
         {files.map((file, i) => (
-          <span key={file} className="bg-white/10 px-1 rounded mr-1 inline-block">
-            {file}
+          <span key={file} className="inline-block px-1">
+            <span className="bg-white/10 px-1 rounded mr-1 inline-block">{file}</span>
             {i < files.length - 1 && ','}
           </span>
         ))}
@@ -22,10 +22,10 @@ export const AvmAbout = () => {
 
   return (
     <>
-      <img src="https://i.imgur.com/xS2XYlA.png" alt="CLI auto execution" className="w-full md:w-1/2 h-auto mx-auto rounded shadow" />
+      <img src="https://i.imgur.com/xS2XYlA.png" alt="CLI auto execution" className="w-full md:w-1/2 h-auto mx-auto rounded shadow my-5" />
 
       <section className="pb-10 space-y-10">
-        <article className="space-y-3">
+        <article className="space-y-3 text-left">
           <p>
             The project analyzes the files in your directory as soon as you open your terminal, and automatically changes the version of your language via your
             version manager, according to the configuration file in the current directory.
@@ -33,18 +33,18 @@ export const AvmAbout = () => {
           <p className="font-bold">Just install the CLI and you don't have to worry about your versions anymore! 😇</p>
         </article>
 
-        <article>
+        <article className="text-left">
           <p className="mb-1 font-medium">Language versions can be identified from the following files:</p>
-          <ul className="list-disc list-inside text-left space-y-1 mx-auto w-fit">{renderFileList()}</ul>
+          <ul className="list-disc list-inside text-left space-y-1">{renderFileList()}</ul>
         </article>
       </section>
 
       <section className="space-y-1">
-        <p className="font-bold">🎉 AVM was correctly published early 2025</p>
+        <p className="font-bold">🎉 AVM has been successfully published in early 2025!</p>
         <p className="italic">Regular updates will introduce new features and resolve issues.</p>
       </section>
 
-      <img src="https://i.imgur.com/DxL4ViJ.png" alt="CLI help command" className="w-full md:w-3/4 h-auto mx-auto rounded shadow" />
+      <img src="https://i.imgur.com/DxL4ViJ.png" alt="CLI help command" className="w-full md:w-3/4 h-auto mx-auto rounded shadow my-5" />
     </>
   );
 };

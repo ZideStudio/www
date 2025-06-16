@@ -30,15 +30,15 @@ export const Avm = () => {
   return (
     <div className="flex flex-col md:px-10 space-y-6">
       <header className="text-center space-y-2">
-        <h1 className="text-2xl font-extrabold underline">Auto Version Manager</h1>
-        <h2 className="font-bold">
+        <h1 className="text-3xl font-extrabold underline">Auto Version Manager</h1>
+        <h2 className="text-xl font-bold">
           A CLI to manage your version managers automatically.
           <br />
-          Compatible with NVM, GVM, Rustup, and more!
+          Compatible with NVM, GVM, Rustup and more!
         </h2>
       </header>
 
-      <nav className="flex justify-center space-x-6 text-lg font-semibold">
+      <nav className="flex justify-center pb-5 space-x-6 font-semibold text-xl">
         <button
           type="button"
           onClick={() => handleTabChange('about')}
@@ -55,7 +55,7 @@ export const Avm = () => {
         </button>
       </nav>
 
-      {selectedTab === 'about' ? <AvmAbout /> : <AvmInstall />}
+      <div className="article">{selectedTab === 'about' ? <AvmAbout /> : <AvmInstall />}</div>
     </div>
   );
 };

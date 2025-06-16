@@ -1,8 +1,8 @@
-import { CommandBlock } from '../../../../components/CodeBock';
+import { CodeBlock } from '../../../../components/CodeBlock';
 
 export const AvmInstall = () => {
   return (
-    <section className="space-y-10">
+    <section className="space-y-10 text-left">
       <p>
         To <span className="underline">install</span> or <span className="underline">update</span> avm, you should run the install script.
         <br />
@@ -10,11 +10,11 @@ export const AvmInstall = () => {
       </p>
 
       <div className="space-y-2">
-        <CommandBlock content={'curl -sSL https://github.com/ZideStudio/avm/releases/latest/download/install.sh | bash'} />
+        <CodeBlock content={'curl -sSL https://github.com/ZideStudio/avm/releases/latest/download/install.sh | bash'} />
 
         <p className="text-center italic font-medium">OR</p>
 
-        <CommandBlock content={'wget -qO- https://github.com/ZideStudio/avm/releases/latest/download/install.sh | bash'} />
+        <CodeBlock content={'wget -qO- https://github.com/ZideStudio/avm/releases/latest/download/install.sh | bash'} />
       </div>
 
       <p>
@@ -22,17 +22,17 @@ export const AvmInstall = () => {
         configure AVM to run automatically each time you open a terminal, and to enable automatic updates.
       </p>
 
-      <div className="py-10 space-y-3">
+      <div className="py-14 space-y-3">
         <p>
           To <span className="underline">uninstall</span> AVM, simply remove the installation script from your system :
         </p>
-        <CommandBlock content={'rm -rf ~/.avm'} />
+        <CodeBlock content={'rm -rf ~/.avm'} />
         <p>
           Don't forget to delete the AVM alias from your rc file, such as ~/.bashrc or ~/.zshrc.
           <br />
           The section to remove looks like this:
         </p>
-        <CommandBlock
+        <CodeBlock
           content={`# AVM - Auto Version Manager\navm() { source ~/.avm/bin/avm "$@"; }\navm run --managers all # Automatically call avm cli each time terminal opens\navm update --auto # Auto-update AVM daily`}
         />
       </div>

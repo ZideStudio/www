@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-interface CommandBlockProps {
+interface CodeBlockProps {
   content: string;
 }
 
-export const CommandBlock = ({ content }: CommandBlockProps) => {
+export const CodeBlock = ({ content }: CodeBlockProps) => {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async () => {
@@ -26,7 +26,7 @@ export const CommandBlock = ({ content }: CommandBlockProps) => {
       >
         <i className={`pi ${copied ? 'pi-check text-blue-400' : 'pi-clipboard'} min-w-5`} />
       </button>
-      <pre className="whitespace-pre-wrap text-start pr-5">
+      <pre className="whitespace-pre-wrap break-words text-start pr-5 font-sans text-sm">
         <code>{content}</code>
       </pre>
     </div>
