@@ -1,44 +1,42 @@
-# Zide 🌐
+# www.Zide.fr
 
-**Zide** is a modern web application focused on **digital simplicity** and **efficiency**.
-We design and develop useful, privacy-conscious tools to improve users’ daily workflows.
+**WWW Zide** is a website that showcases what we do as a collective. Our goal is to offer tools that are digitally simple, helping users work more efficiently. The site highlights the projects we’ve created and the ones we’re currently working on!
 
-## 🚀 Features
+## Tech Features
 
-- ✨ Smooth, animated interface built with `React` and `Framer Motion`
-- 🧠 Project showcase with detailed descriptions and links
-- ⚙️ SEO-ready with [`react-helmet-async`](https://github.com/staylor/react-helmet-async)
-- 🗺️ Sitemap and Open Graph meta tags for rich link previews
+- Smooth, animated interface built with `React` and `Framer Motion`
+- SEO with [`react-helmet-async`](https://github.com/staylor/react-helmet-async)
+- Sitemap and Open Graph meta tags for rich link previews
 
-## 🧩 Stack
+## Stack
 
 - **Frontend**: React + TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **SEO**: React Helmet Async, dynamic metadata
 
-## 🚀 Getting Started
+## Getting Started
 
-### 📦 Installation
+### Installation
 
 ```bash
 nvm use 22.14.0
 npm install
 ```
 
-### 🏗️ Development
+### Development
 
 ```bash
 npm run dev
 ```
 
-### 📦 Build
+### Build
 
 ```bash
 docker build -t zide .
 docker compose up -d
 ```
 
-### 📤 Deployment Workflow
+### Deployment Workflow
 
 The CI pipeline deploys updates to the staging environment automatically with every push to the `main` branch. For production, deployment is triggered by committing a new tag.
