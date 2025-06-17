@@ -1,12 +1,17 @@
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { PROJECTS } from '../../constants/projects/projects.data';
 import { ProjectStatus } from '../../models/project.model';
 
-export const Footer = () => {
+interface FooterProps {
+  selectedProjectSlug: string;
+}
+
+export const Footer = ({ selectedProjectSlug }: FooterProps) => {
   const navigate = useNavigate();
 
   return (
-    <footer className="bg-[#1A1A1A] text-white">
+    <motion.footer className="bg-[#1A1A1A] text-white" layoutId={`footer`}>
       <div className="container py-10 mx-auto flex flex-col space-y-10 md:flex-row md:justify-between md:space-y-0">
         {/* Logo */}
         <div className="w-full px-12 md:px-0 md:w-[13rem]">
@@ -32,7 +37,7 @@ export const Footer = () => {
             {PROJECTS.map((project) => (
               <li key={project.id} className="flex mt-2">
                 <a
-                  className={`text-start font-semibold ${project.status === ProjectStatus.RELEASED ? 'text-white' : 'text-gray-300'} hover:text-blue-400 transition-colors duration-300`}
+                  className={`text-start font-semibold ${project.status === ProjectStatus.RELEASED ? 'text-white' : 'text-gray-300'} ${selectedProjectSlug === project.slug ? 'underline' : ''} hover:text-blue-400 transition-colors duration-300`}
                   href={`/project/${project.slug}`}
                   onClick={(e) => {
                     e.preventDefault();
@@ -73,6 +78,6 @@ export const Footer = () => {
         <p className="text-start">© 2024-{new Date().getFullYear()} Zide.</p>
         <p className="text-start">All rights reserved.</p>
       </div>
-    </footer>
+    </motion.footer>
   );
 };

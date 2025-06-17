@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { projectStatusLabels } from '../../constants/projects/projects.data';
 import { type ProjectPartial, ProjectTarget, ProjectTitleColor } from '../../models/project.model';
 import projectsService from '../../services/projects.service';
+import { Footer } from '../Footer';
 
 type ItemProps = {
   partial_project: ProjectPartial;
@@ -218,7 +219,7 @@ export const Item = ({ partial_project }: ItemProps) => {
           </motion.div>
 
           {/* Main content */}
-          <div className="pt-3 px-10 md:px-48 lg:px-96 pb-10 text-white space-y-6">
+          <div className="pt-3 px-10 md:min-h-[25rem] md:px-48 lg:px-96 pb-10 text-white space-y-6">
             {project.ContentComponent && <project.ContentComponent />}
             {project.link?.github && (
               <div className="flex items-center justify-center">
@@ -229,6 +230,9 @@ export const Item = ({ partial_project }: ItemProps) => {
               </div>
             )}
           </div>
+
+          {/* Footer */}
+          <Footer selectedProjectSlug={project.slug} />
         </div>
       </motion.div>
     </div>
