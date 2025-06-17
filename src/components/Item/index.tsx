@@ -11,17 +11,40 @@ type ItemProps = {
 
 export const Item = ({ partial_project }: ItemProps) => {
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
+  const [hovered, setHovered] = useState(false);
+  const [amplitude, setAmplitude] = useState(20);
 
   const cardRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
 
   const project = projectsService.getProjectByLabel(partial_project.slug);
 
   const card_color = project && project.title_color === ProjectTitleColor.WHITE ? 'text-white' : 'text-black';
 
+  const pathD = `
+    M0,50
+    C360,${50 + amplitude} 1080,${50 - amplitude} 1440,50
+    L1440,100 L0,100 Z
+  `;
+
   const openLink = () => (project?.link?.github ? window.open(project.link.github, '_blank') : null);
   const goBack = () => navigate('/projects');
+
+  useEffect(() => {
+    let frameId: number;
+    const animate = () => {
+      setAmplitude((prev) => {
+        const target = hovered ? 40 : 20;
+        const lerped = prev + (target - prev) * 0.05;
+        return Math.abs(lerped - target) < 0.5 ? target : lerped;
+      });
+      frameId = requestAnimationFrame(animate);
+    };
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [hovered]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -59,7 +82,7 @@ export const Item = ({ partial_project }: ItemProps) => {
     <div className="fixed inset-0 z-20 mt-[3.25rem]">
       <motion.div
         ref={cardRef}
-        className="h-full w-full overflow-hidden  bg-[#1c1c1e] pointer-events-auto relative"
+        className="h-full w-full overflow-hidden bg-[#1c1c1e] pointer-events-auto relative"
         layoutId={`card-container-${partial_project.slug}`}
       >
         {/* Sticky reduced header */}
@@ -112,10 +135,26 @@ export const Item = ({ partial_project }: ItemProps) => {
         {/* Scrollable content container */}
         <div ref={scrollContainerRef} className="h-full overflow-x-hidden overflow-y-auto scroll-smooth">
           {/* Full header */}
-          <motion.div className="relative h-72 w-full z-[1]" layoutId={`card-image-container-${project.id}`}>
-            <img src={project.image_link} alt="" className="w-full h-full object-cover object-center" />
+          <motion.div className="relative h-64   w-full z-[1]" layoutId={`card-image-container-${project.id}`}>
+            <img
+              src={project.image_link}
+              alt=""
+              className="w-full h-full object-cover object-center"
+              style={{
+                maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+              }}
+            />
+
+            {/* Wave effect */}
+            <div className="absolute bottom-[-1px] left-0 right-0 z-[2]" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+              <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                <path d={pathD} fill="#1c1c1e" />
+              </svg>
+            </div>
+
             <motion.div
-              className="absolute flex flex-row items-center pr-5 md:pr-8 justify-between top-[0.5rem] left-[0.5rem] md:top-[15px] md:left-[15px] w-full z-[1]"
+              className="absolute flex flex-row items-center pr-5 md:pr-8 justify-between top-2 left-2 md:top-4 md:left-4 w-full z-[1]"
               layoutId={`title-container-${project.id}`}
             >
               <div className="flex flex-col cursor-pointer" {...openLinkProps}>
@@ -141,46 +180,48 @@ export const Item = ({ partial_project }: ItemProps) => {
               <i className="pi pi-arrow-down-left-and-arrow-up-right-to-center cursor-pointer text-3xl text-white" {...goBackProps} />
             </motion.div>
 
-            <div className="flex flex-col justify-center absolute bottom-[0.5rem] left-[0.5rem] md:bottom-[15px] md:left-[15px] space-y-2">
-              {project.isOpenSource && <motion.div className="text-xs bg-black/50 text-gray-400 px-3 py-1 rounded">Open Source</motion.div>}
-              <div className="flex flex-row">
-                <div
-                  className={`uppercase font-bold text-xs text-white px-3 py-1 ${project.release_date || project.release_date_planned ? 'rounded-l' : 'rounded'} ${projectStatusLabels[project.status].color}`}
-                >
-                  {projectStatusLabels[project.status].label}
-                </div>
-                {(project.release_date || project.release_date_planned) && (
-                  <div className="flex flex-row px-3 text-white bg-black rounded-r">
-                    {project.release_date_planned && <p className="mr-1">Planned for</p>}
-                    {project.release_date
-                      ? new Date(project.release_date).toLocaleDateString()
-                      : project.release_date_planned
-                        ? new Date(project.release_date_planned).toLocaleDateString()
-                        : null}
+            <div className="absolute flex flex-row items-end pr-5 md:pr-8 justify-between bottom-5 left-2 md:bottom-16 md:left-4 w-full z-[1]">
+              <div className="flex flex-col justify-center space-y-2">
+                {project.isOpenSource && <motion.div className="text-xs bg-black/50 text-gray-400 px-3 py-1 rounded">Open Source</motion.div>}
+                <div className="flex flex-row">
+                  <div
+                    className={`uppercase font-bold text-xs text-white px-3 py-1 ${project.release_date || project.release_date_planned ? 'rounded-l' : 'rounded'} ${projectStatusLabels[project.status].color}`}
+                  >
+                    {projectStatusLabels[project.status].label}
                   </div>
-                )}
+                  {(project.release_date || project.release_date_planned) && (
+                    <div className="flex flex-row px-3 text-white bg-black rounded-r">
+                      {project.release_date_planned && <p className="mr-1">Planned for</p>}
+                      {project.release_date
+                        ? new Date(project.release_date).toLocaleDateString()
+                        : project.release_date_planned
+                          ? new Date(project.release_date_planned).toLocaleDateString()
+                          : null}
+                    </div>
+                  )}
+                </div>
               </div>
+              {project.link?.github && (
+                <div className="flex flex-row  space-x-3 items-center">
+                  <button
+                    type="button"
+                    {...openLinkProps}
+                    className="flex animate-pulse items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded"
+                  >
+                    <span className="uppercase font-bold md:inline hidden">Open on Github</span>
+                    <span className="uppercase font-bold md:hidden inline">Open</span>
+                    <i className="pi pi-external-link" />
+                  </button>
+                </div>
+              )}
             </div>
-            {project.link?.github && (
-              <div className="flex flex-row absolute bottom-[0.5rem] right-[0.5rem] md:bottom-[15px] md:right-[15px] space-x-3 items-center">
-                <button
-                  type="button"
-                  {...openLinkProps}
-                  className="flex animate-pulse items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded"
-                >
-                  <span className="uppercase font-bold md:inline hidden">Open on Github</span>
-                  <span className="uppercase font-bold md:hidden inline">Open</span>
-                  <i className="pi pi-external-link" />
-                </button>
-              </div>
-            )}
           </motion.div>
 
           {/* Main content */}
-          <div className="py-10 px-10 md:px-48 lg:px-96 pb-10 text-white space-y-6">
+          <div className="pt-3 px-10 md:px-48 lg:px-96 pb-10 text-white space-y-6">
             {project.ContentComponent && <project.ContentComponent />}
             {project.link?.github && (
-              <div className="flex items-center justify-center pt-5">
+              <div className="flex items-center justify-center">
                 <button type="button" {...openLinkProps} className="flex items-center space-x-2 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1 rounded">
                   <span className="uppercase font-bold">Find out more</span>
                   <i className="pi pi-external-link" />
