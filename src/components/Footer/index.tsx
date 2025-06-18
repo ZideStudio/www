@@ -4,7 +4,7 @@ import { PROJECTS } from '../../constants/projects/projects.data';
 import { ProjectStatus } from '../../models/project.model';
 
 interface FooterProps {
-  selectedProjectSlug: string;
+  selectedProjectSlug?: string;
 }
 
 export const Footer = ({ selectedProjectSlug }: FooterProps) => {

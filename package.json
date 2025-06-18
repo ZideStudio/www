@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@biomejs/biome": "2.0.0",
     "@types/node": "^20.17.57",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.5.0",

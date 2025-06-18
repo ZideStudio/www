@@ -1,7 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "root": true,
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": false, "ignore": [] },
+  "files": { "ignoreUnknown": false, "includes": ["**"] },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -18,7 +19,6 @@
     "rules": {
       "recommended": false,
       "a11y": {
-        "noBlankTarget": "error",
         "noDistractingElements": "error",
         "noLabelWithoutControl": "error",
         "noNoninteractiveElementToInteractiveRole": "error",
@@ -40,7 +40,6 @@
         "noEmptyTypeParameters": "error",
         "noExcessiveNestedTestSuites": "warn",
         "noExtraBooleanCast": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
         "noStaticOnlyClass": "error",
         "noUselessCatch": "error",
         "noUselessConstructor": "error",
@@ -61,7 +60,11 @@
         "useSimpleNumberKeys": "info",
         "noUselessUndefinedInitialization": "error",
         "noVoid": "off",
-        "noWith": "error"
+        "noAdjacentSpacesInRegex": "error",
+        "noFlatMapIdentity": "error",
+        "noUselessContinue": "error",
+        "noCommaOperator": "error",
+        "useWhile": "error"
       },
       "correctness": {
         "noChildrenProp": "error",
@@ -70,7 +73,6 @@
         "noConstantCondition": "error",
         "noEmptyCharacterClassInRegex": "error",
         "noEmptyPattern": "error",
-        "noFlatMapIdentity": "error",
         "noInnerDeclarations": "error",
         "noGlobalObjectCalls": "error",
         "noInvalidBuiltinInstantiation": "error",
@@ -79,7 +81,6 @@
         "noInvalidGridAreas": "error",
         "noInvalidPositionAtImportRule": "error",
         "noInvalidUseBeforeDeclaration": "error",
-        "noNewSymbol": "error",
         "noPrecisionLoss": "error",
         "noSelfAssign": "error",
         "noStringCaseMismatch": "error",
@@ -87,7 +88,6 @@
         "noUndeclaredVariables": "warn",
         "noUnknownProperty": "error",
         "noUnknownUnit": "error",
-        "noUnnecessaryContinue": "error",
         "noUnreachable": "error",
         "noUnreachableSuper": "error",
         "noUnsafeFinally": "error",
@@ -95,11 +95,11 @@
         "noUnsafeOptionalChaining": "error",
         "noVoidElementsWithChildren": "error",
         "noVoidTypeReturn": "error",
-        "useArrayLiterals": "off",
         "useIsNan": "error",
         "useJsxKeyInIterable": "error",
         "useYield": "error",
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "useValidTypeof": "error"
       },
       "performance": {
         "noDelete": "info"
@@ -107,16 +107,15 @@
       "security": {
         "noDangerouslySetInnerHtml": "info",
         "noDangerouslySetInnerHtmlWithChildren": "error",
-        "noGlobalEval": "error"
+        "noGlobalEval": "error",
+        "noBlankTarget": "error"
       },
       "style": {
-        "noCommaOperator": "error",
         "noNamespace": "error",
         "noInferrableTypes": "error",
         "noNonNullAssertion": "error",
         "noParameterAssign": "error",
         "noUselessElse": "error",
-        "noVar": "error",
         "useAsConstAssertion": "warn",
         "noYodaExpression": "error",
         "useBlockStatements": "off",
@@ -138,8 +137,8 @@
         "useNodejsImportProtocol": "error",
         "useNumberNamespace": "info",
         "useTemplate": "error",
-        "useWhile": "error",
-        "useSelfClosingElements": "error"
+        "useSelfClosingElements": "error",
+        "useArrayLiterals": "off"
       },
       "suspicious": {
         "noApproximativeNumericConstant": "error",
@@ -179,19 +178,20 @@
         "noUnsafeNegation": "error",
         "useIsArray": "error",
         "useDefaultSwitchClauseLast": "error",
-        "useValidTypeof": "error",
         "noDuplicateAtImportRules": "error",
         "noConsole": {
           "level": "error",
           "options": {
             "allow": ["assert", "error", "info", "warn", "trace"]
           }
-        }
+        },
+        "noWith": "error",
+        "noVar": "error"
       }
     },
-    "ignore": ["**/metro.config.js", "**/node_modules/"]
+    "includes": ["**", "!**/metro.config.js", "!**/node_modules/"]
   },
-  "organizeImports": { "enabled": true },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "javascript": {
     "formatter": {
       "jsxQuoteStyle": "double",
@@ -209,5 +209,7 @@
       "unsafeParameterDecoratorsEnabled": true
     }
   },
-  "overrides": [{ "include": ["*.ts", "*.tsx"], "linter": { "rules": {} } }]
+  "overrides": [
+    { "includes": ["**/*.ts", "**/*.tsx"], "linter": { "rules": {} } }
+  ]
 }
