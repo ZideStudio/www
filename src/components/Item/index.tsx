@@ -181,7 +181,7 @@ export const Item = ({ partial_project }: ItemProps) => {
               <i className="pi pi-arrow-down-left-and-arrow-up-right-to-center cursor-pointer text-3xl text-white" {...goBackProps} />
             </motion.div>
 
-            <div className="absolute flex flex-row items-end pr-5 md:pr-8 justify-between bottom-5 left-2 md:bottom-16 md:left-4 w-full z-[1]">
+            <div className="absolute flex flex-row items-end pr-5 md:pr-8 justify-between bottom-5 left-2 md:bottom-16 md:left-4 w-full z-[3]">
               <div className="flex flex-col justify-center space-y-2">
                 {project.isOpenSource && <motion.div className="text-xs bg-black/50 text-gray-400 px-3 py-1 rounded">Open Source</motion.div>}
                 <div className="flex flex-row">
