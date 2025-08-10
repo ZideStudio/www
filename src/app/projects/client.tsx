@@ -25,7 +25,10 @@ export const Projects = () => {
   return (
     <div className="mx-5 md:mx-24 space-y-5">
       <ProjectFilters setNameAction={setName} setTargetAction={setTarget} setStatusAction={setStatus} setTypeAction={setType} setSortAction={setSort} />
-      <ProjectGrid projects={projects} />
+
+      <section>
+        <ProjectGrid projects={projects} />
+      </section>
     </div>
   );
 };

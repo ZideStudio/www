@@ -1,3 +1,5 @@
+'use client';
+
 import BackgroundGrid from '@components/BackgroundGrid';
 import { Button } from '@components/Button';
 import { Tag } from '@components/Tag';
@@ -10,7 +12,7 @@ export const Landing = () => {
 
   return (
     <>
-      <div className="antiSelect relative flex h-[calc(100vh-3rem)] flex-col items-center justify-center px-5">
+      <div className="antiSelect relative flex h-[calc(100vh-3rem)] flex-col items-center justify-center px-5 mb-10 md:mb-0">
         <BackgroundGrid interactible />
 
         <div className="z-10 flex w-full flex-col-reverse items-center md:flex-row md:justify-around">
@@ -21,7 +23,7 @@ export const Landing = () => {
               {t('title')}
               <span className="from-activesecondary to-activeprimary ml-5 bg-gradient-to-r bg-clip-text text-transparent">Zide Studio</span>
             </span>
-            <h2 className="text-2xl font-semibold text-gray-400">
+            <span className="text-2xl font-semibold text-gray-400">
               {t('projects.developing')}{' '}
               <span className="text-text">
                 <Typewriter
@@ -34,7 +36,7 @@ export const Landing = () => {
                   delaySpeed={3000}
                 />
               </span>
-            </h2>
+            </span>
             <h2 className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</h2>
             <div className="flex-row space-x-5 pt-5">
               <Button href="/projects" icon="angle-right" className="animate-pulse" primary>

@@ -23,7 +23,7 @@ export const PageBanner = ({ title, descriptionEn, descriptionFr, imageUrl, tag 
     <section className="relative h-96 w-full">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: `url('${imageUrl}')` }} />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary" />
+      <div className="absolute inset-0 -bottom-1 bg-gradient-to-b from-transparent to-primary" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-text px-4">
         {tag && <Tag>{tag}</Tag>}
