@@ -1,4 +1,7 @@
+import { PageBanner } from '@components/PageBanner';
 import { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { Projects } from './client';
 
 export const metadata: Metadata = {
   title: 'Projects',
@@ -6,5 +9,12 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <p>Page</p>;
+  const t = useTranslations('projects');
+
+  return (
+    <div className="text-text">
+      <PageBanner title={t('banner.title')} description={t('banner.description')} />
+      <Projects />
+    </div>
+  );
 }

@@ -5,7 +5,8 @@
     "description": "Our volunteer team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
     "tag": "Passionate developers",
     "projects": {
-      "view_projects": "View All Projects",
+      "view_projects": "View Projects",
+      "view_all_projects": "View All Projects",
       "developing": "We're developing",
       "webapps": "websites",
       "cli": "CLI tools",
@@ -39,6 +40,10 @@
     "projects": "Projects"
   },
   "projects": {
+    "banner": {
+      "title": "Our projects",
+      "description": "Find out more about the projects we have realised and those we are currently working on"
+    },
     "view_project": "View Project",
     "status": {
       "planned": "Planned",
@@ -51,6 +56,10 @@
       "software": "Software",
       "cli_tool": "CLI Tool",
       "extension": "Extension"
+    },
+    "target": {
+      "everyone": "General Public",
+      "developers": "Developers"
     }
   },
   "footer": {

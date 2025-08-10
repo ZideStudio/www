@@ -8,7 +8,7 @@ import { Title } from '@components/Title';
 import { PROJECTS } from '@constants/projects.data';
 import { useTranslations } from 'next-intl';
 
-export const Projects = () => {
+export const HomeProjects = () => {
   const t = useTranslations('home.projects');
 
   return (
@@ -23,7 +23,7 @@ export const Projects = () => {
         <Carousel items={PROJECTS} renderItem={(project) => <ProjectCard project={project} />} />
       </div>
       <Button primary icon="arrow-right" href="/projects">
-        {t('view_projects')}
+        {t('view_all_projects')}
       </Button>
     </div>
   );

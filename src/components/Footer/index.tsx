@@ -12,7 +12,7 @@ export const Footer = ({ selectedProjectSlug }: FooterProps) => {
   const t = useTranslations('footer');
 
   return (
-    <footer className="text-white mt-32 border-t border-text/10">
+    <footer className="text-text mt-32 border-t border-text/10">
       <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 justify-between items-center bg-secondary border border-text/10 mx-5 md:mx-24 my-10 p-5 md:p-12 rounded-lg">
         <div className="flex flex-col space-y-5 md:space-y-0 md:w-1/2">
           <Title className="!text-3xl">{t('discord.title')}</Title>
@@ -26,7 +26,7 @@ export const Footer = ({ selectedProjectSlug }: FooterProps) => {
       <div className="container py-10 mx-auto flex flex-col space-y-10 md:flex-row md:justify-between md:space-y-0">
         {/* Logo */}
         <div className="w-full px-12 md:px-0 md:w-[13rem]">
-          <img src="/assets/logo/zide_complete.png" alt="Zide" className="text-white h-12 antiSelect" />
+          <img src="/assets/logo/zide_complete.png" alt="Zide" className="text-text h-12 antiSelect" />
         </div>
         {/* Zide */}
         <div className="w-full px-12 md:px-0 md:w-[13rem]">

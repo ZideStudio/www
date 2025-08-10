@@ -8,7 +8,7 @@ import Marquee from 'react-fast-marquee';
 import { Typewriter } from 'react-simple-typewriter';
 import { Languages } from './languages';
 import { Presentation } from './presentation';
-import { Projects } from './projects';
+import { HomeProjects } from './projects';
 import { Team } from './team';
 
 export const Home = () => {
@@ -29,7 +29,7 @@ export const Home = () => {
             </span>
             <h2 className="text-2xl font-semibold text-gray-400">
               {t('projects.developing')}{' '}
-              <span className="text-white">
+              <span className="text-text">
                 <Typewriter
                   words={[t('projects.webapps'), t('projects.softwares'), t('projects.cli'), t('projects.extensions'), t('projects.projects')]}
                   loop={0}
@@ -44,7 +44,7 @@ export const Home = () => {
             <h2 className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</h2>
             <div className="flex-row space-x-5 pt-5">
               <Button icon="angle-right" className="animate-pulse" primary>
-                View Projects
+                {t('projects.view_projects')}
               </Button>
               <Button icon="building-columns">Our Story</Button>
             </div>
@@ -53,7 +53,7 @@ export const Home = () => {
             <motion.img
               src="/assets/logo/zide_complete.png"
               alt="ZIDE"
-              className="antiSelect h-48 text-white md:h-64"
+              className="antiSelect h-48 text-text md:h-64"
               initial={{ opacity: 0, scale: 0.8, y: -50 }}
               animate={{
                 opacity: 1,
@@ -130,7 +130,7 @@ export const Home = () => {
 
         <div className="flex flex-col space-y-40 my-16">
           <Presentation />
-          <Projects />
+          <HomeProjects />
           <Languages />
           <Team />
         </div>

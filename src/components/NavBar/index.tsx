@@ -43,7 +43,7 @@ export default function Navbar() {
                 <Link
                   href={href}
                   className={`relative flex items-center rounded-md px-4 py-2 font-semibold transition-colors ${
-                    isActive ? 'text-activesecondary' : 'hover:text-activesecondary text-white'
+                    isActive ? 'text-activesecondary' : 'hover:text-activesecondary text-text'
                   }`}
                 >
                   {label}

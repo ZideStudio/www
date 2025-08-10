@@ -73,7 +73,7 @@ export default function LanguageSelector() {
               handleLocaleChange(locale);
             }}
             className={`flex w-full items-center space-x-2 px-3 py-2 text-left text-sm transition-colors first:rounded-t-md last:rounded-b-md ${
-              locale === currentLocale ? 'bg-activesecondary/20 text-activesecondary' : 'hover:text-activesecondary text-white hover:bg-white/10'
+              locale === currentLocale ? 'bg-activesecondary/20 text-activesecondary' : 'hover:text-activesecondary text-text hover:bg-white/10'
             }`}
           >
             <span className="text-base">{localeFlags[locale]}</span>
@@ -88,7 +88,7 @@ export default function LanguageSelector() {
       <button
         ref={buttonRef}
         onClick={handleToggle}
-        className="hover:text-activesecondary flex items-center justify-center rounded-md p-2 text-white transition-colors"
+        className="hover:text-activesecondary flex items-center justify-center rounded-md p-2 text-text transition-colors"
         aria-label="Select language"
       >
         <span className="text-xl">{localeFlags[currentLocale]}</span>
