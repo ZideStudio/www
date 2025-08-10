@@ -7,6 +7,7 @@ COPY package*.json ./
 RUN npm install --ignore-scripts
 
 # COPY .env .env
+COPY .prettierrc ./
 COPY *.config.* ./
 COPY tsconfig*.json ./
 COPY src ./src
