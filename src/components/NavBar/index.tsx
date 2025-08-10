@@ -14,13 +14,13 @@ export default async function Navbar() {
   ];
 
   return (
-    <NavbarClient navLinks={NAV_LINKS}>
-      <div className="flex h-12 w-full items-center justify-between overflow-visible px-24 md:h-16">
+    <NavbarClient navLinks={NAV_LINKS} languageSelector={<LanguageSelector />}>
+      <div className="flex h-12 w-full items-center justify-between overflow-visible px-6 md:px-24 md:h-16">
         <Link href="/" className="group flex items-center space-x-3 min-w-2xs">
           <img src="/assets/logo/zide_complete.png" className="h-10 w-auto sm:h-12" alt="Zide Logo" />
         </Link>
 
-        <nav className="hidden items-center space-x-2 md:flex">
+        <nav className="hidden items-center space-x-2 lg:flex">
           {NAV_LINKS.map(({ label, href }) => (
             <div key={label} className="group relative" data-nav-link data-href={href}>
               <Link
@@ -34,7 +34,7 @@ export default async function Navbar() {
           ))}
         </nav>
 
-        <div className="relative flex items-center justify-center space-x-4 align-middle min-w-2xs">
+        <div className="relative hidden items-center justify-center space-x-4 align-middle min-w-2xs lg:flex">
           <LanguageSelector />
           <Link href="https://discord.gg/45DXQZGpEP" target="_blank">
             <i className="pi pi-discord text-text align-middle text-2xl" />

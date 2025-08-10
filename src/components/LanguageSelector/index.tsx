@@ -49,6 +49,27 @@ export default function LanguageSelector() {
     setIsOpen(!isOpen);
   };
 
+  const getDropdownPosition = () => {
+    if (!buttonRect) return {};
+
+    const viewportHeight = window.innerHeight;
+    const dropdownHeight = 80;
+    const spaceBelow = viewportHeight - buttonRect.bottom;
+    const spaceAbove = buttonRect.top;
+
+    const showAbove = window.innerWidth < 1024 || spaceBelow < dropdownHeight;
+
+    return showAbove && spaceAbove > dropdownHeight
+      ? {
+          top: buttonRect.top - dropdownHeight - 4,
+          left: buttonRect.right - 120,
+        }
+      : {
+          top: buttonRect.bottom + 4,
+          left: buttonRect.right - 120,
+        };
+  };
+
   const handleLocaleChange = (locale: Locale) => {
     document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; SameSite=lax`;
     router.refresh();
@@ -60,10 +81,7 @@ export default function LanguageSelector() {
       <div
         data-language-dropdown
         className="border-text/20 bg-primary/90 fixed z-[9999] min-w-[120px] rounded-md border shadow-lg backdrop-blur-md"
-        style={{
-          top: buttonRect.bottom + 4,
-          left: buttonRect.right - 120,
-        }}
+        style={getDropdownPosition()}
       >
         {locales.map((locale) => (
           <button
