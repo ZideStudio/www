@@ -17,7 +17,7 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   const t = useTranslations('projects');
 
   const targetOptions: SelectOption[] = [
-    { label: 'All Targets', value: '', icon: 'users' },
+    { label: t('filters.all_targets'), value: '', icon: 'users' },
     ...Object.values(ProjectTarget).map((target) => {
       let icon: string;
       switch (target) {
@@ -37,7 +37,7 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   ];
 
   const statusOptions: SelectOption[] = [
-    { label: 'All Status', value: '', icon: 'chart-bar' },
+    { label: t('filters.all_status'), value: '', icon: 'chart-bar' },
     ...Object.values(ProjectStatus).map((status) => {
       let icon: string;
       switch (status) {
@@ -63,7 +63,7 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   ];
 
   const typeOptions: SelectOption[] = [
-    { label: 'All Types', value: '', icon: 'id-card' },
+    { label: t('filters.all_types'), value: '', icon: 'id-card' },
     ...Object.values(ProjectType).map((type) => {
       let icon: string;
       switch (type) {
@@ -89,8 +89,8 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   ];
 
   const sortOptions: SelectOption[] = [
-    { label: 'Newest', value: 'newest', icon: 'clock' },
-    { label: 'Oldest', value: 'oldest', icon: 'clock' },
+    { label: t('filters.newest'), value: 'newest', icon: 'clock' },
+    { label: t('filters.oldest'), value: 'oldest', icon: 'clock' },
     { label: 'A-Z', value: 'alphabetical', icon: 'sort-alpha-down' },
     { label: 'Z-A', value: 'reverseAlphabetical', icon: 'sort-alpha-down-alt' },
   ];

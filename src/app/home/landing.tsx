@@ -42,7 +42,7 @@ export const Landing = () => {
               <Button href="/projects" icon="angle-right" className="animate-pulse" primary>
                 {t('projects.view_projects')}
               </Button>
-              <Button icon="building-columns">Our Story</Button>
+              <Button icon="building-columns">{t('story')}</Button>
             </div>
           </div>
           <div className="flex flex-col items-center md:mt-0">
@@ -75,7 +75,7 @@ export const Landing = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0, duration: 1, ease: 'easeOut' }}
             >
-              Digital simplicity, greater efficiency
+              {t('slogan')}
             </motion.h2>
 
             {new Date().getMonth() === 0 && (

@@ -37,7 +37,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
             {member.githubUrl && <i className="pi pi-github text-text/50" />}
             <p className="text-xl">{member.name}</p>
           </div>
-          <p className="text-text/25 text-lg">{role}</p>
+          <p className="text-text/25 text-lg truncate">{role}</p>
         </div>
       </div>
       <div className="relative flex items-start">

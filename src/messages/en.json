@@ -4,6 +4,7 @@
     "slogan": "Digital simplicity, greater efficiency",
     "description": "Our volunteer team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
     "tag": "Passionate developers",
+    "story": "Our Story",
     "projects": {
       "view_projects": "View Projects",
       "view_all_projects": "View All Projects",
@@ -16,6 +17,12 @@
       "tag": "Our Work",
       "title": "Featured projects",
       "description": "A selection of projects we have developed through Zide"
+    },
+    "banner": {
+      "webapps": "websites",
+      "cli": "CLI tools",
+      "softwares": "softwares",
+      "extensions": "extensions"
     },
     "presentation": {
       "tag": "About Us",
@@ -76,6 +83,13 @@
     "details": {
       "article_published": "Article published on",
       "article_updated": "Article updated on"
+    },
+    "filters": {
+      "all_targets": "All Targets",
+      "all_status": "All Status",
+      "all_types": "All Types",
+      "newest": "Newest",
+      "oldest": "Oldest"
     }
   },
   "footer": {
