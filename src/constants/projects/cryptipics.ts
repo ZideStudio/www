@@ -9,7 +9,7 @@ export const cryptiPicsProject: Project = {
   imageLink: 'https://i.imgur.com/ouC8WB5.png',
   releaseDate: {
     planned: new Date('2025-12-01'),
-    articlePublished: new Date('2025-01-01'),
+    articlePublished: new Date('2025-03-16'),
   },
   labels: ['Website', 'Cryptography', 'Secure pastebin'],
   featuresEn: ['Secure pastebin', 'Cryptography tool on pictures', 'Steganography tool on pictures'],

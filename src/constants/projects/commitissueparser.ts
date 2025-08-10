@@ -21,11 +21,13 @@ export const commitIssueParserProject: Project = {
   isOpenSource: true,
   link: {
     github: 'https://github.com/ZideStudio/CommitIssueParser',
+    customInstallButton:
+      '<a title="Install commit-issue-parser Raycast Extension" href="https://www.raycast.com/julesjuul/commit-issue-parser" target="_blank"><img src="https://www.raycast.com/julesjuul/commit-issue-parser/install_button@2x.png?v=1.1" height="64" alt="" style="height: 64px;"></a>',
   },
-  customInstallButton:
-    '<a title="Install commit-issue-parser Raycast Extension" href="https://www.raycast.com/julesjuul/commit-issue-parser" target="_blank"><img src="https://www.raycast.com/julesjuul/commit-issue-parser/install_button@2x.png?v=1.1" height="64" alt="" style="height: 64px;"></a>',
   pages: [
     {
+      titleEn: 'About',
+      titleFr: 'À propos',
       content: [
         {
           type: 'title',
@@ -111,6 +113,115 @@ export const commitIssueParserProject: Project = {
           type: 'paragraph',
           contentEn: 'Do not hesitate to create an issue on the GitHub repository to share your suggestions or problems encountered.',
           contentFr: "N'hésitez pas à créer une issue sur le dépôt GitHub pour nous faire part de vos suggestions ou de problèmes rencontrés.",
+        },
+      ],
+    },
+    {
+      titleEn: 'Functionality',
+      titleFr: 'Fonctionnalités',
+      content: [
+        {
+          type: 'paragraph',
+          contentEn: 'The extension offers many settings to adapt to your use of the tool and improve your experience. Here they are !',
+          contentFr: "L'extension propose de nombreux paramètres pour s'adapter à votre utilisation de l'outil et améliorer votre expérience. Les voici !",
+        },
+        {
+          type: 'image',
+          contentEn: 'https://i.imgur.com/VYLwBgx.png',
+        },
+        {
+          type: 'title',
+          contentEn: 'Content Format',
+          contentFr: 'Format du contenu',
+        },
+        {
+          type: 'paragraph',
+          contentEn:
+            'In the extension settings, you can configure the "Content Format" parameter to choose the format of the content you want to use.<br/>Three formats are available:',
+          contentFr:
+            'Dans les paramètres de l\'extension, vous pouvez configurer le paramètre "Content Format" pour choisir le format du contenu que vous souhaitez utiliser.<br/>Trois formats sont disponibles :',
+        },
+        {
+          type: 'paragraph',
+          contentEn: `
+          <ul class="list-disc list-inside text-left space-y-1">
+            <li>Text: paste the selected text content</li>
+            <li>Lazygit: paste the selected text content in a format compatible with Lazygit, which allows you to automatically fill in the body</li>
+            <li>Git Command: paste the selected text content in a format compatible with the CLI Git, which allows you to paste the Git Commit command notably with the body</li>
+          </ul>
+          `,
+          contentFr: `
+          <ul class="list-disc list-inside text-left space-y-1">
+            <li>Text: coller le contenu texte sélectionné</li>
+            <li>Lazygit: coller le contenu texte sélectionné dans un format compatible avec Lazygit, ce qui permet de remplir automatiquement le body</li>
+            <li>Git Command: coller le contenu texte sélectionné dans un format compatible avec le CLI Git, ce qui permet de coller la commande Git Commit notamment avec le body</li>
+          </ul>
+          `,
+        },
+        {
+          type: 'image',
+          contentEn: 'https://i.imgur.com/xPY5FLF.png',
+          altEn: 'Result of Lazygit mode',
+          altFr: 'Résultat du mode Lazygit',
+        },
+        {
+          type: 'image',
+          contentEn: 'https://i.imgur.com/YXyTisz.png',
+          altEn: 'Result of Git Command mode',
+          altFr: 'Résultat du mode Git Command',
+        },
+        {
+          type: 'title',
+          contentEn: 'Type Mode',
+          contentFr: 'Mode de type',
+        },
+        {
+          type: 'paragraph',
+          contentEn: 'The type mode (keyword present at the beginning of the commit) can be configured in two ways:',
+          contentFr: 'Le mode de type (mot clé présent au début du commit) peut être configuré de deux manières :',
+        },
+        {
+          type: 'paragraph',
+          contentEn: `
+          <ul class="list-disc list-inside text-left space-y-1">
+            <li>Text: use Angular Conventional Commit for keywords feat, fix, chore etc...</li>
+            <li>Gitmoji: use Gitmoji emojis for keywords</li>
+          </ul>
+          `,
+          contentFr: `
+          <ul class="list-disc list-inside text-left space-y-1">
+            <li>Text : utilise la convention Angular Conventional Commit pour les mots clés feat, fix, chore etc...</li>
+            <li>Gitmoji : utilise les emojis de Gitmoji pour les mots clés</li>
+          </ul>
+          `,
+        },
+        {
+          type: 'image',
+          contentEn: 'https://github.com/ZideStudio/CommitIssueParser/blob/main/metadata/commit-issue-parser-1.png?raw=true',
+          altEn: 'Text Type Mode',
+          altFr: 'Mode de type Text',
+        },
+        {
+          type: 'image',
+          contentEn: 'https://github.com/ZideStudio/CommitIssueParser/blob/main/metadata/commit-issue-parser-2.png?raw=true',
+          altEn: 'Gitmoji Type Mode',
+          altFr: 'Mode de type Gitmoji',
+        },
+        {
+          type: 'title',
+          contentEn: 'Primary Action',
+          contentFr: 'Action Principale',
+        },
+        {
+          type: 'paragraph',
+          contentEn:
+            'The primary action is the action that is performed when you select a commit name in the list. You can therefore change the default parameter in the menu below:',
+          contentFr:
+            "L'action principale est l'action qui est effectué lorsque vous sélectionnez un nom de commit dans la liste. Vous pouvez donc changer le paramètre par défaut dans le menu ci-dessous :",
+        },
+        {
+          type: 'image',
+          contentEn: 'https://github.com/ZideStudio/CommitIssueParser/blob/main/metadata/commit-issue-parser-3.png?raw=true',
         },
       ],
     },

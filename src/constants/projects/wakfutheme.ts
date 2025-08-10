@@ -8,7 +8,7 @@ export const wakfuThemeProject: Project = {
   imageLink: 'https://i.imgur.com/hvgz8Jr.png',
   releaseDate: {
     date: new Date('2025-01-16'),
-    articlePublished: new Date('2025-01-17'),
+    articlePublished: new Date('2025-08-09'),
   },
   labels: ['Theme', 'Zed IDE'],
   featuresEn: ['Dark and clear theme', 'Compatible with Zed', 'Customisable'],
@@ -18,6 +18,7 @@ export const wakfuThemeProject: Project = {
   type: ProjectType.EXTENSION,
   isOpenSource: true,
   link: {
+    install: 'https://zed.dev/extensions/wakfu-theme',
     github: 'https://github.com/JulesJuul/zed-wakfu-theme',
   },
   pages: [

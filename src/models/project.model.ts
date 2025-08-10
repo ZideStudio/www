@@ -21,8 +21,9 @@ export type Project = {
   link?: {
     github?: string;
     website?: string;
+    install?: string;
+    customInstallButton?: string;
   };
-  customInstallButton?: string;
 };
 
 export type ProjectPartial = Omit<Project, 'content' | 'releaseDate' | 'link'>;

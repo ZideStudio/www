@@ -91,7 +91,7 @@ export const Blog = ({ project, page }: BlogProps) => {
           {content.type === 'paragraph' && <div dangerouslySetInnerHTML={{ __html: content.content }} />}
           {content.type === 'image' && (
             <div className="flex flex-col items-center space-y-3">
-              <img src={content.content} alt={content.alt} />
+              <img src={content.content} alt={content.alt} className="rounded-lg" />
               {content.alt && <p className="text-sm text-text/50">{content.alt}</p>}
             </div>
           )}

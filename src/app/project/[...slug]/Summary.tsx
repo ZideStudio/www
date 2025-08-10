@@ -62,7 +62,14 @@ export const Summary = ({ project }: SummaryProps) => {
           </tr>
         </tbody>
       </table>
-      {project.customInstallButton && <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: project.customInstallButton }} />}
+      {project.link?.customInstallButton && (
+        <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: project.link.customInstallButton }} />
+      )}
+      {project.link?.install && (
+        <Button href={project.link?.install} target="_blank" icon="download" className="w-full" primary>
+          {t('install')}
+        </Button>
+      )}
       {project.link?.website && (
         <Button href={project.link?.website} target="_blank" icon="arrow-up-right" className="w-full" primary>
           {t('open-website')}

@@ -8,7 +8,7 @@ export const zequelProject: Project = {
   imageLink: 'https://i.imgur.com/ZMdgiRi.png',
   releaseDate: {
     planned: new Date('2027-01-01'),
-    articlePublished: new Date('2027-02-01'),
+    articlePublished: new Date('2025-03-16'),
   },
   labels: ['SQL Client', 'Database Management', 'Software'],
   featuresEn: ['Free software', 'Database management', 'Folder organization'],
