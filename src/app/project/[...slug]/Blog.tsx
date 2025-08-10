@@ -2,6 +2,7 @@ import { Locale } from '@/i18n/config';
 import { CodeBlock } from '@components/CodeBlock';
 import { PageContent, Project } from '@models/project.model';
 import { useLocale } from 'next-intl';
+import { BlogDetails } from './BlogDetails';
 
 type Page = {
   id?: string;
@@ -97,6 +98,8 @@ export const Blog = ({ project, page }: BlogProps) => {
           {content.type === 'code' && <CodeBlock content={content.content} />}
         </div>
       ))}
+
+      <BlogDetails project={project} />
     </div>
   );
 };

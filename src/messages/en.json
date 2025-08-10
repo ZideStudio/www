@@ -71,6 +71,10 @@
     "target": {
       "everyone": "General Public",
       "developers": "Developers"
+    },
+    "details": {
+      "article_published": "Article published on",
+      "article_updated": "Article updated on"
     }
   },
   "footer": {
