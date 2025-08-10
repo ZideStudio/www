@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
-import { Home } from './home/client';
 
 export const metadata: Metadata = {
-  title: 'Zide',
+  title: 'Projects',
   description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
 };
 
 export default function Page() {
-  return <Home />;
+  return <p>Page</p>;
 }

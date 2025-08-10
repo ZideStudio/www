@@ -4,7 +4,10 @@ import { Button } from '@components/Button';
 import Navbar from '@components/NavBar';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import Marquee from 'react-fast-marquee';
 import { Typewriter } from 'react-simple-typewriter';
+import { Presentation } from './presentation';
+import { Tag } from '@components/Tag';
 
 export const Home = () => {
   const t = useTranslations('home');
@@ -16,7 +19,7 @@ export const Home = () => {
 
         <div className="z-10 flex w-full flex-col-reverse items-center md:flex-row md:justify-around">
           <div className="mt-14 flex flex-col space-y-5 md:mt-0 md:min-w-[25.5rem]">
-            <p className="border-text/50 text-text w-max rounded-xl border px-3 py-1 text-sm">{t('tag')}</p>
+            <Tag>{t('tag')}</Tag>
 
             <span className="text-activesecondary text-3xl leading-tight font-bold tracking-tight md:text-6xl">
               {t('title')}
@@ -26,7 +29,7 @@ export const Home = () => {
               {t('projects.title')}{' '}
               <span className="text-white">
                 <Typewriter
-                  words={[t('projects.webapps'), t('projects.softwares'), t('projects.cli'), t('projects.raycast'), t('projects.projects')]}
+                  words={[t('projects.webapps'), t('projects.softwares'), t('projects.cli'), t('projects.extensions'), t('projects.projects')]}
                   loop={0}
                   cursor
                   cursorStyle="|"
@@ -36,7 +39,7 @@ export const Home = () => {
                 />
               </span>
             </h2>
-            <h2 className="max-w-xl text-lg font-semibold text-gray-400">{t('description')}</h2>
+            <h2 className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</h2>
             <div className="flex-row space-x-5 pt-5">
               <Button icon="angle-right" className="animate-pulse" primary>
                 View Projects
@@ -69,7 +72,7 @@ export const Home = () => {
             <h1 className="sr-only">Zide</h1>
 
             <motion.h2
-              className="kanit-regular text-activeprimary px-20 text-center text-2xl font-bold shadow-black drop-shadow-lg md:px-0"
+              className="text-activeprimary px-10 text-center text-2xl font-bold shadow-black drop-shadow-lg md:px-20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0, duration: 1, ease: 'easeOut' }}
@@ -79,7 +82,7 @@ export const Home = () => {
 
             {new Date().getMonth() === 0 && (
               <motion.p
-                className="kanit-regular mt-4 text-center text-xl font-semibold text-yellow-200 shadow-black drop-shadow-lg"
+                className="mt-4 text-center text-xl font-semibold text-yellow-200 shadow-black drop-shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -95,8 +98,35 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="h-screen bg-gray-500">
-        <p>TEST</p>
+      <div className="relative">
+        <div className="to-primary pointer-events-none absolute bottom-0 z-0 h-20 w-full bg-gradient-to-b from-transparent" />
+      </div>
+
+      <div className="bg-primary relative">
+        <Marquee pauseOnClick className="absolute -top-20 z-20 overflow-y-hidden text-9xl font-bold uppercase select-none">
+          {[t('projects.webapps'), t('projects.softwares'), t('projects.cli'), t('projects.extensions')].map((item, index) => {
+            let textGradient: string;
+            let dotGradient: string;
+            if (index % 2 === 0) {
+              textGradient = 'from-text to-text/75';
+              dotGradient = 'text-text/75';
+            } else {
+              textGradient = 'from-text/75 to-text';
+              dotGradient = 'text-text';
+            }
+
+            return (
+              <div className="flex flex-row justify-center align-middle">
+                <p key={index} className={`bebas-neue-regular ${textGradient} ml-5 bg-gradient-to-r bg-clip-text text-transparent`}>
+                  {item}
+                </p>
+                <i className={`pi pi-circle-fill ${dotGradient} my-auto ml-5 text-3xl`} />
+              </div>
+            );
+          })}
+        </Marquee>
+
+        <Presentation />
       </div>
     </div>
   );

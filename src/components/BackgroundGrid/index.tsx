@@ -12,7 +12,7 @@ interface BackgroundGridProps {
 
 const BackgroundGrid = ({
   interactible,
-  defaultColor = '#fb3a5d',
+  defaultColor = '#00579F',
   cellSize = '5px',
   strokeWidth = '5px',
   fade = true,

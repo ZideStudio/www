@@ -1,10 +1,22 @@
 @import 'tailwindcss';
 @config "../../tailwind.config.js";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   @apply bg-primary;
 }
+
+.bebas-neue-regular {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Scroll Bar */
 
 ::-webkit-scrollbar {
   display: none;
@@ -41,11 +53,5 @@ body {
 @media screen and (max-width: 700px) {
   .scroll-bar {
     display: none;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  p {
-    font-size: 1.5rem;
   }
 }

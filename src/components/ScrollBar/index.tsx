@@ -19,7 +19,7 @@ export const ScrollBar = () => {
 
   return (
     <div
-      className="scroll-bar"
+      className="scroll-bar z-10"
       style={{
         top: `${scrollPercent}%`,
         ['--p' as string]: `${scrollPercent * 100}%` as string,

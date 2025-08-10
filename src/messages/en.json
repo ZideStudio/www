@@ -2,16 +2,22 @@
   "home": {
     "title": "Welcome to",
     "slogan": "Digital simplicity, greater efficiency",
-    "description": "Our team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
+    "description": "Our volunteer team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
     "tag": "Passionate developers",
     "projects": {
       "title": "We're developing",
       "webapps": "websites",
       "cli": "CLI tools",
       "softwares": "softwares",
-      "raycast": "Raycast extensions",
+      "extensions": "extensions",
       "projects": "your next idea?"
     }
+  },
+  "presentation": {
+    "tag": "About Us",
+    "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
+    "team": "Our aim is to build a network of motivated people who want to create relevant projects or contribute to those of others in their free time. We welcome anyone interested in programming to join our community and share their ideas with us!",
+    "product": "We craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows."
   },
   "navbar": {
     "home": "Home",
