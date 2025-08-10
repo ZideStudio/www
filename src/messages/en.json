@@ -1,0 +1,16 @@
+{
+  "home": {
+    "title": "Welcome to",
+    "slogan": "Digital simplicity, greater efficiency",
+    "description": "Digital simplicity, greater efficiency. We develop open-source applications to help you in your daily routine",
+    "tag": "Passionate developers",
+    "projects": {
+      "title": "We're developing",
+      "webapps": "websites",
+      "cli": "CLI tools",
+      "softwares": "softwares",
+      "raycast": "Raycast extensions",
+      "projects": "your next idea?"
+    }
+  }
+}

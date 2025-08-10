@@ -1,3 +1,4 @@
+'use client';
 import { type HTMLProps, useEffect, useState } from 'react';
 
 interface BackgroundGridProps {
@@ -9,9 +10,34 @@ interface BackgroundGridProps {
   fade?: boolean;
 }
 
-const BackgroundGrid = ({ interactible, defaultColor = '#fb3a5d', cellSize = '5px', strokeWidth = '5px', fade = true }: Partial<BackgroundGridProps> & HTMLProps<HTMLDivElement>) => {
+const BackgroundGrid = ({
+  interactible,
+  defaultColor = '#fb3a5d',
+  cellSize = '5px',
+  strokeWidth = '5px',
+  fade = true,
+}: Partial<BackgroundGridProps> & HTMLProps<HTMLDivElement>) => {
   const [dynamicColor, setDynamicColor] = useState(defaultColor);
   const [cursorPosition, setCursorPosition] = useState({ x: 50, y: 50 });
+  const [maskX, setMaskX] = useState(50);
+  const [maskY, setMaskY] = useState(50);
+
+  const svg = `
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='${dynamicColor}' stroke-width='${strokeWidth}' fill-opacity='0.4'>
+      <path d='M 0 0 L 200 200'/>
+      <path d='M 200 0 L 0 200'/>
+    </svg>
+  `;
+
+  const svgStatic = `
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='white' stroke-width='${strokeWidth}' fill-opacity='0.4'>
+      <path d='M 0 0 L 200 200'/>
+      <path d='M 200 0 L 0 200'/>
+    </svg>
+  `;
+
+  const svgDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  const svgDataUrlStatic = `data:image/svg+xml;utf8,${encodeURIComponent(svgStatic)}`;
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -36,25 +62,10 @@ const BackgroundGrid = ({ interactible, defaultColor = '#fb3a5d', cellSize = '5p
     };
   }, []);
 
-  const svg = `
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='${dynamicColor}' stroke-width='${strokeWidth}' fill-opacity='0.4'>
-      <path d='M 0 0 L 200 200'/>
-      <path d='M 200 0 L 0 200'/>
-    </svg>
-  `;
-
-  const svgStatic = `
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='white' stroke-width='${strokeWidth}' fill-opacity='0.4'>
-      <path d='M 0 0 L 200 200'/>
-      <path d='M 200 0 L 0 200'/>
-    </svg>
-  `;
-
-  const svgDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-  const svgDataUrlStatic = `data:image/svg+xml;utf8,${encodeURIComponent(svgStatic)}`;
-
-  const maskX = (cursorPosition.x / window.innerWidth) * 100;
-  const maskY = (cursorPosition.y / window.innerHeight) * 100;
+  useEffect(() => {
+    setMaskX((cursorPosition.x / window.innerWidth) * 100);
+    setMaskY((cursorPosition.y / window.innerHeight) * 100);
+  });
 
   return (
     <div style={{ zIndex: 0 }}>
@@ -71,7 +82,7 @@ const BackgroundGrid = ({ interactible, defaultColor = '#fb3a5d', cellSize = '5p
         />
       ) : (
         <div
-          className="absolute w-full h-full"
+          className="absolute h-full w-full"
           style={{
             backgroundImage: `url("${svgDataUrlStatic}")`,
             backgroundRepeat: 'repeat',
