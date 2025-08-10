@@ -43,7 +43,7 @@ export const Home = () => {
             </h2>
             <h2 className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</h2>
             <div className="flex-row space-x-5 pt-5">
-              <Button icon="angle-right" className="animate-pulse" primary>
+              <Button href="/projects" icon="angle-right" className="animate-pulse" primary>
                 {t('projects.view_projects')}
               </Button>
               <Button icon="building-columns">Our Story</Button>
