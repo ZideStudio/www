@@ -2,7 +2,7 @@
   "home": {
     "title": "Welcome to",
     "slogan": "Digital simplicity, greater efficiency",
-    "description": "Digital simplicity, greater efficiency. We develop open-source applications to help you in your daily routine",
+    "description": "Our team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
     "tag": "Passionate developers",
     "projects": {
       "title": "We're developing",
@@ -12,5 +12,10 @@
       "raycast": "Raycast extensions",
       "projects": "your next idea?"
     }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects"
   }
 }

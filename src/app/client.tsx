@@ -1,6 +1,7 @@
 'use client';
 import BackgroundGrid from '@components/BackgroundGrid';
 import { Button } from '@components/Button';
+import Navbar from '@components/NavBar';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { Typewriter } from 'react-simple-typewriter';
@@ -9,27 +10,7 @@ export const Home = () => {
   const t = useTranslations('home');
 
   return (
-    <div className="h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll scroll-smooth">
-      <AnimatePresence>
-        <motion.div
-          key="navbar"
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={{
-            hidden: { opacity: 0, y: -20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: 'backOut' },
-            },
-          }}
-          className="fixed top-0 z-50 w-full"
-        >
-          {/*<NavBar pages={pages} withEntireLogo={!isInWelcome} withRoundedCorners={!selectedProject} />*/}
-        </motion.div>
-      </AnimatePresence>
-
+    <div className="">
       <div className="antiSelect relative flex h-screen w-screen flex-col items-center justify-center px-5">
         <BackgroundGrid interactible />
 
@@ -57,7 +38,7 @@ export const Home = () => {
             </h2>
             <h2 className="max-w-xl text-lg font-semibold text-gray-400">{t('description')}</h2>
             <div className="flex-row space-x-5 pt-5">
-              <Button icon="angle-right" className="bg-text border-primary text-primary animate-pulse border">
+              <Button icon="angle-right" className="animate-pulse" primary>
                 View Projects
               </Button>
               <Button icon="building-columns">Our Story</Button>
@@ -112,6 +93,10 @@ export const Home = () => {
             )}
           </div>
         </div>
+      </div>
+
+      <div className="h-screen bg-gray-500">
+        <p>TEST</p>
       </div>
     </div>
   );
