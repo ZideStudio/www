@@ -14,7 +14,6 @@ export const MemberCard = ({ member }: MemberCardProps) => {
 
   let role;
   let message;
-
   if (currentLocale === 'fr') {
     role = member.roleFr;
     message = member.messageFr;
