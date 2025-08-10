@@ -5,23 +5,41 @@
     "description": "Our volunteer team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
     "tag": "Passionate developers",
     "projects": {
-      "title": "We're developing",
+      "developing": "We're developing",
       "webapps": "websites",
       "cli": "CLI tools",
       "softwares": "softwares",
       "extensions": "extensions",
-      "projects": "your next idea?"
+      "projects": "your next idea?",
+      "tag": "Our Work",
+      "title": "Featured projects",
+      "description": "A selection of projects we have developed through Zide"
+    },
+    "presentation": {
+      "tag": "About Us",
+      "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
+      "team": "Our aim is to build a network of motivated people who want to create relevant projects or contribute to those of others in their free time. We welcome anyone interested in programming to join our community and share their ideas with us!",
+      "product": "We craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows."
     }
-  },
-  "presentation": {
-    "tag": "About Us",
-    "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
-    "team": "Our aim is to build a network of motivated people who want to create relevant projects or contribute to those of others in their free time. We welcome anyone interested in programming to join our community and share their ideas with us!",
-    "product": "We craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows."
   },
   "navbar": {
     "home": "Home",
     "about": "About Us",
     "projects": "Projects"
+  },
+  "projects": {
+    "view_project": "View Project",
+    "status": {
+      "planned": "Planned",
+      "in_progress": "In Progress",
+      "paused": "Paused",
+      "released": "Released"
+    },
+    "type": {
+      "website": "Website",
+      "software": "Software",
+      "cli_tool": "CLI Tool",
+      "extension": "Extension"
+    }
   }
 }

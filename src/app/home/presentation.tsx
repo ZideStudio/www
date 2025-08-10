@@ -1,28 +1,24 @@
 import { Tag } from '@components/Tag';
+import { Title } from '@components/Title';
 import { useTranslations } from 'next-intl';
 
 export const Presentation = () => {
-  const t = useTranslations('presentation');
+  const t = useTranslations('home.presentation');
 
   return (
-    <div className="my-24 flex flex-row items-center justify-around px-10 lg:px-20">
+    <div className="flex flex-row items-center justify-around px-10 lg:px-20">
       <div
         className="border-activeprimary hidden h-52 w-52 rounded-lg border-5 bg-cover bg-center lg:block xl:h-96 xl:w-96"
         style={{ backgroundImage: "url('/assets/logo/zide_square.png')" }}
       ></div>
-      <div className="flex max-w-2xl flex-col space-y-10">
+      <div className="flex max-w-2xl flex-col space-y-3">
         <Tag>{t('tag')}</Tag>
         <div className="flex flex-row items-end space-x-3">
           <div
             className="border-activeprimary block h-24 w-24 rounded-lg border-5 bg-cover bg-center lg:hidden"
             style={{ backgroundImage: "url('/assets/logo/zide_square.png')" }}
           ></div>
-          <p
-            id="about"
-            className="from-activesecondary to-activeprimary bg-gradient-to-r bg-clip-text text-3xl leading-tight font-bold tracking-tight text-transparent md:text-6xl"
-          >
-            Zide Studio
-          </p>
+          <Title id="about">Zide Studio</Title>
         </div>
         <div className="flex flex-col space-y-5">
           <p className="text-text">{t('zide')}</p>

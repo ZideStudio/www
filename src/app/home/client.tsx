@@ -1,13 +1,13 @@
 'use client';
 import BackgroundGrid from '@components/BackgroundGrid';
 import { Button } from '@components/Button';
-import Navbar from '@components/NavBar';
-import { AnimatePresence, motion } from 'motion/react';
+import { Tag } from '@components/Tag';
+import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Marquee from 'react-fast-marquee';
 import { Typewriter } from 'react-simple-typewriter';
 import { Presentation } from './presentation';
-import { Tag } from '@components/Tag';
+import { Projects } from './projects';
 
 export const Home = () => {
   const t = useTranslations('home');
@@ -26,7 +26,7 @@ export const Home = () => {
               <span className="from-activesecondary to-activeprimary ml-5 bg-gradient-to-r bg-clip-text text-transparent">Zide Studio</span>
             </span>
             <h2 className="text-2xl font-semibold text-gray-400">
-              {t('projects.title')}{' '}
+              {t('projects.developing')}{' '}
               <span className="text-white">
                 <Typewriter
                   words={[t('projects.webapps'), t('projects.softwares'), t('projects.cli'), t('projects.extensions'), t('projects.projects')]}
@@ -126,7 +126,10 @@ export const Home = () => {
           })}
         </Marquee>
 
-        <Presentation />
+        <div className="flex flex-col space-y-40 my-16">
+          <Presentation />
+          <Projects />
+        </div>
       </div>
     </div>
   );
