@@ -8,10 +8,24 @@ import { notFound } from 'next/navigation';
 import { Blog } from './Blog';
 import { Summary } from './Summary';
 
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
-};
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const projectSlug = slug[0];
+
+  const project: Project | undefined = PROJECTS.find((project) => project.slug === projectSlug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+      description: 'The requested project could not be found.',
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.descriptionEn,
+  };
+}
 
 type PageProps = {
   params: Promise<{ slug: string[] }>;

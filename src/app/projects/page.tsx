@@ -5,7 +5,7 @@ import { Projects } from './client';
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
+  description: 'List of projects developed by our team',
 };
 
 export default function Page() {
