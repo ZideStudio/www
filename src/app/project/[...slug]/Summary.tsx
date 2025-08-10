@@ -1,6 +1,8 @@
-import { Locale } from '@/i18n/config';
+'use client';
+
+import type { Locale } from '@/i18n/config';
 import { Button } from '@components/Button';
-import { Project } from '@models/project.model';
+import type { Project } from '@models/project.model';
 import dayjs from 'dayjs';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -63,6 +65,7 @@ export const Summary = ({ project }: SummaryProps) => {
         </tbody>
       </table>
       {project.link?.customInstallButton && (
+        // eslint-disable-next-line react/no-danger
         <div className="flex w-full justify-center" dangerouslySetInnerHTML={{ __html: project.link.customInstallButton }} />
       )}
       {project.link?.install && (
@@ -85,6 +88,7 @@ export const Summary = ({ project }: SummaryProps) => {
         <h3 className="mb-4 text-lg font-semibold">{t('key-features')}</h3>
         <ul className="list-inside list-disc">
           {features.map((feature, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <li key={index}>{feature}</li>
           ))}
         </ul>

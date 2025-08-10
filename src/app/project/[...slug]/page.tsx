@@ -1,12 +1,20 @@
 import { PageBanner } from '@components/PageBanner';
 import { PROJECTS } from '@constants/projects.data';
-import { Project } from '@models/project.model';
-import { Metadata } from 'next';
+import type { Project } from '@models/project.model';
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Blog } from './Blog';
 import { Summary } from './Summary';
+
+export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  return PROJECTS.map((project) => ({
+    slug: [project.slug],
+  }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;

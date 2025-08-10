@@ -19,17 +19,18 @@ export const useProjects = ({ filters }: UseProjectsProps) => {
   let projects = PROJECTS;
 
   // filtering
-  if (filters.name) {
-    projects = projects.filter((project) => project.title.toLowerCase().includes(filters.name!.toLowerCase()));
+  const { name, target, status, type } = filters;
+  if (name) {
+    projects = projects.filter((project) => project.title.toLowerCase().includes(name.toLowerCase()));
   }
-  if (filters.target) {
-    projects = projects.filter((project) => project.target.toLowerCase().includes(filters.target!.toLowerCase()));
+  if (target) {
+    projects = projects.filter((project) => project.target.toLowerCase().includes(target.toLowerCase()));
   }
-  if (filters.status) {
-    projects = projects.filter((project) => project.status.toLowerCase().includes(filters.status!.toLowerCase()));
+  if (status) {
+    projects = projects.filter((project) => project.status.toLowerCase().includes(status.toLowerCase()));
   }
-  if (filters.type) {
-    projects = projects.filter((project) => project.type.toLowerCase().includes(filters.type!.toLowerCase()));
+  if (type) {
+    projects = projects.filter((project) => project.type.toLowerCase().includes(type.toLowerCase()));
   }
 
   // sorting

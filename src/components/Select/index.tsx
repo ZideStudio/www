@@ -1,4 +1,4 @@
-import { Option } from '@models/option.model';
+import type { Option } from '@models/option.model';
 import { useState } from 'react';
 
 export type SelectOption = Option & {

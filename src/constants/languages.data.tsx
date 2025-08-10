@@ -1,4 +1,4 @@
-import { Language } from '@models/language.model';
+import type { Language } from '@models/language.model';
 import {
   DockerOriginal,
   ElectronOriginal,

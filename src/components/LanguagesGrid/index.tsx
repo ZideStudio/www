@@ -1,20 +1,5 @@
-import { Language } from '@models/language.model';
+import type { Language } from '@models/language.model';
 import Link from 'next/link';
-
-type LanguagesGridProps = {
-  languages: Language[];
-  className?: string;
-};
-
-export const LanguagesGrid = ({ languages }: LanguagesGridProps) => {
-  return (
-    <div className="flex flex-wrap gap-4">
-      {languages.map((language, index) => (
-        <LanguageChip key={index} language={language} />
-      ))}
-    </div>
-  );
-};
 
 type LanguageChipProps = {
   language: Language;
@@ -31,5 +16,20 @@ const LanguageChip = ({ language, className }: LanguageChipProps) => {
         <span className="pr-1 text-lg font-semibold">{language.name}</span>
       </div>
     </Link>
+  );
+};
+
+type LanguagesGridProps = {
+  languages: Language[];
+  className?: string;
+};
+
+export const LanguagesGrid = ({ languages }: LanguagesGridProps) => {
+  return (
+    <div className="flex flex-wrap gap-4">
+      {languages.map((language, index) => (
+        <LanguageChip key={index} language={language} />
+      ))}
+    </div>
   );
 };

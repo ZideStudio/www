@@ -1,6 +1,6 @@
-import { Locale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 import { CodeBlock } from '@components/CodeBlock';
-import { PageContent, Project } from '@models/project.model';
+import type { PageContent, Project } from '@models/project.model';
 import { useLocale } from 'next-intl';
 import { BlogDetails } from './BlogDetails';
 

@@ -1,7 +1,8 @@
 'use client';
 
 import { Input } from '@components/Input';
-import { Select, SelectOption } from '@components/Select';
+import type { SelectOption } from '@components/Select';
+import { Select } from '@components/Select';
 import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model';
 import { useTranslations } from 'next-intl';
 
@@ -19,13 +20,15 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   const targetOptions: SelectOption[] = [
     { label: t('filters.all_targets'), value: '', icon: 'users' },
     ...Object.values(ProjectTarget).map((target) => {
-      let icon: string;
+      let icon: string | undefined;
       switch (target) {
         case ProjectTarget.EVERYONE:
           icon = 'globe';
           break;
         case ProjectTarget.DEVELOPERS:
           icon = 'code';
+          break;
+        default:
           break;
       }
       return {
@@ -39,7 +42,7 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   const statusOptions: SelectOption[] = [
     { label: t('filters.all_status'), value: '', icon: 'chart-bar' },
     ...Object.values(ProjectStatus).map((status) => {
-      let icon: string;
+      let icon: string | undefined;
       switch (status) {
         case ProjectStatus.RELEASED:
           icon = 'bookmark';
@@ -53,6 +56,8 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
         case ProjectStatus.PLANNED:
           icon = 'calendar-clock';
           break;
+        default:
+          break;
       }
       return {
         label: t(`status.${status.toLowerCase()}`),
@@ -65,7 +70,7 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   const typeOptions: SelectOption[] = [
     { label: t('filters.all_types'), value: '', icon: 'id-card' },
     ...Object.values(ProjectType).map((type) => {
-      let icon: string;
+      let icon: string | undefined;
       switch (type) {
         case ProjectType.WEBSITE:
           icon = 'globe';
@@ -78,6 +83,8 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
           break;
         case ProjectType.EXTENSION:
           icon = 'expand';
+          break;
+        default:
           break;
       }
       return {

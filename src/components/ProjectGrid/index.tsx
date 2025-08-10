@@ -1,7 +1,7 @@
 'use client';
 
 import { ProjectCard } from '@components/ProjectCard';
-import { Project } from '@models/project.model';
+import type { Project } from '@models/project.model';
 
 type ProjectGridProps = {
   projects: Project[];

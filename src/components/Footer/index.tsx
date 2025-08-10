@@ -5,11 +5,7 @@ import { Title } from '@components/Title';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-interface FooterProps {
-  selectedProjectSlug?: string;
-}
-
-export const Footer = ({ selectedProjectSlug }: FooterProps) => {
+export const Footer = () => {
   const t = useTranslations('footer');
 
   return (

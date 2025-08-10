@@ -11,6 +11,8 @@ import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import './globals.css';
 
+export const dynamic = 'force-static';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],

@@ -1,9 +1,10 @@
 'use client';
 
-import { Locale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 import { Button } from '@components/Button';
 import { Tag, TagPlainType } from '@components/Tag';
-import { Project, ProjectStatus } from '@models/project.model';
+import type { Project } from '@models/project.model';
+import { ProjectStatus } from '@models/project.model';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 

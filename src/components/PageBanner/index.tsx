@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 import { Tag } from '@components/Tag';
 import { useLocale } from 'next-intl';
 

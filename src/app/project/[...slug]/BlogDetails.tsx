@@ -1,7 +1,7 @@
 'use client';
 
-import { Locale } from '@/i18n/config';
-import { Project } from '@models/project.model';
+import type { Locale } from '@/i18n/config';
+import type { Project } from '@models/project.model';
 import dayjs from 'dayjs';
 import { useLocale, useTranslations } from 'next-intl';
 

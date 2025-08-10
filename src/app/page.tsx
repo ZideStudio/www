@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Marquee from 'react-fast-marquee';
 import { Landing } from './home/landing';
@@ -33,10 +33,9 @@ export default async function Page() {
             }
 
             return (
-              <div className="flex flex-row justify-center align-middle">
-                <p key={index} className={`bebas-neue-regular ${textGradient} ml-5 bg-gradient-to-r bg-clip-text text-transparent`}>
-                  {item}
-                </p>
+              // eslint-disable-next-line react/no-array-index-key
+              <div key={index} className="flex flex-row justify-center align-middle">
+                <p className={`bebas-neue-regular ${textGradient} ml-5 bg-gradient-to-r bg-clip-text text-transparent`}>{item}</p>
                 <i className={`pi pi-circle-fill ${dotGradient} my-auto ml-5 text-3xl`} />
               </div>
             );

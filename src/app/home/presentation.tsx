@@ -10,14 +10,14 @@ export const Presentation = () => {
       <div
         className="border-activeprimary hidden h-52 w-52 rounded-lg border-5 bg-cover bg-center lg:block xl:h-96 xl:w-96"
         style={{ backgroundImage: "url('/assets/logo/zide_square.png')" }}
-      ></div>
+      />
       <div className="flex max-w-2xl flex-col space-y-3">
         <Tag>{t('tag')}</Tag>
         <div className="flex flex-row items-end space-x-3">
           <div
             className="border-activeprimary block h-24 w-24 rounded-lg border-5 bg-cover bg-center lg:hidden"
             style={{ backgroundImage: "url('/assets/logo/zide_square.png')" }}
-          ></div>
+          />
           <Title id="about" className="scroll-mt-40">
             Zide Studio
           </Title>

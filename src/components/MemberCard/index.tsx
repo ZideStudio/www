@@ -1,8 +1,8 @@
 'use client';
 
-import { Locale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 import { QuoteSvg } from '@components/Svg/QuoteSvg';
-import { Member } from '@models/member.model';
+import type { Member } from '@models/member.model';
 import { useLocale } from 'next-intl';
 
 type MemberCardProps = {
@@ -30,7 +30,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
   return (
     <div className="bg-secondary group border-primary hover:border-text text-text flex h-72 w-full flex-col space-y-5 overflow-hidden rounded-xl border p-10">
       <div className={`flex flex-row items-center space-x-3 ${member.githubUrl ? 'cursor-pointer' : ''}`} onClick={openGithub}>
-        <img src={member.pictureUrl} className="h-10 w-auto rounded-full sm:h-12" />
+        <img src={member.pictureUrl} alt="Member" className="h-10 w-auto rounded-full sm:h-12" />
 
         <div className="flex flex-col">
           <div className="flex flex-row items-center space-x-2">

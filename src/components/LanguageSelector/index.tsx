@@ -19,7 +19,7 @@ export default function LanguageSelector() {
 
       if (buttonRef.current && !buttonRef.current.contains(target)) {
         const dropdownElement = document.querySelector('[data-language-dropdown]');
-        if (!dropdownElement || !dropdownElement.contains(target)) {
+        if (!dropdownElement?.contains(target)) {
           setIsOpen(false);
         }
       }

@@ -1,4 +1,4 @@
-import { Project, ProjectStatus } from '@models/project.model';
+import type { Project, ProjectStatus } from '@models/project.model';
 import { autoVersionManagerProject } from './projects/autoversionmanager';
 import { commitIssueParserProject } from './projects/commitissueparser';
 import { cryptiPicsProject } from './projects/cryptipics';
