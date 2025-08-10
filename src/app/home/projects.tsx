@@ -23,7 +23,7 @@ export const Projects = () => {
         <Carousel items={PROJECTS} renderItem={(project) => <ProjectCard project={project} />} />
       </div>
       <Button primary icon="arrow-right" href="/projects">
-        View All Projects
+        {t('view_projects')}
       </Button>
     </div>
   );

@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { locales, localeLabels, localeFlags, type Locale } from '../../i18n/config';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { localeFlags, localeLabels, locales, type Locale } from '../../i18n/config';
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);

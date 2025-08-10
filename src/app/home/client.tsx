@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Marquee from 'react-fast-marquee';
 import { Typewriter } from 'react-simple-typewriter';
+import { Languages } from './languages';
 import { Presentation } from './presentation';
 import { Projects } from './projects';
 
@@ -129,6 +130,7 @@ export const Home = () => {
         <div className="flex flex-col space-y-40 my-16">
           <Presentation />
           <Projects />
+          <Languages />
         </div>
       </div>
     </div>
