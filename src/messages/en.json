@@ -40,6 +40,17 @@
     "projects": "Projects"
   },
   "projects": {
+    "summary": {
+      "title": "Name",
+      "released": "Released",
+      "planned": "Planned",
+      "planned_for": "Planned for",
+      "target": "Target"
+    },
+    "key-features": "Key Features",
+    "open-website": "Open Website",
+    "open-github": "Open GitHub",
+    "back": "Back to projects",
     "banner": {
       "title": "Our projects",
       "description": "Find out more about the projects we have realised and those we are currently working on"

@@ -1,16 +1,18 @@
-import type React from 'react';
-
 export type Project = {
   title: string;
   slug: string;
-  ContentComponent: React.FC;
-  metaDescription: string;
-  image_link: string;
+  pages: ProjectPage[];
+  descriptionEn: string;
+  descriptionFr: string;
+  imageLink: string;
   labels: string[];
-  features: string[];
-  release_date?: {
+  featuresEn: string[];
+  featuresFr: string[];
+  releaseDate: {
     date?: Date;
     planned?: Date;
+    articlePublished: Date;
+    articleUpdated?: Date;
   };
   status: ProjectStatus;
   target: ProjectTarget;
@@ -20,6 +22,7 @@ export type Project = {
     github?: string;
     website?: string;
   };
+  customInstallButton?: string;
 };
 
 export type ProjectPartial = Omit<Project, 'content' | 'releaseDate' | 'link'>;
@@ -42,3 +45,18 @@ export enum ProjectTarget {
   EVERYONE = 'EVERYONE',
   DEVELOPERS = 'DEVELOPERS',
 }
+
+export type ProjectPage = {
+  titleEn: string;
+  titleFr: string;
+  content: PageContent[];
+};
+
+export type PageContent = {
+  type: 'text' | 'title' | 'image' | 'code';
+  contentEn: string;
+  contentFr: string;
+  altEn?: string;
+  altFr?: string;
+  codeLanguage?: string;
+};

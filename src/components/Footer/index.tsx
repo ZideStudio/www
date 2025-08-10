@@ -3,6 +3,7 @@
 import { Button } from '@components/Button';
 import { Title } from '@components/Title';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 interface FooterProps {
   selectedProjectSlug?: string;
@@ -59,21 +60,21 @@ export const Footer = ({ selectedProjectSlug }: FooterProps) => {
             </li>
             <li className="flex flex-row items-center space-x-3 mt-2">
               <i className="pi pi-twitter" style={{ fontSize: '1rem' }} />
-              <a href="https://x.com/ZideStudio" className="text-blue-400" target="_blank" rel="noopener noreferrer">
+              <Link href="https://x.com/ZideStudio" className="text-blue-400" target="_blank" rel="noopener noreferrer">
                 @ZideStudio
-              </a>
+              </Link>
             </li>
             <li className="flex flex-row items-center space-x-3 mt-2">
               <i className="pi pi-discord" style={{ fontSize: '1rem' }} />
-              <a href="https://discord.gg/45DXQZGpEP" className="text-blue-400" target="_blank" rel="noopener noreferrer">
+              <Link href="https://discord.gg/45DXQZGpEP" className="text-blue-400" target="_blank" rel="noopener noreferrer">
                 Zide Discord
-              </a>
+              </Link>
             </li>
             <li className="flex flex-row items-center space-x-3 mt-2">
               <i className="pi pi-envelope" style={{ fontSize: '1rem' }} />
-              <a href="mailto:contact@zide.fr" className="text-blue-400">
+              <Link href="mailto:contact@zide.fr" className="text-blue-400">
                 contact@zide.fr
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

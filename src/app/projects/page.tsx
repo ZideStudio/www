@@ -13,7 +13,12 @@ export default function Page() {
 
   return (
     <div className="text-text">
-      <PageBanner title={t('banner.title')} description={t('banner.description')} />
+      <PageBanner
+        title={t('banner.title')}
+        descriptionEn={t('banner.description')}
+        descriptionFr={t('banner.description')}
+        imageUrl="/assets/background/projects.jpg"
+      />
       <Projects />
     </div>
   );

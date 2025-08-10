@@ -1,0 +1,43 @@
+import { PageBanner } from '@components/PageBanner';
+import { PROJECTS } from '@constants/projects.data';
+import { Project } from '@models/project.model';
+import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { Summary } from './Summary';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
+};
+
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  const t = await getTranslations();
+
+  const project: Project | undefined = PROJECTS.find((project) => project.slug === slug);
+  if (!project) {
+    notFound();
+  }
+
+  return (
+    <div className="text-text">
+      <PageBanner title={project.title} descriptionEn={project.descriptionEn} descriptionFr={project.descriptionFr} imageUrl={project.imageLink} />
+      <div className="flex flex-col px-3 space-y-10 md:justify-between md:flex-row md:px-10 md:space-y-0">
+        <div className="flex flex-col">
+          <Link href="/projects" className="flex flex-row space-x-3 items-center text-text/50 hover:text-text/75">
+            <i className="pi pi-arrow-left" />
+            <p>{t('projects.back')}</p>
+          </Link>
+          <div className="w-full">content</div>
+        </div>
+        <Summary project={project} />
+      </div>
+    </div>
+  );
+}

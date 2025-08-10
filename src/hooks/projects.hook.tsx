@@ -34,13 +34,13 @@ export const useProjects = ({ filters }: UseProjectsProps) => {
 
   // sorting
   if (filters.sort === 'oldest') {
-    projects = projects.sort((a, b) => (a.release_date?.date ?? a.release_date?.planned) - (b.release_date?.date ?? b.release_date?.planned));
+    projects = projects.sort((a, b) => (a.releaseDate.date ?? a.releaseDate.planned) - (b.releaseDate.date ?? b.releaseDate.planned));
   } else if (filters.sort === 'alphabetical') {
     projects = projects.sort((a, b) => a.title.localeCompare(b.title));
   } else if (filters.sort === 'reverseAlphabetical') {
     projects = projects.sort((a, b) => b.title.localeCompare(a.title));
   } else {
-    projects = projects.sort((a, b) => (b.release_date?.date ?? b.release_date?.planned) - (a.release_date?.date ?? a.release_date?.planned));
+    projects = projects.sort((a, b) => (b.releaseDate.date ?? b.releaseDate.planned) - (a.releaseDate.date ?? a.releaseDate.planned));
   }
 
   if (!filters.status) {
