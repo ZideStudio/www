@@ -45,9 +45,9 @@ export const commitIssueParserProject: Project = {
         {
           type: 'paragraph',
           contentEn:
-            'And Commit Issue Parser is a Raycast extension that allows you to parse URLs from your tickets (like Jira, GitHub, and GitLab) to provide a commit name and description that you can use to format your Git commit names!',
+            'Commit Issue Parser is a Raycast extension that allows you to parse URLs from your tickets (like Jira, GitHub, and GitLab) to provide a commit name and description that you can use to format your Git commit names!',
           contentFr:
-            "Et Commit Issue Parser est une extension Raycast vous permet d'analyser les urls de vos tickets (comme Jira, GitHub et GitLab) pour vous fournir un nom de commit et une description que vous pouvez utiliser pour formater vos noms de commit Git !",
+            "Quant à Commit Issue Parser est une extension Raycast qui vous permet d'analyser les urls de vos tickets (comme Jira, GitHub et GitLab) pour vous fournir un nom de commit et une description que vous pouvez utiliser pour formater vos noms de commit Git !",
         },
         {
           type: 'title',
@@ -68,7 +68,6 @@ export const commitIssueParserProject: Project = {
               <li>Use your shortcut, or open Raycast and enter the command "Parse Issue Url"</li>
               <li>Enter your ticket URL</li>
               <li>(Optional) Enter your commit name and body using a comma as a separator</li>
-              <li>Press Enter to paste the commit name and description into your active application</li>
             </ul>
           `,
           contentFr: `
@@ -76,9 +75,15 @@ export const commitIssueParserProject: Project = {
               <li>Utiliser votre racourci, ou ouvrer Raycast et entrer la commande "Parse Issue Url"</li>
               <li>Entrer votre URL de ticket</li>
               <li>(Facultatif) Entrer le nom de votre commit et son body à l'aide d'une virgule comme séparateur</li>
-              <li>Appuyer sur Entrée pour coller le nom de commit et la description dans votre application active</li>
           </ul>
           `,
+        },
+        {
+          type: 'paragraph',
+          contentEn:
+            'Finally, search for the most appropriate commit type and press Enter to paste the commit name and description into your active application!',
+          contentFr:
+            'Et finalement, rechercher le type de commit le plus approprié et appuyer sur Entrée pour coller le nom de commit et la description dans votre application active !',
         },
         {
           type: 'image',
@@ -97,9 +102,10 @@ export const commitIssueParserProject: Project = {
         },
         {
           type: 'paragraph',
-          contentEn: 'If you do not have a ticket URL or a body, the extension adapts correctly to your input because all parameters are optional.',
+          contentEn:
+            'If you do not have a ticket URL or a body, or if you want to use your own scope, the extension adapts correctly to your input because all parameters are optional.',
           contentFr:
-            "De plus, si vous ne possédez pas d'url de ticket, ou de body, l'extension s'adapte correctement à votre entrée car tout les paramètres sont optionnels.",
+            "De plus, si vous ne possédez pas d'url de ticket, ou que vous souhaitez mettre votre propre scope, l'extension s'adapte correctement à votre entrée car tout les paramètres sont optionnels.",
         },
         {
           type: 'image',
@@ -118,8 +124,8 @@ export const commitIssueParserProject: Project = {
       ],
     },
     {
-      titleEn: 'Functionality',
-      titleFr: 'Fonctionnalités',
+      titleEn: 'Settings',
+      titleFr: 'Paramétrage',
       content: [
         {
           type: 'paragraph',
@@ -216,9 +222,9 @@ export const commitIssueParserProject: Project = {
         {
           type: 'paragraph',
           contentEn:
-            'The primary action is the action that is performed when you select a commit name in the list. You can therefore change the default parameter in the menu below:',
+            'The primary action is the action that is performed when you select a commit name in the list. You can therefore change the default parameter with one of those proposed in the menu below:',
           contentFr:
-            "L'action principale est l'action qui est effectué lorsque vous sélectionnez un nom de commit dans la liste. Vous pouvez donc changer le paramètre par défaut dans le menu ci-dessous :",
+            "L'action principale est l'action qui est effectué lorsque vous sélectionnez un nom de commit dans la liste. Vous pouvez donc changer le paramètre par défaut par un de ceux que propose le menu ci-dessous :",
         },
         {
           type: 'image',

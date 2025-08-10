@@ -47,6 +47,11 @@ export const wakfuThemeProject: Project = {
           altEn: 'Light theme',
           altFr: 'Thème clair',
         },
+        {
+          type: 'paragraph',
+          contentEn: 'To use it, go to the Zed application, open the extensions tab and search for Wakfu Theme!',
+          contentFr: "Pour l'utiliser, rendez-vous sur l'application Zed, ouvrez l'onglet des extensions et recherchez Wakfu Theme!",
+        },
       ],
     },
   ],
