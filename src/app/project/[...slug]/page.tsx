@@ -35,7 +35,7 @@ export default async function Page({ params }: PageProps) {
       <PageBanner title={project.title} descriptionEn={project.descriptionEn} descriptionFr={project.descriptionFr} imageUrl={project.imageLink} />
       <div className="flex flex-col mt-3 px-3 space-y-10 md:justify-between md:flex-row md:px-10 md:space-y-0">
         <div className="flex flex-col w-7/8">
-          <Link href="/projects" className="flex flex-row space-x-3 items-center text-text/50 hover:text-text/75">
+          <Link href="/projects" className="flex flex-row space-x-3 items-center text-text/50 hover:text-text/75 w-max">
             <i className="pi pi-arrow-left" />
             <p>{t('projects.back')}</p>
           </Link>

@@ -60,7 +60,7 @@ export const Blog = ({ project, page }: BlogProps) => {
 
   if (pages.length < 1) {
     return (
-      <div className="flex justify-center px-1 md:px-20 lg:px-40 mt-5 article">
+      <div className="flex justify-center px-3 md:px-10 xl:px-40 mt-5 article">
         <h1 className="text-3xl text-red-400">No content found</h1>
       </div>
     );
@@ -69,9 +69,9 @@ export const Blog = ({ project, page }: BlogProps) => {
   const currentPage = page ? (pages.find(({ id }) => id === page) ?? pages[0]) : pages[0];
 
   return (
-    <div className="flex flex-col space-y-14 px-1 md:px-20 lg:px-40">
+    <div className={`flex flex-col space-y-14 px-3 md:px-10 xl:px-40 ${project.pages.length < 2 ? 'mt-15' : ''}`}>
       {project.pages.length > 1 && (
-        <nav className="flex justify-center pb-5 space-x-6 font-semibold text-xl my-14">
+        <nav className="flex justify-center pb-5 space-x-8 font-semibold text-xl my-14">
           {pages.map((page) => (
             <a
               key={page.title}
@@ -86,7 +86,7 @@ export const Blog = ({ project, page }: BlogProps) => {
 
       {currentPage.content.map((content, index) => (
         <div key={index} className="article">
-          {content.type === 'title' && <h2 className="text-3xl">{content.content}</h2>}
+          {content.type === 'title' && <h2 className="text-3xl mt-5">{content.content}</h2>}
           {content.type === 'paragraph' && <div dangerouslySetInnerHTML={{ __html: content.content }} />}
           {content.type === 'image' && (
             <div className="flex flex-col items-center space-y-3">
