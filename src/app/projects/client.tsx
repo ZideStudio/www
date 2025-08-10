@@ -23,7 +23,7 @@ export const Projects = () => {
   });
 
   return (
-    <div className="mx-5 md:mx-24 space-y-5">
+    <div className="mx-5 space-y-5 md:mx-24">
       <ProjectFilters setNameAction={setName} setTargetAction={setTarget} setStatusAction={setStatus} setTypeAction={setType} setSortAction={setSort} />
 
       <section>

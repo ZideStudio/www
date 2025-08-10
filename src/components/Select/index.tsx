@@ -33,11 +33,11 @@ export const Select = ({ options, setOption }: SelectProps) => {
   };
 
   return (
-    <div className="relative text-text" onBlur={handleBlur}>
+    <div className="text-text relative" onBlur={handleBlur}>
       <button
         id="select-button"
         type="button"
-        className="grid w-44 cursor-default grid-cols-1 rounded-md bg-primary py-1.5 pr-2 pl-3 text-left outline-1 -outline-offset-1 outline-text/10 focus:outline-2 focus:-outline-offset-2 focus:outline-activeprimary sm:text-sm/6"
+        className="bg-primary outline-text/10 focus:outline-activeprimary grid w-44 cursor-default grid-cols-1 rounded-md py-1.5 pr-2 pl-3 text-left outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
         aria-haspopup="listbox"
         aria-expanded="true"
         aria-labelledby="listbox-label"
@@ -64,7 +64,7 @@ export const Select = ({ options, setOption }: SelectProps) => {
 
       {isOpen && (
         <div
-          className="absolute z-10 mt-1 max-h-56 w-auto min-w-full overflow-auto rounded-md bg-secondary py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-hidden sm:text-sm"
+          className="bg-secondary absolute z-10 mt-1 max-h-56 w-auto min-w-full overflow-auto rounded-md py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-hidden sm:text-sm"
           tabIndex={-1}
           role="listbox"
           aria-labelledby="listbox-label"
@@ -81,7 +81,7 @@ export const Select = ({ options, setOption }: SelectProps) => {
                 role="option"
                 onMouseDown={() => handleOptionSelect(option)}
               >
-                <div className="flex items-center text-text">
+                <div className="text-text flex items-center">
                   {option.icon && <i className={`pi pi-${option.icon}`} />}
                   <span className="ml-3 block font-normal whitespace-nowrap">{option.label}</span>
                 </div>

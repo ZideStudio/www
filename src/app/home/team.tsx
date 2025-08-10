@@ -18,7 +18,7 @@ export const Team = () => {
         <p className="text-text">{t('description')}</p>
       </div>
 
-      <div className="flex items-center w-full py-5">
+      <div className="flex w-full items-center py-5">
         <Carousel items={MEMBERS} renderItem={(member) => <MemberCard member={member} />} speed={15000} />
       </div>
     </div>

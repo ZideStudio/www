@@ -61,7 +61,7 @@ export const Blog = ({ project, page }: BlogProps) => {
 
   if (pages.length < 1) {
     return (
-      <div className="flex justify-center px-3 md:px-10 xl:px-40 mt-5 article">
+      <div className="article mt-5 flex justify-center px-3 md:px-10 xl:px-40">
         <h1 className="text-3xl text-red-400">No content found</h1>
       </div>
     );
@@ -72,7 +72,7 @@ export const Blog = ({ project, page }: BlogProps) => {
   return (
     <div className={`flex flex-col space-y-14 px-3 md:px-10 xl:px-40 ${project.pages.length < 2 ? 'mt-15' : ''}`}>
       {project.pages.length > 1 && (
-        <nav className="flex justify-center pb-5 space-x-8 font-semibold text-xl my-14">
+        <nav className="my-14 flex justify-center space-x-8 pb-5 text-xl font-semibold">
           {pages.map((page) => (
             <a
               key={page.title}
@@ -87,12 +87,12 @@ export const Blog = ({ project, page }: BlogProps) => {
 
       {currentPage.content.map((content, index) => (
         <div key={index} className="article">
-          {content.type === 'title' && <h2 className="text-3xl mt-5">{content.content}</h2>}
+          {content.type === 'title' && <h2 className="mt-5 text-3xl">{content.content}</h2>}
           {content.type === 'paragraph' && <div dangerouslySetInnerHTML={{ __html: content.content }} />}
           {content.type === 'image' && (
             <div className="flex flex-col items-center space-y-3">
               <img src={content.content} alt={content.alt} className="rounded-lg" />
-              {content.alt && <p className="text-sm text-text/50">{content.alt}</p>}
+              {content.alt && <p className="text-text/50 text-sm">{content.alt}</p>}
             </div>
           )}
           {content.type === 'code' && <CodeBlock content={content.content} />}

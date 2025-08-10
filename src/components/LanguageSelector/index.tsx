@@ -106,7 +106,7 @@ export default function LanguageSelector() {
       <button
         ref={buttonRef}
         onClick={handleToggle}
-        className="hover:text-activesecondary flex items-center justify-center rounded-md p-2 text-text space-x-1 transition-colors"
+        className="hover:text-activesecondary text-text flex items-center justify-center space-x-1 rounded-md p-2 transition-colors"
         aria-label="Select language"
       >
         <i className="pi pi-language" />

@@ -16,19 +16,19 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const t = useTranslations('projects');
 
   return (
-    <div className="w-full h-[25rem] bg-secondary rounded-xl overflow-hidden flex flex-col group border border-primary hover:border-text">
+    <div className="bg-secondary group border-primary hover:border-text flex h-[25rem] w-full flex-col overflow-hidden rounded-xl border">
       <Link href={`/project/${project.slug}`}>
         <img
           src={project.imageLink}
           alt="Zide Logo"
-          className="w-full h-28 object-cover object-center group-hover:scale-110 transition-transform duration-300"
+          className="h-28 w-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
         />
       </Link>
-      <div className="relative p-4 h-full flex flex-col justify-between">
-        <div className="absolute -top-3 left-2 group-hover:-top-2 transition-all duration-300">
+      <div className="relative flex h-full flex-col justify-between p-4">
+        <div className="absolute -top-3 left-2 transition-all duration-300 group-hover:-top-2">
           <Tag plain={TagPlainType.LIGHT}>{t(`type.${project.type.toLowerCase()}`)}</Tag>
         </div>
-        <div className="flex flex-col space-y-5 mt-5">
+        <div className="mt-5 flex flex-col space-y-5">
           <p className="text-text text-xl font-semibold">{project.title}</p>
           <p className="text-text line-clamp-2">{currentLocale === 'fr' ? project.descriptionFr : project.descriptionEn}</p>
           <div className="flex flex-row flex-wrap gap-x-3 gap-y-2">
@@ -39,7 +39,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                     {t(`status.${project.status.toLowerCase()}`)}
                   </Tag>
                 ) : (
-                  <Tag plain={TagPlainType.DARK} key={label} className="text-xs font-semibold bg-text/10">
+                  <Tag plain={TagPlainType.DARK} key={label} className="bg-text/10 text-xs font-semibold">
                     {t(`status.${project.status.toLowerCase()}`)}
                   </Tag>
                 );

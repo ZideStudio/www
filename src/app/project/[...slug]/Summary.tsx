@@ -35,35 +35,35 @@ export const Summary = ({ project }: SummaryProps) => {
   }
 
   return (
-    <div className="text-text h-full rounded-xl border border-text/10 p-6 space-y-6 border-border sticky top-24 shadow-sm bg-background">
-      <table className="w-full text-left border border-text/10 rounded-xl overflow-hidden">
-        <tbody className="divide-y divide-text/10">
+    <div className="text-text border-text/10 border-border bg-background sticky top-24 h-full space-y-6 rounded-xl border p-6 shadow-sm">
+      <table className="border-text/10 w-full overflow-hidden rounded-xl border text-left">
+        <tbody className="divide-text/10 divide-y">
           <tr>
             <td className="px-4 py-3 font-medium">{t('summary.title')}</td>
-            <td className="px-4 py-3 text-muted-foreground">{project.title}</td>
+            <td className="text-muted-foreground px-4 py-3">{project.title}</td>
           </tr>
           {releaseDate && (
             <tr>
               <td className="px-4 py-3 font-medium">{t('summary.released')}</td>
-              <td className="px-4 py-3 text-muted-foreground">{releaseDate}</td>
+              <td className="text-muted-foreground px-4 py-3">{releaseDate}</td>
             </tr>
           )}
           {plannedDate && (
             <tr>
               <td className="px-4 py-3 font-medium">{t('summary.planned')}</td>
-              <td className="px-4 py-3 text-muted-foreground">
+              <td className="text-muted-foreground px-4 py-3">
                 {t('summary.planned_for')} {plannedDate}
               </td>
             </tr>
           )}
           <tr>
             <td className="px-4 py-3 font-medium">{t('summary.target')}</td>
-            <td className="px-4 py-3 text-muted-foreground">{t(`target.${project.target.toLowerCase()}`)}</td>
+            <td className="text-muted-foreground px-4 py-3">{t(`target.${project.target.toLowerCase()}`)}</td>
           </tr>
         </tbody>
       </table>
       {project.link?.customInstallButton && (
-        <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: project.link.customInstallButton }} />
+        <div className="flex w-full justify-center" dangerouslySetInnerHTML={{ __html: project.link.customInstallButton }} />
       )}
       {project.link?.install && (
         <Button href={project.link?.install} target="_blank" icon="download" className="w-full" primary>
@@ -82,8 +82,8 @@ export const Summary = ({ project }: SummaryProps) => {
       )}
 
       <div>
-        <h3 className="text-lg font-semibold mb-4">{t('key-features')}</h3>
-        <ul className="list-disc list-inside">
+        <h3 className="mb-4 text-lg font-semibold">{t('key-features')}</h3>
+        <ul className="list-inside list-disc">
           {features.map((feature, index) => (
             <li key={index}>{feature}</li>
           ))}

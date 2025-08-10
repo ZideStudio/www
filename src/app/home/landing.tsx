@@ -12,7 +12,7 @@ export const Landing = () => {
 
   return (
     <>
-      <div className="antiSelect relative flex h-[calc(100vh-3rem)] flex-col items-center justify-center px-5 mb-10 md:mb-0">
+      <div className="antiSelect relative mb-10 flex h-[calc(100vh-3rem)] flex-col items-center justify-center px-5 md:mb-0">
         <BackgroundGrid interactible />
 
         <div className="z-10 flex w-full flex-col-reverse items-center md:flex-row md:justify-around">
@@ -49,7 +49,7 @@ export const Landing = () => {
             <motion.img
               src="/assets/logo/zide_complete.png"
               alt="ZIDE"
-              className="antiSelect h-48 text-text md:h-64"
+              className="antiSelect text-text h-48 md:h-64"
               initial={{ opacity: 0, scale: 0.8, y: -50 }}
               animate={{
                 opacity: 1,

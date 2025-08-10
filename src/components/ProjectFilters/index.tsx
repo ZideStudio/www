@@ -96,9 +96,9 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between rounded border border-text/10 p-3 my-5 space-y-5 lg:space-y-0">
+    <div className="border-text/10 my-5 flex flex-col justify-between space-y-5 rounded border p-3 lg:flex-row lg:space-y-0">
       <Input placeholder="Search projects..." icon="search" className="w-full lg:w-1/3" onChange={setNameAction} />
-      <div className="flex flex-col lg:flex-row items-center align-middle lg:space-x-3 space-y-2 lg:space-y-0">
+      <div className="flex flex-col items-center space-y-2 align-middle lg:flex-row lg:space-y-0 lg:space-x-3">
         <Select options={targetOptions} setOption={setTargetAction} />
         <Select options={statusOptions} setOption={setStatusAction} />
         <Select options={typeOptions} setOption={setTypeAction} />

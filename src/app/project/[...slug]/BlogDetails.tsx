@@ -19,7 +19,7 @@ export const BlogDetails = ({ project }: BlogDetailsProps) => {
   }
 
   return (
-    <div className="flex flex-col text-text/50 text-sm">
+    <div className="text-text/50 flex flex-col text-sm">
       <p>
         {t('details.article_published')} {dayjs(project.releaseDate.articlePublished).format(dateFormat)}
       </p>

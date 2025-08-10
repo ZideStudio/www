@@ -98,8 +98,8 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
   }, [transitionEnabled]);
 
   return (
-    <div className="flex flex-row items-center w-full py-5 space-x-6 overflow-hidden">
-      <div className="p-3 border-text bg-secondary rounded-lg cursor-pointer" onClick={handlePrev}>
+    <div className="flex w-full flex-row items-center space-x-6 overflow-hidden py-5">
+      <div className="border-text bg-secondary cursor-pointer rounded-lg p-3" onClick={handlePrev}>
         <i className="pi pi-chevron-left text-text" />
       </div>
 
@@ -116,7 +116,7 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
             <div
               key={index}
               ref={index === numVisible ? slideRef : null}
-              className={`${numVisible === 1 ? 'w-full basis-full' : 'w-1/3 basis-1/3'} px-2 shrink-0`}
+              className={`${numVisible === 1 ? 'w-full basis-full' : 'w-1/3 basis-1/3'} shrink-0 px-2`}
             >
               {renderItem(item, index)}
             </div>
@@ -124,7 +124,7 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
         </div>
       </div>
 
-      <div className="p-3 border-text bg-secondary rounded-lg cursor-pointer" onClick={handleNext}>
+      <div className="border-text bg-secondary cursor-pointer rounded-lg p-3" onClick={handleNext}>
         <i className="pi pi-chevron-right text-text" />
       </div>
     </div>

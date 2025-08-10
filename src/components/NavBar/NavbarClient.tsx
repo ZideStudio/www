@@ -94,7 +94,7 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
 
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="fixed right-6 top-4 z-50 flex items-center justify-center rounded-md p-2 text-text hover:text-activesecondary lg:hidden"
+          className="text-text hover:text-activesecondary fixed top-4 right-6 z-50 flex items-center justify-center rounded-md p-2 lg:hidden"
           aria-label="Open mobile menu"
         >
           <i className="pi pi-bars text-2xl" />
@@ -105,19 +105,19 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
 
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-primary/95 backdrop-blur-md border-l border-text/20 shadow-xl">
-            <div className="flex items-center justify-between p-6 border-b rounded-b-lg border-text/20">
+          <div className="bg-primary/95 border-text/20 absolute top-0 right-0 h-full w-80 max-w-[85vw] border-l shadow-xl backdrop-blur-md">
+            <div className="border-text/20 flex items-center justify-between rounded-b-lg border-b p-6">
               <img src="/assets/logo/zide_complete.png" className="h-8 w-auto" alt="Zide Logo" />
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center rounded-md p-2 text-text hover:text-activesecondary"
+                className="text-text hover:text-activesecondary flex items-center justify-center rounded-md p-2"
                 aria-label="Close mobile menu"
               >
                 <i className="pi pi-times text-xl" />
               </button>
             </div>
 
-            <nav className="flex flex-col p-6 space-y-2">
+            <nav className="flex flex-col space-y-2 p-6">
               {navLinks.map(({ label, href }) => {
                 const currentUrl = pathname + currentHash;
                 let isActive = false;
@@ -138,13 +138,13 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
                     }`}
                   >
                     {label}
-                    {isActive && <span className="absolute left-0 top-0 bottom-0 w-1 bg-activesecondary rounded-r" />}
+                    {isActive && <span className="bg-activesecondary absolute top-0 bottom-0 left-0 w-1 rounded-r" />}
                   </Link>
                 );
               })}
             </nav>
 
-            <div className="absolute bottom-0 left-0 right-0 p-6 border-t rounded-t-lg border-text/20">
+            <div className="border-text/20 absolute right-0 bottom-0 left-0 rounded-t-lg border-t p-6">
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-text font-medium">Language</span>
@@ -155,7 +155,7 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
                   <Link
                     href="https://discord.gg/45DXQZGpEP"
                     target="_blank"
-                    className="flex items-center space-x-2 text-text hover:text-activesecondary transition-colors"
+                    className="text-text hover:text-activesecondary flex items-center space-x-2 transition-colors"
                   >
                     <i className="pi pi-discord text-xl" />
                     <span>Discord</span>
@@ -164,7 +164,7 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
                   <Link
                     href="https://github.com/ZideStudio"
                     target="_blank"
-                    className="flex items-center space-x-2 text-text hover:text-activesecondary transition-colors"
+                    className="text-text hover:text-activesecondary flex items-center space-x-2 transition-colors"
                   >
                     <i className="pi pi-github text-xl" />
                     <span>GitHub</span>
