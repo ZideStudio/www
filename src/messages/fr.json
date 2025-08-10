@@ -1,0 +1,117 @@
+{
+  "home": {
+    "title": "Bienvenue sur",
+    "slogan": "Simplicité digitale, efficacité totale",
+    "description": "Notre équipe de volontaires se consacre au développement d'applications open-source pour vous aider dans votre quotidien. Envie de nous rejoindre ?",
+    "tag": "Développeurs passionnés",
+    "story": "Notre Histoire",
+    "projects": {
+      "view_projects": "Voir les Projets",
+      "view_all_projects": "Voir tout les Projets",
+      "developing": "Nous développons",
+      "webapps": "des sites web",
+      "cli": "des outils CLI",
+      "softwares": "des logiciels",
+      "extensions": "des extensions",
+      "projects": "votre prochaine idée?",
+      "tag": "Notre travail",
+      "title": "Projets en vedette",
+      "description": "Une sélection de projets que nous avons développés via Zide"
+    },
+    "banner": {
+      "webapps": "sites web",
+      "cli": "outils CLI",
+      "softwares": "logiciels",
+      "extensions": "extensions"
+    },
+    "presentation": {
+      "tag": "À propos de nous",
+      "zide": "Zide est un collectif de développeurs passionnés qui créent des outils innovants, destinés aussi bien à des développeurs qu'au grand public.",
+      "team": "Notre objectif est de créer un réseau de développeurs motivées qui souhaitent créer des projets pertinents ou contribuer à ceux d'autres personnes pendant leur temps libre. Nous invitons toutes les personnes intéressées par la programmation à rejoindre notre communauté et à partager vos idées avec nous !",
+      "product": "Nous concevons des produits numériques intuitifs, efficaces et hautement personnalisables. Conçus pour simplifier l'expérience utilisateur tout en permettant des flux de travail performants."
+    },
+    "languages": {
+      "tag": "Sous le capot",
+      "title": "Les langages que nous apprécions",
+      "description": "Les langages, les frameworks et les outils avec lesquels nous avons l'habitude de travailler. Nous sommes ouverts à toutes les solutions adaptées aux besoins du projet."
+    },
+    "team": {
+      "tag": "Notre Équipe",
+      "title": "Rencontrez l'équipe",
+      "description": "Développeurs passionnés par la programmation et les projets innovants"
+    }
+  },
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets"
+  },
+  "projects": {
+    "summary": {
+      "title": "Nom",
+      "released": "Publié",
+      "planned": "Prévu",
+      "planned_for": "Prévu pour",
+      "target": "Cible"
+    },
+    "key-features": "Fonctionnalités Principales",
+    "install": "Installer",
+    "open-website": "Ouvrir le Site Web",
+    "open-github": "Ouvrir le GitHub",
+    "back": "Back to projects",
+    "banner": {
+      "title": "Nos projets",
+      "description": "Découvrez les projets que nous avons réalisés et ceux sur lesquels nous travaillons actuellement."
+    },
+    "view_project": "Voir le Projet",
+    "status": {
+      "planned": "Planifié",
+      "in_progress": "En Cours",
+      "paused": "En Pause",
+      "released": "Publié"
+    },
+    "type": {
+      "website": "Site web",
+      "software": "Logiciel",
+      "cli_tool": "Outil CLI",
+      "extension": "Extension"
+    },
+    "target": {
+      "everyone": "Grand public",
+      "developers": "Développeurs"
+    },
+    "details": {
+      "article_published": "Article publié le",
+      "article_updated": "Article mis à jour le"
+    },
+    "filters": {
+      "all_targets": "Toutes cibles",
+      "all_status": "Tous statuts",
+      "all_types": "Tous types",
+      "newest": "Le plus récent",
+      "oldest": "Le plus ancien"
+    }
+  },
+  "footer": {
+    "collective": {
+      "category": "Collectif",
+      "title": "Zide est un collectif de développeurs qui crée des outils innovants pour tous.",
+      "description": "Animés par la passion et la curiosité, nous créons des produits numériques intuitifs, efficaces et hautement personnalisables, conçus pour simplifier l'expérience de l'utilisateur tout en exploitant des flux de travail efficaces."
+    },
+    "services": {
+      "category": "Services",
+      "websites": "Sites web",
+      "softwares": "Logiciels",
+      "cli_tools": "Outils CLI",
+      "extensions": "Extensions"
+    },
+    "contact": {
+      "category": "Contact"
+    },
+    "discord": {
+      "title": "Rejoindre le Groupe Discord",
+      "description": "Restez informé des dernières mises à jour et annonces concernant nos projets en rejoignant notre groupe Discord officiel. Si vous êtes développeur, participez à notre veille technologique ou à nos projets.",
+      "join": "Rejoindre le Discord"
+    }
+  }
+}

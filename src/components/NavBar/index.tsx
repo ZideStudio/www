@@ -1,92 +1,49 @@
-import { AnimatePresence } from 'framer-motion';
-import { motion } from 'framer-motion';
-import type { Page } from '../../models/pages.model';
+import { Button } from '@components/Button';
+import LanguageSelector from '@components/LanguageSelector';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
+import { NavbarClient } from './NavbarClient';
 
-type NavBarProps = {
-  pages: Page[];
-  withEntireLogo: boolean;
-  withRoundedCorners: boolean;
-};
+export default async function Navbar() {
+  const t = await getTranslations('navbar');
 
-export const NavBar = ({ pages, withEntireLogo, withRoundedCorners }: NavBarProps) => {
-  const redirectToHome = () => {
-    if (!withEntireLogo) return; // only on home page
-
-    const homeRef = pages.find((page) => page.title === 'Home')?.ref;
-    if (!homeRef) return;
-
-    homeRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const openPage = (page: Page) => {
-    page.ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const NAV_LINKS = [
+    { label: t('home'), href: '/' },
+    { label: t('about'), href: '/#about' },
+    { label: t('projects'), href: '/projects' },
+  ];
 
   return (
-    <motion.div
-      initial={{ borderRadius: withRoundedCorners ? '0px' : '0px' }}
-      animate={{ borderRadius: withRoundedCorners ? '0px 0px 16px 16px' : '0px' }}
-      transition={{ duration: 0.5 }}
-      className="fixed flex flex-row justify-between w-full z-20 align-middle backdrop-blur-sm shadow-xs shadow-black md:border-x border-b border-gray-300 px-3 md:px-10 py-2"
-    >
-      <div className="flex justify-start w-14" onClick={redirectToHome} onKeyUp={redirectToHome}>
-        <AnimatePresence mode="wait">
-          {withEntireLogo ? (
-            <motion.img
-              key="complete-logo"
-              src="/assets/logo/zide_complete.png"
-              alt="Zide"
-              className="text-white h-8 antiSelect"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-            />
-          ) : (
-            <motion.img
-              key="simple-logo"
-              src="/assets/logo/zide.png"
-              alt="Zide"
-              className="text-white h-8 antiSelect"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-            />
-          )}
-        </AnimatePresence>
-      </div>
-      <div className="flex space-x-14 select-none">
-        {pages.map((page, i, a) => (
-          <div
-            // biome-ignore lint/suspicious/noArrayIndexKey: no id
-            key={i}
-            onClick={() => {
-              openPage(page);
-            }}
-            onKeyUp={() => {
-              openPage(page);
-            }}
-          >
-            <motion.div className="relative inline-block cursor-pointer group" onClick={() => openPage(page)} onKeyUp={() => openPage(page)}>
-              <span className="font-lubri text-gray-300 text-3xl font-bold text-center group-hover:text-blue-400 transition-colors duration-300">
-                {page.title}
-              </span>
+    <NavbarClient navLinks={NAV_LINKS} languageSelector={<LanguageSelector />}>
+      <div className="flex h-12 w-full items-center justify-between overflow-visible px-6 md:px-24 md:h-16">
+        <Link href="/" className="group flex items-center space-x-3 min-w-2xs">
+          <img src="/assets/logo/zide_complete.png" className="h-10 w-auto sm:h-12" alt="Zide Logo" />
+        </Link>
 
-              <motion.div
-                layout
-                className={`absolute ${i + 1 < a.length ? 'left-0' : 'right-0'} bottom-0 h-0.5 bg-gray-300 group-hover:bg-blue-400 transition-colors duration-300`}
-                initial={{ width: 0 }}
-                animate={{ width: page.isSelected ? '100%' : '0%' }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-          </div>
-        ))}
+        <nav className="hidden items-center space-x-2 lg:flex">
+          {NAV_LINKS.map(({ label, href }) => (
+            <div key={label} className="group relative" data-nav-link data-href={href}>
+              <Link
+                href={href}
+                className="nav-link relative flex items-center rounded-md px-4 py-2 font-semibold transition-colors text-text hover:text-activesecondary"
+              >
+                {label}
+                <span className="nav-indicator bg-activesecondary absolute -bottom-5 left-0 h-0.5 transition-all duration-300 w-0" />
+              </Link>
+            </div>
+          ))}
+        </nav>
+
+        <div className="relative hidden items-center justify-center space-x-4 align-middle min-w-2xs lg:flex">
+          <LanguageSelector />
+          <Link href="https://discord.gg/45DXQZGpEP" target="_blank">
+            <i className="pi pi-discord text-text align-middle text-2xl" />
+          </Link>
+          <Button href="https://github.com/ZideStudio" target="_blank" icon="github" primary>
+            Open GitHub
+          </Button>
+        </div>
       </div>
-      <a className="flex justify-end w-14" href="https://github.com/ZideStudio" target="_blank" rel="noopener noreferrer">
-        <img src="/assets/brand/github.png" alt="GitHub" className="h-8 antiSelect" />
-      </a>
-    </motion.div>
+    </NavbarClient>
   );
-};
+}

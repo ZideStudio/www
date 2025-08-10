@@ -1,0 +1,117 @@
+{
+  "home": {
+    "title": "Welcome to",
+    "slogan": "Digital simplicity, greater efficiency",
+    "description": "Our volunteer team focuses on developing open-source applications to help you in your daily routine. Wanna join us?",
+    "tag": "Passionate developers",
+    "story": "Our Story",
+    "projects": {
+      "view_projects": "View Projects",
+      "view_all_projects": "View All Projects",
+      "developing": "We're developing",
+      "webapps": "websites",
+      "cli": "CLI tools",
+      "softwares": "softwares",
+      "extensions": "extensions",
+      "projects": "your next idea?",
+      "tag": "Our Work",
+      "title": "Featured projects",
+      "description": "A selection of projects we have developed through Zide"
+    },
+    "banner": {
+      "webapps": "websites",
+      "cli": "CLI tools",
+      "softwares": "softwares",
+      "extensions": "extensions"
+    },
+    "presentation": {
+      "tag": "About Us",
+      "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
+      "team": "Our aim is to build a network of motivated people who want to create relevant projects or contribute to those of others in their free time. We welcome anyone interested in programming to join our community and share their ideas with us!",
+      "product": "We craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows."
+    },
+    "languages": {
+      "tag": "Under the hood",
+      "title": "Languages we like",
+      "description": "The languages, frameworks and tools we are used to working with. We are open to all solutions adapted to project needs."
+    },
+    "team": {
+      "tag": "Our Team",
+      "title": "Meet the team",
+      "description": "Developers passionate about programming and innovative projects"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects"
+  },
+  "projects": {
+    "summary": {
+      "title": "Name",
+      "released": "Released",
+      "planned": "Planned",
+      "planned_for": "Planned for",
+      "target": "Target"
+    },
+    "key-features": "Key Features",
+    "install": "Install",
+    "open-website": "Open Website",
+    "open-github": "Open GitHub",
+    "back": "Back to projects",
+    "banner": {
+      "title": "Our projects",
+      "description": "Find out more about the projects we have realised and those we are currently working on"
+    },
+    "view_project": "View Project",
+    "status": {
+      "planned": "Planned",
+      "in_progress": "In Progress",
+      "paused": "Paused",
+      "released": "Released"
+    },
+    "type": {
+      "website": "Website",
+      "software": "Software",
+      "cli_tool": "CLI Tool",
+      "extension": "Extension"
+    },
+    "target": {
+      "everyone": "General Public",
+      "developers": "Developers"
+    },
+    "details": {
+      "article_published": "Article published on",
+      "article_updated": "Article updated on"
+    },
+    "filters": {
+      "all_targets": "All Targets",
+      "all_status": "All Status",
+      "all_types": "All Types",
+      "newest": "Newest",
+      "oldest": "Oldest"
+    }
+  },
+  "footer": {
+    "collective": {
+      "category": "Collective",
+      "title": "Zide is a software development collective creating innovative tools for everyone.",
+      "description": "Driven by passion and curiosity, We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows."
+    },
+    "services": {
+      "category": "Services",
+      "websites": "Websites",
+      "softwares": "Softwares",
+      "cli_tools": "CLI Tools",
+      "extensions": "Extensions"
+    },
+    "contact": {
+      "category": "Contact"
+    },
+    "discord": {
+      "title": "Join Discord Group",
+      "description": "Keep in touch with the latest updates and project announcements by joining our official Discord group. If you're a developer, take part in our technology watch or our projects.",
+      "join": "Join Discord"
+    }
+  }
+}

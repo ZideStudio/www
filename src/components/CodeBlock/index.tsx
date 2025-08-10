@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 interface CodeBlockProps {
@@ -18,13 +20,13 @@ export const CodeBlock = ({ content }: CodeBlockProps) => {
   };
 
   return (
-    <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto shadow-lg">
+    <div className="relative bg-secondary text-white p-4 rounded-lg overflow-x-auto shadow-lg">
       <button
         type="button"
         onClick={copyToClipboard}
-        className="absolute flex flex-row top-2 right-2 text-sm bg-gray-800/90 hover:bg-gray-800 transition px-2 py-1 rounded"
+        className="absolute flex flex-row top-2 right-2 text-sm bg-primary/50 hover:bg-primary transition px-2 py-1 rounded"
       >
-        <i className={`pi ${copied ? 'pi-check text-blue-400' : 'pi-clipboard'} min-w-5`} />
+        <i className={`pi ${copied ? 'pi-check text-activeprimary' : 'pi-clipboard'} min-w-5`} />
       </button>
       <pre className="whitespace-pre-wrap break-words text-start pr-5 font-sans text-sm">
         <code>{content}</code>
