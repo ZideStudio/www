@@ -31,22 +31,18 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="flex flex-col space-y-5 mt-5">
           <p className="text-text text-xl font-semibold">{project.title}</p>
           <p className="text-text line-clamp-2">{currentLocale === 'fr' ? project.descriptionFr : project.descriptionEn}</p>
-          <div className="flex flex-row flex-wrap space-x-3 space-y-2">
+          <div className="flex flex-row flex-wrap gap-x-3 gap-y-2">
             {project.labels.map((label, index) => {
               if (index === 0) {
-                if (project.status === ProjectStatus.RELEASED) {
-                  return (
-                    <Tag plain={TagPlainType.SUCCESS} key={label} className="text-xs font-bold">
-                      {t(`status.${project.status.toLowerCase()}`)}
-                    </Tag>
-                  );
-                } else {
-                  return (
-                    <Tag plain={TagPlainType.DARK} key={label} className="text-xs font-semibold bg-text/10">
-                      {t(`status.${project.status.toLowerCase()}`)}
-                    </Tag>
-                  );
-                }
+                return project.status === ProjectStatus.RELEASED ? (
+                  <Tag plain={TagPlainType.SUCCESS} key={label} className="text-xs font-bold">
+                    {t(`status.${project.status.toLowerCase()}`)}
+                  </Tag>
+                ) : (
+                  <Tag plain={TagPlainType.DARK} key={label} className="text-xs font-semibold bg-text/10">
+                    {t(`status.${project.status.toLowerCase()}`)}
+                  </Tag>
+                );
               }
 
               return (
