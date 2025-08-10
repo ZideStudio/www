@@ -18,7 +18,9 @@ export const Presentation = () => {
             className="border-activeprimary block h-24 w-24 rounded-lg border-5 bg-cover bg-center lg:hidden"
             style={{ backgroundImage: "url('/assets/logo/zide_square.png')" }}
           ></div>
-          <Title id="about">Zide Studio</Title>
+          <Title id="about" className="scroll-mt-40">
+            Zide Studio
+          </Title>
         </div>
         <div className="flex flex-col space-y-5">
           <p className="text-text">{t('zide')}</p>

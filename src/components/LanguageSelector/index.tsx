@@ -88,10 +88,11 @@ export default function LanguageSelector() {
       <button
         ref={buttonRef}
         onClick={handleToggle}
-        className="hover:text-activesecondary flex items-center justify-center rounded-md p-2 text-text transition-colors"
+        className="hover:text-activesecondary flex items-center justify-center rounded-md p-2 text-text space-x-1 transition-colors"
         aria-label="Select language"
       >
-        <span className="text-xl">{localeFlags[currentLocale]}</span>
+        <i className="pi pi-language" />
+        <i className="pi pi-chevron-down" />
       </button>
 
       {typeof document !== 'undefined' && dropdown && createPortal(dropdown, document.body)}
