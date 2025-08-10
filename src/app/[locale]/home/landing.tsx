@@ -38,7 +38,7 @@ export const Landing = () => {
                 />
               </span>
             </span>
-            <h2 className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</h2>
+            <p className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</p>
             <div className="flex-row space-x-5 pt-5">
               <Button href="/projects" icon="angle-right" className="animate-pulse" primary>
                 {t('projects.view_projects')}

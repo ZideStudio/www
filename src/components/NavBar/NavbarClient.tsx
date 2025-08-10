@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Link as IntlLink, usePathname as useIntlPathname } from '../../i18n/routing';
 
 interface NavLink {
   label: string;
@@ -20,23 +20,28 @@ function useCurrentHash() {
   const [currentHash, setCurrentHash] = useState('');
 
   useEffect(() => {
-    setCurrentHash(window.location.hash);
+    // Set initial hash immediately
+    const initialHash = window.location.hash;
+    setCurrentHash(initialHash);
 
     const checkHash = () => {
       const hash = window.location.hash;
       setCurrentHash((prev) => (prev !== hash ? hash : prev));
     };
 
-    const interval = setInterval(checkHash, 100);
+    // Check hash more frequently initially to catch fast changes
+    const interval = setInterval(checkHash, 50);
 
     const updateHash = () => setCurrentHash(window.location.hash);
     window.addEventListener('hashchange', updateHash);
     window.addEventListener('popstate', updateHash);
+    window.addEventListener('load', updateHash);
 
     return () => {
       clearInterval(interval);
       window.removeEventListener('hashchange', updateHash);
       window.removeEventListener('popstate', updateHash);
+      window.removeEventListener('load', updateHash);
     };
   }, []);
 
@@ -44,7 +49,7 @@ function useCurrentHash() {
 }
 
 export function NavbarClient({ navLinks, children, languageSelector }: NavbarClientProps) {
-  const pathname = usePathname();
+  const pathname = useIntlPathname(); // Use next-intl pathname which excludes locale prefix
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const currentHash = useCurrentHash();
@@ -57,14 +62,21 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
 
   useEffect(() => {
     navLinks.forEach(({ href }) => {
-      const currentUrl = pathname + currentHash;
       let isActive = false;
 
       if (href === '/projects') {
-        isActive = pathname.startsWith('/project');
+        isActive = pathname.startsWith('/projects') || pathname.startsWith('/project');
+      } else if (href.includes('#')) {
+        // For anchor links, check both pathname and hash
+        const [linkPath, linkHash] = href.split('#');
+        isActive = pathname === linkPath && currentHash === `#${linkHash}`;
+      } else if (href === '/') {
+        // For home, only active if no hash is present
+        isActive = pathname === href && !currentHash;
       } else {
-        isActive = currentUrl === href;
+        isActive = pathname === href;
       }
+
       const linkElement = document.querySelector(`[data-href="${href}"] .nav-link`);
       const indicatorElement = document.querySelector(`[data-href="${href}"] .nav-indicator`);
 
@@ -83,6 +95,14 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
       }
     });
   }, [pathname, currentHash, navLinks]);
+
+  // Handle anchor link clicks
+  const handleAnchorClick = (href: string) => {
+    if (href.includes('#')) {
+      const [, hash] = href.split('#');
+      window.location.hash = hash;
+    }
+  };
 
   return (
     <>
@@ -120,27 +140,42 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
 
             <nav className="flex flex-col space-y-2 p-6">
               {navLinks.map(({ label, href }) => {
-                const currentUrl = pathname + currentHash;
                 let isActive = false;
 
                 if (href === '/projects') {
-                  isActive = pathname.startsWith('/projects');
+                  isActive = pathname.startsWith('/projects') || pathname.startsWith('/project');
+                } else if (href.includes('#')) {
+                  const [linkPath, linkHash] = href.split('#');
+                  isActive = pathname === linkPath && currentHash === `#${linkHash}`;
+                } else if (href === '/') {
+                  // For home, only active if no hash is present
+                  isActive = pathname === href && !currentHash;
                 } else {
-                  isActive = currentUrl === href;
+                  isActive = pathname === href;
                 }
 
+                const LinkComponent = href.includes('#') ? 'a' : IntlLink;
+                const linkProps = href.includes('#')
+                  ? {
+                      href,
+                      onClick: () => {
+                        setMobileMenuOpen(false);
+                        handleAnchorClick(href);
+                      },
+                    }
+                  : { href, onClick: () => setMobileMenuOpen(false) };
+
                 return (
-                  <Link
+                  <LinkComponent
                     key={label}
-                    href={href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    {...linkProps}
                     className={`relative flex items-center rounded-md px-4 py-3 text-lg font-semibold transition-colors ${
                       isActive ? 'text-activesecondary bg-activesecondary/10' : 'text-text hover:text-activesecondary hover:bg-text/5'
                     }`}
                   >
                     {label}
                     {isActive && <span className="bg-activesecondary absolute top-0 bottom-0 left-0 w-1 rounded-r" />}
-                  </Link>
+                  </LinkComponent>
                 );
               })}
             </nav>

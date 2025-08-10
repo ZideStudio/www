@@ -23,7 +23,7 @@ export const Presentation = () => {
           </Title>
         </div>
         <div className="flex flex-col space-y-5">
-          <p className="text-text">{t('zide')}</p>
+          <h2 className="text-text">{t('zide')}</h2>
           <p className="text-text">{t('team')}</p>
           <p className="text-text">{t('product')}</p>
         </div>

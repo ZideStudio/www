@@ -22,17 +22,22 @@ export default async function Navbar() {
         </Link>
 
         <nav className="hidden items-center space-x-2 lg:flex">
-          {NAV_LINKS.map(({ label, href }) => (
-            <div key={label} className="group relative" data-nav-link data-href={href}>
-              <Link
-                href={href}
-                className="nav-link text-text hover:text-activesecondary relative flex items-center rounded-md px-4 py-2 font-semibold transition-colors"
-              >
-                {label}
-                <span className="nav-indicator bg-activesecondary absolute -bottom-5 left-0 h-0.5 w-0 transition-all duration-300" />
-              </Link>
-            </div>
-          ))}
+          {NAV_LINKS.map(({ label, href }) => {
+            const isAnchorLink = href.includes('#');
+            const LinkComponent = isAnchorLink ? 'a' : Link;
+
+            return (
+              <div key={label} className="group relative" data-nav-link data-href={href}>
+                <LinkComponent
+                  href={href}
+                  className="nav-link text-text hover:text-activesecondary relative flex items-center rounded-md px-4 py-2 font-semibold transition-colors"
+                >
+                  {label}
+                  <span className="nav-indicator bg-activesecondary absolute -bottom-5 left-0 h-0.5 w-0 transition-all duration-300" />
+                </LinkComponent>
+              </div>
+            );
+          })}
         </nav>
 
         <div className="relative hidden min-w-2xs items-center justify-center space-x-4 align-middle lg:flex">
