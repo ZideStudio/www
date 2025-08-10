@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     imageLink: 'https://github.com/ZideStudio/CommitIssueParser/blob/main/metadata/commit-issue-parser-2.png?raw=true',
     releaseDate: {
       date: new Date('2025-08-05'),
-      articlePublished: new Date('2025-08-05'),
+      articlePublished: new Date('2025-08-09'),
     },
     labels: ['Issue Parser', 'Raycast Extension', 'Productivity'],
     featuresEn: ['Parse issue urls', 'GitHub, GitLab and Jira compatibility', 'Generate commit name, a description and a body'],
