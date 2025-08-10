@@ -5,6 +5,7 @@ import { Button } from '@components/Button';
 import { Tag } from '@components/Tag';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Typewriter } from 'react-simple-typewriter';
 
 export const Landing = () => {
@@ -46,10 +47,8 @@ export const Landing = () => {
             </div>
           </div>
           <div className="flex flex-col items-center md:mt-0">
-            <motion.img
-              src="/assets/logo/zide_complete.png"
-              alt="ZIDE"
-              className="antiSelect text-text h-48 md:h-64"
+            <motion.div
+              className="antiSelect text-text relative h-48 w-80 md:h-64 md:w-[27.4rem]"
               initial={{ opacity: 0, scale: 0.8, y: -50 }}
               animate={{
                 opacity: 1,
@@ -66,7 +65,16 @@ export const Landing = () => {
                 },
               }}
               style={{ color: 'white' }}
-            />
+            >
+              <Image
+                src="/assets/logo/zide_complete.png"
+                alt="ZIDE"
+                fill
+                className="antiSelect object-contain"
+                sizes="(max-width: 768px) 320px, 438px"
+                priority
+              />
+            </motion.div>
             <h1 className="sr-only">Zide</h1>
 
             <motion.h2

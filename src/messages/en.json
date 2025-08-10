@@ -44,7 +44,8 @@
   "navbar": {
     "home": "Home",
     "about": "About Us",
-    "projects": "Projects"
+    "projects": "Projects",
+    "open_github": "Open GitHub"
   },
   "projects": {
     "summary": {

@@ -1,5 +1,3 @@
-export const dynamic = 'force-static';
-
 import { PROJECTS } from '@constants/projects.data';
 import dayjs from 'dayjs';
 import type { MetadataRoute } from 'next';

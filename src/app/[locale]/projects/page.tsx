@@ -3,8 +3,6 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Projects } from './client';
 
-export const dynamic = 'force-static';
-
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'List of projects developed by our team',

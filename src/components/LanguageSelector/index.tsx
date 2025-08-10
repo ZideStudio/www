@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { localeFlags, localeLabels, locales, type Locale } from '../../i18n/config';
@@ -10,13 +9,12 @@ export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const [buttonRect, setButtonRect] = useState<DOMRect | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const router = useRouter();
+
   const currentLocale = useLocale() as Locale;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
-
       if (buttonRef.current && !buttonRef.current.contains(target)) {
         const dropdownElement = document.querySelector('[data-language-dropdown]');
         if (!dropdownElement?.contains(target)) {
@@ -25,20 +23,11 @@ export default function LanguageSelector() {
       }
     };
 
-    const handleScroll = () => {
-      if (isOpen && buttonRef.current) {
-        setButtonRect(buttonRef.current.getBoundingClientRect());
-      }
-    };
-
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      window.addEventListener('scroll', handleScroll);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, [isOpen]);
 
@@ -51,28 +40,38 @@ export default function LanguageSelector() {
 
   const getDropdownPosition = () => {
     if (!buttonRect) return {};
-
     const viewportHeight = window.innerHeight;
     const dropdownHeight = 80;
     const spaceBelow = viewportHeight - buttonRect.bottom;
     const spaceAbove = buttonRect.top;
-
     const showAbove = window.innerWidth < 1024 || spaceBelow < dropdownHeight;
 
     return showAbove && spaceAbove > dropdownHeight
-      ? {
-          top: buttonRect.top - dropdownHeight - 4,
-          left: buttonRect.right - 120,
-        }
-      : {
-          top: buttonRect.bottom + 4,
-          left: buttonRect.right - 120,
-        };
+      ? { top: buttonRect.top - dropdownHeight - 4, left: buttonRect.right - 120 }
+      : { top: buttonRect.bottom + 4, left: buttonRect.right - 120 };
   };
 
   const handleLocaleChange = (locale: Locale) => {
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; SameSite=lax`;
-    router.refresh();
+    if (locale === currentLocale) {
+      setIsOpen(false);
+      return;
+    }
+
+    // Use native window.location for more reliable navigation in production
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+
+    // Remove existing locale prefix if present
+    const basePath = currentPath.replace(/^\/[a-z]{2}(?=\/|$)/, '') || '/';
+
+    // Build new path with always prefix mode
+    const newPath = `/${locale}${basePath}`;
+
+    // Add search params if they exist
+    const fullPath = newPath + currentSearch;
+
+    // Use replace to avoid adding to browser history
+    window.location.replace(fullPath);
     setIsOpen(false);
   };
 
@@ -112,7 +111,6 @@ export default function LanguageSelector() {
         <i className="pi pi-language" />
         <i className="pi pi-chevron-down" />
       </button>
-
       {typeof document !== 'undefined' && dropdown && createPortal(dropdown, document.body)}
     </>
   );

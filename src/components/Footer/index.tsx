@@ -3,6 +3,7 @@
 import { Button } from '@components/Button';
 import { Title } from '@components/Title';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const Footer = () => {
@@ -23,7 +24,7 @@ export const Footer = () => {
       <div className="container mx-auto flex flex-col space-y-10 py-10 md:flex-row md:justify-between md:space-y-0">
         {/* Logo */}
         <div className="w-full px-12 md:w-[13rem] md:px-0">
-          <img src="/assets/logo/zide_complete.png" alt="Zide" className="text-text antiSelect h-12" />
+          <Image src="/assets/logo/zide_complete.png" alt="Zide" className="text-text antiSelect h-12 w-auto" width={82} height={48} />
         </div>
         {/* Zide */}
         <div className="w-full px-12 md:w-[13rem] md:px-0">

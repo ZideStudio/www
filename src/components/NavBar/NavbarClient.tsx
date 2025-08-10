@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -107,7 +108,7 @@ export function NavbarClient({ navLinks, children, languageSelector }: NavbarCli
 
           <div className="bg-primary/95 border-text/20 absolute top-0 right-0 h-full w-80 max-w-[85vw] border-l shadow-xl backdrop-blur-md">
             <div className="border-text/20 flex items-center justify-between rounded-b-lg border-b p-6">
-              <img src="/assets/logo/zide_complete.png" className="h-8 w-auto" alt="Zide Logo" />
+              <Image src="/assets/logo/zide_complete.png" className="h-8 w-auto" alt="Zide Logo" width={128} height={32} />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-text hover:text-activesecondary flex items-center justify-center rounded-md p-2"

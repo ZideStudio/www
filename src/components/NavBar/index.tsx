@@ -1,6 +1,7 @@
 import { Button } from '@components/Button';
 import LanguageSelector from '@components/LanguageSelector';
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 import Link from 'next/link';
 import { NavbarClient } from './NavbarClient';
 
@@ -17,7 +18,7 @@ export default async function Navbar() {
     <NavbarClient navLinks={NAV_LINKS} languageSelector={<LanguageSelector />}>
       <div className="flex h-12 w-full items-center justify-between overflow-visible px-6 md:h-16 md:px-24">
         <Link href="/" className="group flex min-w-2xs items-center space-x-3">
-          <img src="/assets/logo/zide_complete.png" className="h-10 w-auto sm:h-12" alt="Zide Logo" />
+          <Image src="/assets/logo/zide_complete.png" className="h-10 w-auto sm:h-12" alt="Zide Logo" width={192} height={48} />
         </Link>
 
         <nav className="hidden items-center space-x-2 lg:flex">
@@ -40,7 +41,7 @@ export default async function Navbar() {
             <i className="pi pi-discord text-text align-middle text-2xl" />
           </Link>
           <Button href="https://github.com/ZideStudio" target="_blank" icon="github" primary>
-            Open GitHub
+            {t('open_github')}
           </Button>
         </div>
       </div>

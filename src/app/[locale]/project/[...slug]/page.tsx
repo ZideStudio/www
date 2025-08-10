@@ -8,8 +8,6 @@ import { notFound } from 'next/navigation';
 import { Blog } from './Blog';
 import { Summary } from './Summary';
 
-export const dynamic = 'force-static';
-
 export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
     slug: [project.slug],
