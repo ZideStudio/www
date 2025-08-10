@@ -1,9 +1,10 @@
 'use client';
 
+import { Locale } from '@/i18n/config';
 import { Button } from '@components/Button';
 import { Tag, TagPlainType } from '@components/Tag';
 import { Project, ProjectStatus } from '@models/project.model';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 type ProjectCardProps = {
@@ -11,6 +12,7 @@ type ProjectCardProps = {
 };
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const currentLocale = useLocale() as Locale;
   const t = useTranslations('projects');
 
   return (
@@ -28,7 +30,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
         <div className="flex flex-col space-y-5 mt-5">
           <p className="text-text text-xl font-semibold">{project.title}</p>
-          <p className="text-text line-clamp-2">{project.description}</p>
+          <p className="text-text line-clamp-2">{currentLocale === 'fr' ? project.descriptionFr : project.descriptionEn}</p>
           <div className="flex flex-row flex-wrap space-x-3 space-y-2">
             {project.labels.map((label, index) => {
               if (index === 0) {
