@@ -9,6 +9,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { Languages } from './languages';
 import { Presentation } from './presentation';
 import { Projects } from './projects';
+import { Team } from './team';
 
 export const Home = () => {
   const t = useTranslations('home');
@@ -131,6 +132,7 @@ export const Home = () => {
           <Presentation />
           <Projects />
           <Languages />
+          <Team />
         </div>
       </div>
     </div>

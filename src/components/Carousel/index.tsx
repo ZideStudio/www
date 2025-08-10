@@ -5,9 +5,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 interface CarouselProps<T> {
   items: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
+  speed?: number;
 }
 
-export const Carousel = <T,>({ items, renderItem }: CarouselProps<T>) => {
+export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<T>) => {
   const [numVisible, setNumVisible] = useState(3);
   const [currentIndex, setCurrentIndex] = useState(3);
   const [slideWidth, setSlideWidth] = useState(0);
@@ -67,7 +68,7 @@ export const Carousel = <T,>({ items, renderItem }: CarouselProps<T>) => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, speed);
     return () => clearInterval(interval);
   }, []);
 

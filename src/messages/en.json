@@ -26,6 +26,11 @@
       "tag": "Under the hood",
       "title": "Languages we like",
       "description": "The languages, frameworks and tools we are used to working with. We are open to all solutions adapted to project needs."
+    },
+    "team": {
+      "tag": "Our Team",
+      "title": "Meet the team",
+      "description": "Developers passionate about programming and innovative projects"
     }
   },
   "navbar": {
