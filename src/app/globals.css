@@ -16,6 +16,11 @@ body {
   font-style: normal;
 }
 
+/* Article */
+.article {
+  @apply font-article text-article text-text leading-relaxed;
+}
+
 /* Scroll Bar */
 
 ::-webkit-scrollbar {

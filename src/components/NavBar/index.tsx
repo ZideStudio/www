@@ -62,7 +62,7 @@ export default function Navbar() {
           <Link href="https://discord.gg/45DXQZGpEP" target="_blank">
             <i className="pi pi-discord text-text align-middle text-2xl" />
           </Link>
-          <Button icon="github" primary>
+          <Button href="https://github.com/ZideStudio" target="_blank" icon="github" primary>
             Open GitHub
           </Button>
         </div>

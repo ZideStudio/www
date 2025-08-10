@@ -17,6 +17,12 @@ module.exports = {
         activesecondary: '#06AEF7',
         text: '#ECEEEF',
       },
+      fontFamily: {
+        article: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      },
+      fontSize: {
+        article: '1.25rem',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

@@ -53,7 +53,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             })}
           </div>
         </div>
-        <Button primary icon="arrow-up-right" href={`/project/${project.slug}`}>
+        <Button href={`/project/${project.slug}`} target="_blank" primary icon="arrow-up-right">
           {t('view_project')}
         </Button>
       </div>

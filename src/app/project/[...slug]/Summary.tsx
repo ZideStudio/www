@@ -64,12 +64,12 @@ export const Summary = ({ project }: SummaryProps) => {
       </table>
       {project.customInstallButton && <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: project.customInstallButton }} />}
       {project.link?.website && (
-        <Button href={project.link?.website} icon="arrow-up-right" className="w-full" primary>
+        <Button href={project.link?.website} target="_blank" icon="arrow-up-right" className="w-full" primary>
           {t('open-website')}
         </Button>
       )}
       {project.link?.github && (
-        <Button href={project.link?.github} icon="github" className="w-full" primary>
+        <Button href={project.link?.github} target="_blank" icon="github" className="w-full" primary>
           {t('open-github')}
         </Button>
       )}

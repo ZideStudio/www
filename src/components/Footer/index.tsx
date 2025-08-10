@@ -19,7 +19,7 @@ export const Footer = ({ selectedProjectSlug }: FooterProps) => {
           <Title className="!text-3xl">{t('discord.title')}</Title>
           <p>{t('discord.description')}</p>
         </div>
-        <Button icon="arrow-right" primary>
+        <Button href="https://discord.gg/45DXQZGpEP" target="_blank" icon="arrow-right" primary>
           {t('discord.join')}
         </Button>
       </div>

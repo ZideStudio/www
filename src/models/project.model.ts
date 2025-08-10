@@ -47,15 +47,15 @@ export enum ProjectTarget {
 }
 
 export type ProjectPage = {
-  titleEn: string;
-  titleFr: string;
+  titleEn?: string;
+  titleFr?: string;
   content: PageContent[];
 };
 
 export type PageContent = {
-  type: 'text' | 'title' | 'image' | 'code';
+  type: 'paragraph' | 'title' | 'image' | 'code';
   contentEn: string;
-  contentFr: string;
+  contentFr?: string;
   altEn?: string;
   altFr?: string;
   codeLanguage?: string;
