@@ -1,27 +1,25 @@
+# Build
 FROM node:22-alpine3.21 AS builder
 
 WORKDIR /app
 
 COPY package*.json ./
-
 RUN npm install --ignore-scripts
 
-# COPY .env .env
-COPY .prettierrc ./
-COPY *.config.* ./
-COPY tsconfig*.json ./
-COPY src ./src
-COPY public ./public
-
+COPY . .
 RUN npm run build
 
-FROM nginx:stable-alpine AS production
+# Production
+FROM node:22-alpine3.21 AS runner
 
-RUN rm -rf /etc/nginx/conf.d
+WORKDIR /app
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/out /usr/share/nginx/html
+ENV NODE_ENV=production
+ENV PORT=3000
+EXPOSE 3000
 
-EXPOSE 80
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
