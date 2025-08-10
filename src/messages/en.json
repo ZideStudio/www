@@ -47,5 +47,27 @@
       "cli_tool": "CLI Tool",
       "extension": "Extension"
     }
+  },
+  "footer": {
+    "collective": {
+      "category": "Collective",
+      "title": "Zide is a software development collective creating innovative tools for everyone.",
+      "description": "Driven by passion and curiosity, We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows."
+    },
+    "services": {
+      "category": "Services",
+      "websites": "Websites",
+      "softwares": "Softwares",
+      "cli_tools": "CLI Tools",
+      "extensions": "Extensions"
+    },
+    "contact": {
+      "category": "Contact"
+    },
+    "discord": {
+      "title": "Join Discord Group",
+      "description": "Keep in touch with the latest updates and project announcements by joining our official Discord group. If you're a developer, take part in our technology watch or our projects.",
+      "join": "Join Discord"
+    }
   }
 }

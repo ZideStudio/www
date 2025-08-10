@@ -1,6 +1,8 @@
 // app/layout.tsx
 
+import { Footer } from '@components/Footer';
 import Navbar from '@components/NavBar';
+import { ScrollBar } from '@components/ScrollBar';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -8,7 +10,6 @@ import 'primeicons/primeicons.css';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import './globals.css';
-import { ScrollBar } from '@components/ScrollBar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -45,6 +46,7 @@ export default async function RootLayout({
             <ScrollBar />
             <Navbar />
             {children}
+            <Footer />
           </NextIntlClientProvider>
         </PrimeReactProvider>
       </body>
