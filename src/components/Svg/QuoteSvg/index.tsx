@@ -4,19 +4,7 @@ type QuoteSvgProps = {
 };
 
 export const QuoteSvg = ({ className }: QuoteSvgProps) => (
-  <svg
-    className={className}
-    // fill="#000000"
-    fill="#323232"
-    version="1.1"
-    id="Layer_1"
-    xmlns="http://www.w3.org/2000/svg"
-    // width="800px"
-    // height="800px"
-    viewBox="0 0 40 40"
-    enable-background="new 0 0 40 40"
-    // xml:space="preserve"
-  >
+  <svg className={className} fill="#323232" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enableBackground="new 0 0 40 40">
     <g display="none">
       <path
         display="inline"
@@ -71,8 +59,8 @@ export const QuoteSvg = ({ className }: QuoteSvgProps) => (
     <g display="none">
       <path
         display="inline"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M20,29.616c-6.911,0-13.412-3.681-17-9.615
 		c3.588-5.935,10.089-9.617,17-9.617c6.91,0,13.412,3.682,17,9.617C33.412,25.936,26.91,29.616,20,29.616L20,29.616z M19.998,12.254
 		c-5.817,0-11.309,2.848-14.687,7.618l-0.088,0.125l0.088,0.124c3.378,4.77,8.87,7.618,14.687,7.618
@@ -80,8 +68,8 @@ export const QuoteSvg = ({ className }: QuoteSvgProps) => (
       />
       <path
         display="inline"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M19.987,13.521c-3.574,0-6.478,2.9-6.478,6.479
 		c0,3.579,2.904,6.478,6.478,6.478c3.581,0,6.478-2.898,6.478-6.478C26.465,16.42,23.568,13.521,19.987,13.521z M19.987,24.857
 		c-2.68,0-4.858-2.175-4.858-4.858s2.178-4.859,4.858-4.859c2.686,0,4.858,2.175,4.858,4.859S22.673,24.857,19.987,24.857z"

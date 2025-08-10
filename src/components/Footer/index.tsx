@@ -12,7 +12,7 @@ export const Footer = ({ selectedProjectSlug }: FooterProps) => {
   const t = useTranslations('footer');
 
   return (
-    <footer className="text-white mt-32">
+    <footer className="text-white mt-32 border-t border-text/10">
       <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 justify-between items-center bg-secondary border border-text/10 mx-5 md:mx-24 my-10 p-5 md:p-12 rounded-lg">
         <div className="flex flex-col space-y-5 md:space-y-0 md:w-1/2">
           <Title className="!text-3xl">{t('discord.title')}</Title>
@@ -61,6 +61,12 @@ export const Footer = ({ selectedProjectSlug }: FooterProps) => {
               <i className="pi pi-twitter" style={{ fontSize: '1rem' }} />
               <a href="https://x.com/ZideStudio" className="text-blue-400" target="_blank" rel="noopener noreferrer">
                 @ZideStudio
+              </a>
+            </li>
+            <li className="flex flex-row items-center space-x-3 mt-2">
+              <i className="pi pi-discord" style={{ fontSize: '1rem' }} />
+              <a href="https://discord.gg/45DXQZGpEP" className="text-blue-400" target="_blank" rel="noopener noreferrer">
+                Zide Discord
               </a>
             </li>
             <li className="flex flex-row items-center space-x-3 mt-2">
