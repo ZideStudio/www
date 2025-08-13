@@ -20,7 +20,7 @@ export const HomeProjects = () => {
       </div>
 
       <div className="flex w-full items-center py-5">
-        <Carousel items={PROJECTS} renderItem={(project) => <ProjectCard project={project} />} />
+        <Carousel items={PROJECTS} renderItem={(project) => <ProjectCard project={project} />} speed={3000} />
       </div>
       <Button primary icon="arrow-right" href="/projects">
         {t('view_all_projects')}

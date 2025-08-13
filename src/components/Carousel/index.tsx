@@ -13,6 +13,7 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
   const [currentIndex, setCurrentIndex] = useState(3);
   const [slideWidth, setSlideWidth] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
   const isCooldown = useRef(false);
 
   const trackRef = useRef<HTMLDivElement>(null);
@@ -66,11 +67,13 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
   };
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       handleNext();
     }, speed);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   useEffect(() => {
     const handleTransitionEnd = () => {
@@ -98,7 +101,11 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
   }, [transitionEnabled]);
 
   return (
-    <div className="flex w-full flex-row items-center space-x-6 overflow-hidden py-5">
+    <div
+      className="flex w-full flex-row items-center space-x-6 overflow-hidden py-5"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="border-text bg-secondary cursor-pointer rounded-lg p-3" onClick={handlePrev}>
         <i className="pi pi-chevron-left text-text" />
       </div>
