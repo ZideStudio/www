@@ -86,8 +86,10 @@ export const Blog = ({ project, page }: BlogProps) => {
       )}
 
       {currentPage.content.map((content, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <div key={index} className="article">
           {content.type === 'title' && <h2 className="mt-5 text-3xl">{content.content}</h2>}
+          {/* eslint-disable-next-line react/no-danger */}
           {content.type === 'paragraph' && <div dangerouslySetInnerHTML={{ __html: content.content }} />}
           {content.type === 'image' && (
             <div className="flex flex-col items-center space-y-3">
@@ -95,7 +97,12 @@ export const Blog = ({ project, page }: BlogProps) => {
               {content.alt && <p className="text-text/50 text-sm">{content.alt}</p>}
             </div>
           )}
-          {content.type === 'code' && <CodeBlock content={content.content} />}
+          {content.type === 'code' && (
+            <div className="flex flex-col items-center space-y-3">
+              <CodeBlock content={content.content} />
+              {content.alt && <p className="text-text/50 text-sm">{content.alt}</p>}
+            </div>
+          )}
         </div>
       ))}
 
