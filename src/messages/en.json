@@ -114,5 +114,8 @@
       "description": "Keep in touch with the latest updates and project announcements by joining our official Discord group. If you're a developer, take part in our technology watch or our projects.",
       "join": "Join Discord"
     }
+  },
+  "toast": {
+    "copy_url": "URL copied to clipboard!"
   }
 }

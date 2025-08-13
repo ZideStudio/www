@@ -1,7 +1,11 @@
+'use client';
+
 import type { Locale } from '@/i18n/config';
+import { createSlug } from '@/utils/slug';
 import { CodeBlock } from '@components/CodeBlock';
 import type { PageContent, Project } from '@models/project.model';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import toast from 'react-hot-toast';
 import { BlogDetails } from './BlogDetails';
 
 type Page = {
@@ -21,7 +25,17 @@ type BlogProps = {
 };
 
 export const Blog = ({ project, page }: BlogProps) => {
+  const t = useTranslations('toast');
   const currentLocale = useLocale() as Locale;
+
+  const copyTitleUrl = async (event: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => {
+    try {
+      await navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}#${event.currentTarget.id}`);
+      toast(t('copy_url'));
+    } catch (err) {
+      console.error('Copy failed:', err);
+    }
+  };
 
   const pages: Page[] = project.pages.map((page) => {
     let title: string | undefined;
@@ -32,7 +46,7 @@ export const Blog = ({ project, page }: BlogProps) => {
     }
 
     return {
-      id: page.titleEn?.split(' ').join('-').toLowerCase(),
+      id: page.titleEn ? createSlug(page.titleEn) : undefined,
       title,
       content: page.content.map((pageContent) => {
         let content: string;
@@ -88,7 +102,17 @@ export const Blog = ({ project, page }: BlogProps) => {
       {currentPage.content.map((content, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <div key={index} className="article">
-          {content.type === 'title' && <h2 className="mt-5 text-3xl">{content.content}</h2>}
+          {content.type === 'title' && (
+            <div
+              id={createSlug(content.content)}
+              className="group mt-5 flex scroll-mt-40 flex-row items-center space-x-3"
+              onClick={copyTitleUrl}
+              onKeyUp={copyTitleUrl}
+            >
+              <h2 className="text-3xl">{content.content}</h2>
+              <i className="pi pi-link text-text/90 hover:text-text/75 group-hover:visiblext-2xl invisible text-2xl opacity-0 transition-opacity duration-300 ease-in-out group-hover:visible group-hover:opacity-100" />
+            </div>
+          )}
           {/* eslint-disable-next-line react/no-danger */}
           {content.type === 'paragraph' && <div dangerouslySetInnerHTML={{ __html: content.content }} />}
           {content.type === 'image' && (

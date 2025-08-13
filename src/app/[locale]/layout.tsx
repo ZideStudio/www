@@ -9,6 +9,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import 'primeicons/primeicons.css';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
+import { Toaster } from 'react-hot-toast';
 import { locales } from '../../i18n/config';
 import '../globals.css';
 
@@ -76,6 +77,15 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <PrimeReactProvider>
           <NextIntlClientProvider messages={messages} locale={locale}>
+            <Toaster
+              toastOptions={{
+                style: {
+                  border: '10px',
+                  background: '#333',
+                  color: '#fff',
+                },
+              }}
+            />
             <ScrollBar />
             <Navbar />
             {children}

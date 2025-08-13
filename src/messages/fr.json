@@ -114,5 +114,8 @@
       "description": "Restez informé des dernières mises à jour et annonces concernant nos projets en rejoignant notre groupe Discord officiel. Si vous êtes développeur, participez à notre veille technologique ou à nos projets.",
       "join": "Rejoindre le Discord"
     }
+  },
+  "toast": {
+    "copy_url": "URL copiée dans le presse-papiers !"
   }
 }
