@@ -43,7 +43,9 @@ export const Landing = () => {
               <Button href="/projects" icon="angle-right" className="animate-pulse" primary>
                 {t('projects.view_projects')}
               </Button>
-              <Button icon="building-columns">{t('story')}</Button>
+              <Button href="#about" icon="building-columns">
+                {t('story')}
+              </Button>
             </div>
           </div>
           <div className="flex flex-col items-center md:mt-0">
