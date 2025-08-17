@@ -13,13 +13,15 @@ export const MEMBERS: Member[] = [
     pictureUrl: 'https://avatars.githubusercontent.com/u/38363471',
   },
   {
-    name: 'Xxx',
-    roleEn: 'Developer',
-    roleFr: 'Développeur',
-    messageEn: 'This seat is reserved by a developer who will soon take his place... but nothing prevents you from taking another one!',
-    messageFr: "Ce siège est réservé par un développeur qui va bientôt prendre place... mais rien ne vous empêche d'en prendre un autre !",
-    pictureUrl:
-      'https://static.vecteezy.com/system/resources/previews/013/360/247/non_2x/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg',
+    name: 'ElisaROGGE',
+    roleEn: 'Frontend Developer',
+    roleFr: 'Développeuse Front-end',
+    messageEn:
+      "Hi, my name is Elisa! I'm a front-end developer who likes to design small projects that reflect my hobbies and interests, mixing technology and creativity.",
+    messageFr:
+      "Salut ! Je m'appelle Elisa ! Développeuse orientée front-end, j’aime concevoir de petits projets qui reflètent mes loisirs et mes centres d’intérêts, en mêlant technique et créativité.",
+    pictureUrl: 'https://avatars.githubusercontent.com/u/90752990?v=4',
+    githubUrl: 'https://github.com/ElisaROGGE',
   },
   {
     name: 'You?',
