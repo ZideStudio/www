@@ -2,40 +2,40 @@
 
 import type { Locale } from '@/i18n/config';
 import { QuoteSvg } from '@components/Svg/QuoteSvg';
-import type { Member } from '@models/member.model';
+import type { MemberFeedback } from '@models/member.model';
 import { useLocale } from 'next-intl';
 
 type MemberCardProps = {
-  member: Member;
+  feedback: MemberFeedback;
 };
 
-export const MemberCard = ({ member }: MemberCardProps) => {
+export const MemberCard = ({ feedback }: MemberCardProps) => {
   const currentLocale = useLocale() as Locale;
 
   let role;
   let message;
   if (currentLocale === 'fr') {
-    role = member.roleFr;
-    message = member.messageFr;
+    role = feedback.member.roleFr;
+    message = feedback.messageFr;
   } else {
-    role = member.roleEn;
-    message = member.messageEn;
+    role = feedback.member.roleEn;
+    message = feedback.messageEn;
   }
 
   const openGithub = () => {
-    if (!member.githubUrl) return;
-    window.open(member.githubUrl, '_blank');
+    if (!feedback.member.githubUrl) return;
+    window.open(feedback.member.githubUrl, '_blank');
   };
 
   return (
     <div className="bg-secondary group border-primary hover:border-text text-text flex h-72 w-full flex-col space-y-5 overflow-hidden rounded-xl border p-10">
-      <div className={`flex flex-row items-center space-x-3 ${member.githubUrl ? 'cursor-pointer' : ''}`} onClick={openGithub}>
-        <img src={member.pictureUrl} alt="Member" className="h-10 w-auto rounded-full sm:h-12" />
+      <div className={`flex flex-row items-center space-x-3 ${feedback.member.githubUrl ? 'cursor-pointer' : ''}`} onClick={openGithub}>
+        <img src={feedback.member.pictureUrl} alt="Member" className="h-10 w-auto rounded-full sm:h-12" />
 
         <div className="flex flex-col">
           <div className="flex flex-row items-center space-x-2">
-            {member.githubUrl && <i className="pi pi-github text-text/50" />}
-            <p className="text-xl">{member.name}</p>
+            {feedback.member.githubUrl && <i className="pi pi-github text-text/50" />}
+            <p className="text-xl">{feedback.member.name}</p>
           </div>
           <p className="text-text/25 truncate text-lg">{role}</p>
         </div>

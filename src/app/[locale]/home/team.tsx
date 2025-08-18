@@ -4,7 +4,7 @@ import { Carousel } from '@components/Carousel';
 import { MemberCard } from '@components/MemberCard';
 import { Tag } from '@components/Tag';
 import { Title } from '@components/Title';
-import { MEMBERS } from '@constants/members.data';
+import { MEMBER_FEEDBACKS } from '@constants/feedbacks.data';
 import { useTranslations } from 'next-intl';
 
 export const Team = () => {
@@ -19,7 +19,7 @@ export const Team = () => {
       </div>
 
       <div className="flex w-full items-center py-5">
-        <Carousel items={MEMBERS} renderItem={(member) => <MemberCard member={member} />} speed={10000} />
+        <Carousel items={MEMBER_FEEDBACKS} renderItem={(feedback) => <MemberCard feedback={feedback} />} speed={10000} />
       </div>
     </div>
   );

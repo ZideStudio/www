@@ -1,9 +1,14 @@
 export type Member = {
+  id: number;
   name: string;
   roleEn: string;
-  messageEn: string;
   roleFr: string;
-  messageFr: string;
   githubUrl?: string;
   pictureUrl: string;
+};
+
+export type MemberFeedback = {
+  member: Member;
+  messageEn: string;
+  messageFr: string;
 };
