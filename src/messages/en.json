@@ -91,6 +91,10 @@
       "all_types": "All Types",
       "newest": "Newest",
       "oldest": "Oldest"
+    },
+    "errors": {
+      "not_found": "No projects found",
+      "not_found_details": "Try changing your filters"
     }
   },
   "footer": {
