@@ -176,4 +176,5 @@ export const cryptiPicsProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
+  contributors: [memberService.getById(1), memberService.getById(2)],
 };

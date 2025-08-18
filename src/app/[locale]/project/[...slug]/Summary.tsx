@@ -1,6 +1,7 @@
 'use client';
 
 import type { Locale } from '@/i18n/config';
+import { AvatarGroup } from '@components/AvatarGroup';
 import { Button } from '@components/Button';
 import type { Project } from '@models/project.model';
 import { getFormattedDate } from '@utils/date';
@@ -56,6 +57,12 @@ export const Summary = ({ project }: SummaryProps) => {
           <tr>
             <td className="px-4 py-3 font-medium">{t('summary.target')}</td>
             <td className="text-muted-foreground px-4 py-3">{t(`target.${project.target.toLowerCase()}`)}</td>
+          </tr>
+          <tr>
+            <td className="px-4 py-3 font-medium">{t('contributors')}</td>
+            <td className="text-muted-foreground px-4 py-3">
+              <AvatarGroup members={project.contributors} tooltipPosition="top" size="small" />
+            </td>
           </tr>
         </tbody>
       </table>

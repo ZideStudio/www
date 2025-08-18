@@ -57,4 +57,5 @@ export const wakfuThemeProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
+  contributors: [memberService.getById(1)],
 };

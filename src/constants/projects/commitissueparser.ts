@@ -235,4 +235,5 @@ export const commitIssueParserProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
+  contributors: [memberService.getById(1)],
 };

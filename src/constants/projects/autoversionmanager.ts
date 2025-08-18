@@ -156,4 +156,5 @@ avm update --auto # Auto-update AVM daily
     },
   ],
   authors: [memberService.getById(1)],
+  contributors: [memberService.getById(1)],
 };

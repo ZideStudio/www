@@ -52,7 +52,7 @@
       "title": "Nom",
       "released": "Publié",
       "planned": "Prévu",
-      "planned_for": "Prévu pour",
+      "planned_for": "Prévu pour le",
       "target": "Cible"
     },
     "key-features": "Fonctionnalités Principales",
@@ -67,6 +67,7 @@
     "view_project": "Voir le Projet",
     "editor": "Rédacteur",
     "editors": "Rédacteurs",
+    "contributors": "Contributeurs",
     "status": {
       "planned": "Planifié",
       "in_progress": "En Cours",

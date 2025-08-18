@@ -18,7 +18,7 @@ export const BlogDetails = ({ project }: BlogDetailsProps) => {
     <div className="flex flex-col justify-between space-y-5 md:flex-row md:space-y-0">
       <div className="flex flex-col space-y-2">
         <p className="text-text/50 text-sm">{project.authors.length > 1 ? t('editors') : t('editor')}</p>
-        <AvatarGroup members={project.authors} />
+        <AvatarGroup members={project.authors} displayLimit={3} />
       </div>
       <div className="flex flex-col space-x-3 text-sm">
         <p className="text-text/50">

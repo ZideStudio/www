@@ -37,4 +37,5 @@ export const zequelProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
+  contributors: [memberService.getById(1)],
 };

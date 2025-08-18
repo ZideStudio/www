@@ -27,6 +27,7 @@ export type Project = {
     customInstallButton?: string;
   };
   authors: Member[];
+  contributors: Member[];
 };
 
 export type ProjectPartial = Omit<Project, 'content' | 'releaseDate' | 'link'>;
