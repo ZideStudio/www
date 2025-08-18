@@ -1,3 +1,4 @@
+import memberService from '@/services/member';
 import type { Project } from '@models/project.model';
 import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model';
 
@@ -154,4 +155,5 @@ avm update --auto # Auto-update AVM daily
       ],
     },
   ],
+  authors: [memberService.getById(1)],
 };

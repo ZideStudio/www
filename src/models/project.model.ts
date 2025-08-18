@@ -1,3 +1,5 @@
+import type { Member } from './member.model';
+
 export type Project = {
   title: string;
   slug: string;
@@ -24,6 +26,7 @@ export type Project = {
     install?: string;
     customInstallButton?: string;
   };
+  authors: Member[];
 };
 
 export type ProjectPartial = Omit<Project, 'content' | 'releaseDate' | 'link'>;

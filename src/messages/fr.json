@@ -65,6 +65,8 @@
       "description": "Découvrez les projets que nous avons réalisés et ceux sur lesquels nous travaillons actuellement."
     },
     "view_project": "Voir le Projet",
+    "editor": "Rédacteur",
+    "editors": "Rédacteurs",
     "status": {
       "planned": "Planifié",
       "in_progress": "En Cours",
@@ -83,7 +85,7 @@
     },
     "details": {
       "article_published": "Article publié le",
-      "article_updated": "mis à jour le"
+      "article_updated": "Mis à jour le"
     },
     "filters": {
       "all_targets": "Toutes cibles",

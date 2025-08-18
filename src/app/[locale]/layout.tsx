@@ -92,6 +92,7 @@ export default async function RootLayout({
             <Footer />
           </NextIntlClientProvider>
         </PrimeReactProvider>
+        <script src="./node_modules/preline/dist/preline.js" />
       </body>
     </html>
   );

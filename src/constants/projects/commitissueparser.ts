@@ -1,3 +1,4 @@
+import memberService from '@/services/member';
 import type { Project } from '@models/project.model';
 import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model';
 
@@ -233,4 +234,5 @@ export const commitIssueParserProject: Project = {
       ],
     },
   ],
+  authors: [memberService.getById(1)],
 };
