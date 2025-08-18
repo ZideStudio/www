@@ -8,7 +8,6 @@ export const cryptiPicsProject: Project = {
   descriptionEn: 'A website for sharing information securely and anonymously. Features secure pastebin, cryptography tool and steganography.',
   descriptionFr:
     'Un site web pour partager des informations de manière sécurisée et anonyme. Propose un pastebin sécurisé, un outil de chiffrement sur les images et un outil de stéganographie sur les images.',
-  imageLink: 'https://i.imgur.com/ouC8WB5.png',
   releaseDate: {
     planned: new Date('2025-12-01'),
     articlePublished: new Date('2025-03-16'),

@@ -6,7 +6,6 @@ export type Project = {
   pages: ProjectPage[];
   descriptionEn: string;
   descriptionFr: string;
-  imageLink: string;
   labels: string[];
   featuresEn: string[];
   featuresFr: string[];

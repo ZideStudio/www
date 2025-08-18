@@ -10,6 +10,21 @@ import { Team } from './home/team';
 export const metadata: Metadata = {
   title: 'Zide',
   description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
+  openGraph: {
+    title: 'Zide',
+    description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
+    url: `https://zide.fr`,
+    siteName: 'Zide',
+    images: [
+      {
+        url: `https://zide.fr/assets/logo/zide_complete.png`,
+        alt: 'Zide',
+      },
+    ],
+    locale: 'en_US',
+    alternateLocale: ['fr_FR'],
+    type: 'website',
+  },
 };
 
 export default async function Page() {

@@ -30,6 +30,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: project.title,
     description: project.descriptionEn,
+    openGraph: {
+      title: project.title,
+      description: project.descriptionEn,
+      url: `https://zide.fr/projects/${projectSlug}`,
+      siteName: 'Zide',
+      images: [
+        {
+          url: `https://zide.fr/assets/projects/${project.slug}.png`,
+          alt: project.title,
+        },
+      ],
+      locale: 'en_US',
+      alternateLocale: ['fr_FR'],
+      type: 'website',
+    },
   };
 }
 
@@ -52,7 +67,12 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div className="text-text">
-      <PageBanner title={project.title} descriptionEn={project.descriptionEn} descriptionFr={project.descriptionFr} imageUrl={project.imageLink} />
+      <PageBanner
+        title={project.title}
+        descriptionEn={project.descriptionEn}
+        descriptionFr={project.descriptionFr}
+        imagePath={`/assets/projects/${project.slug}.png`}
+      />
       <div className="mt-3 flex flex-col space-y-10 px-3 md:flex-row md:justify-between md:space-y-0 md:px-10">
         <div className="flex w-7/8 flex-col">
           <Link href="/projects" className="text-text/50 hover:text-text/75 flex w-max flex-row items-center space-x-3">

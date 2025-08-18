@@ -7,7 +7,6 @@ export const wakfuThemeProject: Project = {
   slug: 'wakfu-theme',
   descriptionEn: 'A dark and clear theme that allows you to customise your IDE, compatible with Zed.',
   descriptionFr: 'Un thème sombre et clair qui vous permet de personnaliser votre IDE, compatible avec Zed.',
-  imageLink: 'https://i.imgur.com/hvgz8Jr.png',
   releaseDate: {
     date: new Date('2025-01-16'),
     articlePublished: new Date('2025-08-09'),

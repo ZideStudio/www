@@ -7,7 +7,6 @@ export const zequelProject: Project = {
   slug: 'zequel',
   descriptionEn: 'SQL client software, with a lot of features and a simple intuitive interface.',
   descriptionFr: 'Logiciel client SQL, avec de nombreuses fonctionnalités et une interface intuitive simple.',
-  imageLink: 'https://i.imgur.com/ZMdgiRi.png',
   releaseDate: {
     planned: new Date('2027-01-01'),
     articlePublished: new Date('2025-03-16'),

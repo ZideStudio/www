@@ -6,6 +6,15 @@ import { Projects } from './client';
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'List of projects developed by our team',
+  openGraph: {
+    title: 'Projects',
+    description: 'List of projects developed by our team',
+    url: `https://zide.fr/projects`,
+    siteName: 'Zide',
+    locale: 'en_US',
+    alternateLocale: ['fr_FR'],
+    type: 'website',
+  },
 };
 
 export default function Page() {
@@ -17,7 +26,7 @@ export default function Page() {
         title={t('banner.title')}
         descriptionEn={t('banner.description')}
         descriptionFr={t('banner.description')}
-        imageUrl="/assets/background/projects.jpg"
+        imagePath="/assets/background/projects.jpg"
       />
       <Projects />
     </div>

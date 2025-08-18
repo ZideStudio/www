@@ -9,7 +9,6 @@ export const commitIssueParserProject: Project = {
     'This Raycast extension allows you to parse your issue urls (such as Jira, GitHub and GitLab) to provide you with a commit name and description that you can use with Git!',
   descriptionFr:
     'Cette extension Raycast vous permet de parser vos URL de tickets (comme Jira, GitHub et GitLab) pour vous fournir un nom de commit et une description que vous pouvez utiliser avec Git!',
-  imageLink: 'https://i.imgur.com/0DF5oAf.png',
   releaseDate: {
     date: new Date('2025-08-05'),
     articlePublished: new Date('2025-08-09'),

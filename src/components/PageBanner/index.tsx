@@ -6,11 +6,11 @@ type PageBannerProps = {
   title: string;
   descriptionEn: string;
   descriptionFr: string;
-  imageUrl: string;
+  imagePath: string;
   tag?: string;
 };
 
-export const PageBanner = ({ title, descriptionEn, descriptionFr, imageUrl, tag }: PageBannerProps) => {
+export const PageBanner = ({ title, descriptionEn, descriptionFr, imagePath, tag }: PageBannerProps) => {
   const currentLocale = useLocale() as Locale;
   let description = '';
   if (currentLocale === 'fr') {
@@ -21,7 +21,7 @@ export const PageBanner = ({ title, descriptionEn, descriptionFr, imageUrl, tag 
 
   return (
     <section className="relative h-96 w-full">
-      <div className="absolute inset-0 bg-cover bg-fixed bg-center bg-no-repeat" style={{ backgroundImage: `url('${imageUrl}')` }} />
+      <div className="absolute inset-0 bg-cover bg-fixed bg-center bg-no-repeat" style={{ backgroundImage: `url('${imagePath}')` }} />
 
       <div className="to-primary absolute inset-0 -bottom-1 bg-gradient-to-b from-transparent" />
 

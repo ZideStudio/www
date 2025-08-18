@@ -7,7 +7,6 @@ export const autoVersionManagerProject: Project = {
   slug: 'avm',
   descriptionEn: 'A CLI to manage your versions managers automatically. Compatible with NVM, GVM, Rustup, and more!',
   descriptionFr: 'Un CLI pour gérer automatiquement vos gestionnaires de versions. Compatible avec NVM, GVM, Rustup, et plus encore !',
-  imageLink: 'https://i.imgur.com/ilstnBg.jpeg',
   releaseDate: {
     date: new Date('2025-03-16'),
     articlePublished: new Date('2025-03-16'),

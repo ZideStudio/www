@@ -20,7 +20,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
     <div className="bg-secondary group border-primary hover:border-text flex h-[25rem] w-full flex-col overflow-hidden rounded-xl border">
       <Link href={`/project/${project.slug}`}>
         <img
-          src={project.imageLink}
+          src={`/assets/projects/${project.slug}.png`}
           alt="Zide Logo"
           className="h-28 w-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
         />
