@@ -3,7 +3,7 @@
 import type { Locale } from '@/i18n/config';
 import { Button } from '@components/Button';
 import type { Project } from '@models/project.model';
-import dayjs from 'dayjs';
+import { getFormattedDate } from '@utils/date';
 import { useLocale, useTranslations } from 'next-intl';
 
 type SummaryProps = {
@@ -11,29 +11,24 @@ type SummaryProps = {
 };
 
 export const Summary = ({ project }: SummaryProps) => {
-  const currentLocale = useLocale() as Locale;
+  const locale = useLocale() as Locale;
   const t = useTranslations('projects');
 
   const features: string[] = [];
-  if (currentLocale === 'fr') {
+  if (locale === 'fr') {
     features.push(...project.featuresFr);
   } else {
     features.push(...project.featuresEn);
   }
 
-  let dateFormat = 'MMM DD, YYYY';
-  if (currentLocale === 'fr') {
-    dateFormat = 'DD MMMM YYYY';
-  }
-
   let releaseDate: string | undefined;
   if (project.releaseDate.date) {
-    releaseDate = dayjs(project.releaseDate.date).format(dateFormat);
+    releaseDate = getFormattedDate(project.releaseDate.date, 'LL', locale);
   }
 
   let plannedDate: string | undefined;
   if (project.releaseDate.planned) {
-    plannedDate = dayjs(project.releaseDate.planned).format(dateFormat);
+    plannedDate = getFormattedDate(project.releaseDate.planned, 'LL', locale);
   }
 
   return (
@@ -50,7 +45,7 @@ export const Summary = ({ project }: SummaryProps) => {
               <td className="text-muted-foreground px-4 py-3">{releaseDate}</td>
             </tr>
           )}
-          {plannedDate && (
+          {project.releaseDate.planned && (
             <tr>
               <td className="px-4 py-3 font-medium">{t('summary.planned')}</td>
               <td className="text-muted-foreground px-4 py-3">

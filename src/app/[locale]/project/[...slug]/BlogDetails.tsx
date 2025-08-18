@@ -2,7 +2,7 @@
 
 import type { Locale } from '@/i18n/config';
 import type { Project } from '@models/project.model';
-import dayjs from 'dayjs';
+import { getFormattedDate } from '@utils/date';
 import { useLocale, useTranslations } from 'next-intl';
 
 type BlogDetailsProps = {
@@ -11,22 +11,20 @@ type BlogDetailsProps = {
 
 export const BlogDetails = ({ project }: BlogDetailsProps) => {
   const t = useTranslations('projects');
-  const currentLocale = useLocale() as Locale;
-
-  let dateFormat = 'MMMM DD, YYYY';
-  if (currentLocale === 'fr') {
-    dateFormat = 'DD MMMM YYYY';
-  }
+  const locale = useLocale() as Locale;
 
   return (
-    <div className="text-text/50 flex flex-col text-sm">
-      <p>
-        {t('details.article_published')} {dayjs(project.releaseDate.articlePublished).format(dateFormat)}
+    <div className="flex flex-row space-x-3 text-sm">
+      <p className="text-text/50">
+        {t('details.article_published')} {getFormattedDate(project.releaseDate.articlePublished, 'LL', locale)}
       </p>
       {project.releaseDate.articleUpdated && (
-        <p>
-          {t('details.article_updated')} {dayjs(project.releaseDate.articleUpdated).format(dateFormat)}
-        </p>
+        <div className="text-text/25 flex flex-row items-center space-x-2">
+          <i className="pi pi-pencil text-xs" />
+          <p>
+            {t('details.article_updated')} {getFormattedDate(project.releaseDate.articleUpdated, 'LL', locale)}
+          </p>
+        </div>
       )}
     </div>
   );
