@@ -10,6 +10,7 @@ export const autoVersionManagerProject: Project = {
   releaseDate: {
     date: new Date('2025-03-16'),
     articlePublished: new Date('2025-03-16'),
+    articleUpdated: new Date('2025-08-20'),
   },
   labels: ['CLI tool', 'Version Manager', 'Productivity'],
   featuresEn: ['Automatic version manager management', 'Bash and Zsh compatibility', 'Easy setup'],
@@ -20,6 +21,7 @@ export const autoVersionManagerProject: Project = {
   isOpenSource: true,
   link: {
     github: 'https://github.com/ZideStudio/avm',
+    install: '/project/avm/install#installation',
   },
   pages: [
     {

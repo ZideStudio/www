@@ -6,6 +6,7 @@ import { Button } from '@components/Button';
 import type { Project } from '@models/project.model';
 import { getFormattedDate } from '@utils/date';
 import { useLocale, useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 type SummaryProps = {
   project: Project;
@@ -81,9 +82,13 @@ export const Summary = ({ project }: SummaryProps) => {
         </Button>
       )}
       {project.link?.github && (
-        <Button href={project.link?.github} target="_blank" icon="github" className="w-full" primary>
-          {t('open-github')}
-        </Button>
+        <Link href={project.link?.github} target="_blank" className="flex flex-row items-center justify-center space-x-3">
+          <i className="pi pi-github text-lg" />
+          <div className="flex flex-row items-center justify-center space-x-2">
+            <p>{t('view-source')}</p>
+            <i className="pi pi-arrow-up-right text-xs" />
+          </div>
+        </Link>
       )}
 
       <div>

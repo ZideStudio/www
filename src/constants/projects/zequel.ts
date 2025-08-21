@@ -18,6 +18,9 @@ export const zequelProject: Project = {
   target: ProjectTarget.DEVELOPERS,
   type: ProjectType.SOFTWARE,
   isOpenSource: true,
+  link: {
+    github: 'https://github.com/ZideStudio/Zequel',
+  },
   pages: [
     {
       content: [
