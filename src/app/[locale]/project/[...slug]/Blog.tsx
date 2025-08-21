@@ -88,23 +88,26 @@ export const Blog = ({ project, page }: BlogProps) => {
 
   return (
     <div className={`flex flex-col space-y-14 px-3 md:w-8/10 md:px-10 xl:px-32 ${project.pages.length < 2 ? 'mt-15' : ''}`}>
-      <Link href="/projects" className="text-text/50 hover:text-text/75 flex w-max flex-row items-center space-x-3">
+      <Link href="/projects" className={`text-text/50 hover:text-text/75 ${project.pages.length > 1 ? 'mb-7' : ''} flex w-max flex-row items-center space-x-3`}>
         <i className="pi pi-arrow-left" />
         <p>{t('projects.back')}</p>
       </Link>
 
       {project.pages.length > 1 && (
-        <nav className="my-14 flex justify-center space-x-8 pb-5 text-xl font-semibold">
-          {pages.map((page) => (
-            <a
-              key={page.title}
-              href={`/project/${project.slug}/${page.id}`}
-              className={`text-activeprimary hover:text-activesecondary ${currentPage.title === page.title ? 'underline' : ''}`}
-            >
-              {page.title}
-            </a>
-          ))}
-        </nav>
+        <>
+          <nav className="border-text/15 mx-auto mb-7 flex w-full flex-col justify-center space-x-4 rounded-3xl border p-2 text-xl font-semibold lg:w-max lg:flex-row lg:rounded-full lg:p-1.5">
+            {pages.map((page) => (
+              <a
+                key={page.title}
+                href={`/project/${project.slug}/${page.id}`}
+                className={`text-text/75 hover:text-text w-full rounded-3xl px-5 py-1 text-center lg:w-auto lg:rounded-full ${currentPage.title === page.title ? 'bg-text/10' : ''}`}
+              >
+                {page.title}
+              </a>
+            ))}
+          </nav>
+          <hr className="border-text/10 w-full" />
+        </>
       )}
 
       {currentPage.content.map((content, index) => (
