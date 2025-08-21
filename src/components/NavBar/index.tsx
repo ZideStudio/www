@@ -1,4 +1,3 @@
-import { Button } from '@components/Button';
 import LanguageSelector from '@components/LanguageSelector';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
@@ -40,14 +39,14 @@ export default async function Navbar() {
           })}
         </nav>
 
-        <div className="relative hidden min-w-2xs items-center justify-center space-x-4 align-middle lg:flex">
+        <div className="relative hidden min-w-2xs items-center justify-center space-x-6 align-middle lg:flex">
           <LanguageSelector />
           <Link href="https://discord.gg/45DXQZGpEP" target="_blank">
             <i className="pi pi-discord text-text align-middle text-2xl" />
           </Link>
-          <Button href="https://github.com/ZideStudio" target="_blank" icon="github" primary>
-            {t('open_github')}
-          </Button>
+          <Link href="https://github.com/ZideStudio" target="_blank">
+            <i className="pi pi-github text-text align-middle text-2xl" />
+          </Link>
         </div>
       </div>
     </NavbarClient>
