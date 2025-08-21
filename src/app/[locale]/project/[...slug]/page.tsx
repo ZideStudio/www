@@ -1,3 +1,4 @@
+import Ad from '@components/Ad';
 import { PageBanner } from '@components/PageBanner';
 import { PROJECTS } from '@constants/projects.data';
 import type { Project } from '@models/project.model';
@@ -71,7 +72,10 @@ export default async function Page({ params }: PageProps) {
       />
       <div className="mt-3 flex flex-col space-y-10 px-3 md:flex-row md:justify-between md:space-y-0 md:px-10">
         <Blog project={project} page={projectPage} />
-        <Summary project={project} />
+        <div className="relative flex flex-col space-y-3 md:w-xl md:max-w-xl">
+          <Ad slot="3367063543" className="h-32" />
+          <Summary project={project} />
+        </div>
       </div>
     </div>
   );

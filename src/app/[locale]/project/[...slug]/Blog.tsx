@@ -97,13 +97,13 @@ export const Blog = ({ project, page }: BlogProps) => {
         <>
           <nav className="border-text/15 mx-auto mb-7 flex w-full flex-col justify-center space-x-4 rounded-3xl border p-2 text-xl font-semibold lg:w-max lg:flex-row lg:rounded-full lg:p-1.5">
             {pages.map((page) => (
-              <a
+              <Link
                 key={page.title}
                 href={`/project/${project.slug}/${page.id}`}
                 className={`text-text/75 hover:text-text w-full rounded-3xl px-5 py-1 text-center lg:w-auto lg:rounded-full ${currentPage.title === page.title ? 'bg-text/10' : ''}`}
               >
                 {page.title}
-              </a>
+              </Link>
             ))}
           </nav>
           <hr className="border-text/10 w-full" />

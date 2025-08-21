@@ -1,5 +1,6 @@
 'use client';
 
+import Ad from '@components/Ad';
 import { Button } from '@components/Button';
 import { Title } from '@components/Title';
 import { useTranslations } from 'next-intl';
@@ -20,10 +21,13 @@ export const Footer = () => {
           {t('discord.join')}
         </Button>
       </div>
+      <div className="my-10 flex min-h-32 w-full justify-center">
+        <Ad slot="5456387871" />
+      </div>
 
       <div className="container mx-auto flex flex-col space-y-10 py-10 md:flex-row md:justify-between md:space-y-0">
         {/* Logo */}
-        <div className="w-full px-12 md:w-[13rem] md:px-0">
+        <div className="max-h-96 w-full px-12 md:w-[13rem] md:px-0">
           <Image src="/assets/logo/zide_complete.png" alt="Zide" className="text-text antiSelect h-12 w-auto" width={82} height={48} />
         </div>
         {/* Zide */}

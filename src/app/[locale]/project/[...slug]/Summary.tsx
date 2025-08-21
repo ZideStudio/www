@@ -34,7 +34,7 @@ export const Summary = ({ project }: SummaryProps) => {
   }
 
   return (
-    <div className="text-text border-text/10 border-border bg-background sticky top-24 h-full space-y-6 rounded-xl border p-6 shadow-sm">
+    <div className="text-text border-text/10 border-border bg-background sticky top-24 h-max space-y-6 rounded-xl border p-6 shadow-sm">
       <table className="border-text/10 w-full overflow-hidden rounded-xl border text-left">
         <tbody className="divide-text/10 divide-y">
           <tr>
