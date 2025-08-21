@@ -42,10 +42,10 @@ export default async function Navbar() {
         <div className="relative hidden min-w-2xs items-center justify-center space-x-6 align-middle lg:flex">
           <LanguageSelector />
           <Link href="https://discord.gg/45DXQZGpEP" target="_blank">
-            <i className="pi pi-discord text-text align-middle text-2xl" />
+            <i className="pi pi-discord text-text hover:text-activesecondary align-middle text-2xl" />
           </Link>
           <Link href="https://github.com/ZideStudio" target="_blank">
-            <i className="pi pi-github text-text align-middle text-2xl" />
+            <i className="pi pi-github text-text hover:text-activesecondary align-middle text-2xl" />
           </Link>
         </div>
       </div>

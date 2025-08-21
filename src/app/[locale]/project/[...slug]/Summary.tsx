@@ -38,7 +38,7 @@ export const Summary = ({ project }: SummaryProps) => {
       <table className="border-text/10 w-full overflow-hidden rounded-xl border text-left">
         <tbody className="divide-text/10 divide-y">
           <tr>
-            <td className="px-4 py-3 font-medium">{t('summary.title')}</td>
+            <td className="px-4 py-3 font-medium">{t('summary.project')}</td>
             <td className="text-muted-foreground px-4 py-3">{project.title}</td>
           </tr>
           {releaseDate && (

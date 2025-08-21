@@ -29,7 +29,7 @@ export const Footer = () => {
         {/* Zide */}
         <div className="w-full px-12 md:w-[13rem] md:px-0">
           <p className="text-start text-xl font-semibold">{t('collective.category')}</p>
-          <hr className="my-4 w-1/3 border-gray-600" />
+          <hr className="border-text/10 my-4 w-1/3" />
           <ul>
             <li className="mt-2 text-start">{t('collective.title')}</li>
             <li className="mt-1 text-start text-xs text-gray-400">{t('collective.description')}</li>
@@ -38,7 +38,7 @@ export const Footer = () => {
         {/* Projects */}
         <div className="w-full px-12 md:w-[13rem] md:px-0">
           <p className="text-start text-xl font-semibold">{t('services.category')}</p>
-          <hr className="my-4 w-1/3 border-gray-600" />
+          <hr className="border-text/10 my-4 w-1/3" />
           <ul className="list-inside list-disc">
             <li className="mt-2 text-start">{t('services.websites')}</li>
             <li className="mt-2 text-start">{t('services.softwares')}</li>
@@ -49,7 +49,7 @@ export const Footer = () => {
         {/* Contact */}
         <div className="w-full px-12 md:w-[13rem] md:px-0">
           <p className="text-start text-xl font-semibold">{t('contact.category')}</p>
-          <hr className="my-4 w-1/3 border-gray-600" />
+          <hr className="border-text/10 my-4 w-1/3" />
           <ul className="mt-2 text-start">
             <li className="mt-2 flex flex-row items-center space-x-3">
               <i className="pi pi-home" style={{ fontSize: '1rem' }} />

@@ -49,7 +49,7 @@
   },
   "projects": {
     "summary": {
-      "title": "Name",
+      "project": "Project",
       "released": "Released",
       "planned": "Planned",
       "planned_for": "Planned for",
@@ -94,6 +94,10 @@
       "all_types": "All Types",
       "newest": "Newest",
       "oldest": "Oldest"
+    },
+    "nav": {
+      "previous": "Previous Project",
+      "next": "Next Project"
     },
     "errors": {
       "not_found": "No projects found",

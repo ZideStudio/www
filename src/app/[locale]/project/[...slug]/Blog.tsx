@@ -3,10 +3,13 @@
 import type { Locale } from '@/i18n/config';
 import { createSlug } from '@/utils/slug';
 import { CodeBlock } from '@components/CodeBlock';
+import { PROJECTS } from '@constants/projects.data';
 import type { PageContent, Project } from '@models/project.model';
 import { useLocale, useTranslations } from 'next-intl';
+import Link from 'next/link';
 import toast from 'react-hot-toast';
 import { BlogDetails } from './BlogDetails';
+import { ProjectNavigation } from './ProjectNavigation';
 
 type Page = {
   id?: string;
@@ -25,13 +28,13 @@ type BlogProps = {
 };
 
 export const Blog = ({ project, page }: BlogProps) => {
-  const t = useTranslations('toast');
+  const t = useTranslations();
   const currentLocale = useLocale() as Locale;
 
   const copyTitleUrl = async (event: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => {
     try {
       await navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}#${event.currentTarget.id}`);
-      toast(t('copy_url'));
+      toast(t('toast.copy_url'));
     } catch (err) {
       console.error('Copy failed:', err);
     }
@@ -84,7 +87,12 @@ export const Blog = ({ project, page }: BlogProps) => {
   const currentPage = page ? (pages.find(({ id }) => id === page) ?? pages[0]) : pages[0];
 
   return (
-    <div className={`flex flex-col space-y-14 px-3 md:px-10 xl:px-40 ${project.pages.length < 2 ? 'mt-15' : ''}`}>
+    <div className={`flex flex-col space-y-14 px-3 md:w-8/10 md:px-10 xl:px-32 ${project.pages.length < 2 ? 'mt-15' : ''}`}>
+      <Link href="/projects" className="text-text/50 hover:text-text/75 flex w-max flex-row items-center space-x-3">
+        <i className="pi pi-arrow-left" />
+        <p>{t('projects.back')}</p>
+      </Link>
+
       {project.pages.length > 1 && (
         <nav className="my-14 flex justify-center space-x-8 pb-5 text-xl font-semibold">
           {pages.map((page) => (
@@ -130,7 +138,11 @@ export const Blog = ({ project, page }: BlogProps) => {
         </div>
       ))}
 
-      <BlogDetails project={project} />
+      <div className="flex flex-col space-y-5">
+        <hr className="border-text/10 w-full" />
+        <ProjectNavigation currentProjectIndex={PROJECTS.findIndex((p) => p.slug === project.slug)} />
+        <BlogDetails project={project} />
+      </div>
     </div>
   );
 };

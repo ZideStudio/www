@@ -20,17 +20,15 @@ export const BlogDetails = ({ project }: BlogDetailsProps) => {
         <p className="text-text/50 text-sm">{project.authors.length > 1 ? t('editors') : t('editor')}</p>
         <AvatarGroup members={project.authors} displayLimit={3} />
       </div>
-      <div className="flex flex-col space-x-3 text-sm">
+      <div className="flex flex-col items-end justify-center text-sm">
         <p className="text-text/50">
           {t('details.article_published')} {getFormattedDate(project.releaseDate.articlePublished, 'LL', locale)}
         </p>
         {project.releaseDate.articleUpdated && (
-          <div className="text-text/25 flex flex-row items-center space-x-2">
-            <i className="pi pi-pencil text-xs" />
-            <p>
-              {t('details.article_updated')} {getFormattedDate(project.releaseDate.articleUpdated, 'LL', locale)}
-            </p>
-          </div>
+          <p className="text-text/25">
+            <i className="pi pi-pencil mr-2 text-xs" />
+            {t('details.article_updated')} {getFormattedDate(project.releaseDate.articleUpdated, 'LL', locale)}
+          </p>
         )}
       </div>
     </div>
