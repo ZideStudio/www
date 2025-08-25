@@ -28,7 +28,7 @@ export const CodeBlock = ({ content }: CodeBlockProps) => {
       >
         <i className={`pi ${copied ? 'pi-check text-activeprimary' : 'pi-clipboard'} min-w-5`} />
       </button>
-      <pre className="pr-5 text-start font-sans text-sm break-words whitespace-pre-wrap">
+      <pre className="pr-10 text-start font-sans text-sm break-words whitespace-pre-wrap">
         <code>{content}</code>
       </pre>
     </div>
