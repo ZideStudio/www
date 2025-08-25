@@ -95,7 +95,7 @@ export const Blog = ({ project, page }: BlogProps) => {
 
       {project.pages.length > 1 && (
         <>
-          <nav className="border-text/15 mx-auto mb-7 flex w-full flex-col justify-center space-x-4 rounded-3xl border p-2 text-xl font-semibold lg:w-max lg:flex-row lg:rounded-full lg:p-1.5">
+          <nav className="border-text/15 mx-auto mb-7 flex w-full flex-col justify-center space-x-4 rounded-3xl border p-2 text-lg font-semibold lg:w-max lg:flex-row lg:rounded-full lg:p-1.5">
             {pages.map((page) => (
               <Link
                 key={page.title}

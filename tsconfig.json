@@ -24,6 +24,7 @@
       "@models/*": ["./src/models/*"],
       "@constants/*": ["./src/constants/*"],
       "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@/*": ["./src/*"]
     }
   },
