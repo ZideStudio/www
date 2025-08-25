@@ -3,6 +3,7 @@
 import { Footer } from '@components/Footer';
 import Navbar from '@components/NavBar';
 import { ScrollBar } from '@components/ScrollBar';
+import ScrollToTop from '@components/ScrollToTop';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -91,6 +92,7 @@ export default async function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <ScrollToTop />
           </NextIntlClientProvider>
         </PrimeReactProvider>
         <script src="./node_modules/preline/dist/preline.js" />
