@@ -12,6 +12,7 @@ export const commitIssueParserProject: Project = {
   releaseDate: {
     date: new Date('2025-08-05'),
     articlePublished: new Date('2025-08-09'),
+    articleUpdated: new Date('2025-08-25'),
   },
   labels: ['Issue Parser', 'Raycast Extension', 'Productivity'],
   featuresEn: ['Parse issue urls', 'GitHub, GitLab and Jira compatibility', 'Generate commit name, a description and a body'],
@@ -229,6 +230,36 @@ export const commitIssueParserProject: Project = {
         {
           type: 'image',
           contentEn: 'https://github.com/ZideStudio/CommitIssueParser/blob/main/metadata/commit-issue-parser-3.png?raw=true',
+        },
+        {
+          type: 'title',
+          contentEn: 'Commit Format',
+          contentFr: 'Formattage du Commit',
+        },
+        {
+          type: 'paragraph',
+          contentEn:
+            'The way the commit name is formatted can be fully customized. The \\ allow you to make the following character optional in case the scope is not present. Here is the default format:',
+          contentFr:
+            "La façon dont est formaté le nom du commit peut être entièrement personnalisée. Les \\ vous permettent de rendre facultatif le caractère qui suit dans le cas où le scope n'est pas présent. Voici le format par défaut :",
+        },
+        {
+          type: 'code',
+          contentEn: '{type}\\({scope}\\): {message}',
+        },
+        {
+          type: 'title',
+          contentEn: 'Body Format',
+          contentFr: 'Formattage du Body',
+        },
+        {
+          type: 'paragraph',
+          contentEn: 'The way the body is formatted can also be customized. Here is the default format:',
+          contentFr: 'La façon dont est formaté le body peut être aussi personnalisée. Voici le format par défaut :',
+        },
+        {
+          type: 'code',
+          contentEn: 'Issue: {scope}\\n\\n{body}',
         },
       ],
     },
