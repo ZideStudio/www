@@ -24,6 +24,8 @@ nvm use 22.14.0
 npm install
 ```
 
+> ℹ️ This project uses [Volta](https://volta.sh/) to automatically manage the Node version (example `22.19.0`). If you have Volta installed, the correct version will be used without any manual intervention.
+
 ### Development
 
 ```bash
