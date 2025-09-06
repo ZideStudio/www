@@ -7,35 +7,28 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    window.scroll({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="fixed right-8 bottom-8 z-50">
-      <button
-        onClick={scrollToTop}
-        className={`bg-secondary/50 hover:bg-secondary/90 group flex h-12 w-12 transform cursor-pointer items-center justify-center rounded-full text-white shadow-lg transition-all duration-300 ease-in-out focus:outline-none ${isVisible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-10 opacity-0'} `}
-        aria-label="Retour en haut"
-      >
-        <i className="pi pi-arrow-up align-middle text-lg" />
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={scrollToTop}
+      className={`bg-secondary/50 hover:bg-secondary/90 group focus-visible:ring-activesecondary fixed right-8 bottom-8 z-50 flex h-12 w-12 transform cursor-pointer items-center justify-center rounded-full text-white shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 ${isVisible ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-10 opacity-0'}`}
+      aria-label="Retour en haut"
+      title="Retour en haut"
+      tabIndex={isVisible ? 0 : -1}
+    >
+      <i className="pi pi-arrow-up align-middle text-lg" />
+    </button>
   );
 };
 
