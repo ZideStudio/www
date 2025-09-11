@@ -11,10 +11,10 @@ export const MEMBERS: Member[] = [
   },
   {
     id: 1,
-    name: 'JulesJuul',
+    name: 'Nekeo',
     roleEn: 'Zide Founder / Developer',
     roleFr: 'Fondateur de Zide / Développeur',
-    githubUrl: 'https://github.com/JulesJuul',
+    githubUrl: 'https://github.com/Nekeo',
     pictureUrl: 'https://avatars.githubusercontent.com/u/38363471',
   },
   {

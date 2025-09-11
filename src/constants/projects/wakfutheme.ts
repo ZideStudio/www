@@ -20,7 +20,7 @@ export const wakfuThemeProject: Project = {
   isOpenSource: true,
   link: {
     install: 'https://zed.dev/extensions/wakfu-theme',
-    github: 'https://github.com/JulesJuul/zed-wakfu-theme',
+    github: 'https://github.com/Nekeo/zed-wakfu-theme',
   },
   pages: [
     {
@@ -37,13 +37,13 @@ export const wakfuThemeProject: Project = {
         },
         {
           type: 'image',
-          contentEn: 'https://github.com/JulesJuul/zed-wakfu-theme/blob/main/screenshots/wakfu-dark.png?raw=true',
+          contentEn: 'https://github.com/Nekeo/zed-wakfu-theme/blob/main/screenshots/wakfu-dark.png?raw=true',
           altEn: 'Dark theme',
           altFr: 'Thème sombre',
         },
         {
           type: 'image',
-          contentEn: 'https://github.com/JulesJuul/zed-wakfu-theme/blob/main/screenshots/wakfu-light.png?raw=true',
+          contentEn: 'https://github.com/Nekeo/zed-wakfu-theme/blob/main/screenshots/wakfu-light.png?raw=true',
           altEn: 'Light theme',
           altFr: 'Thème clair',
         },
