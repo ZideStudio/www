@@ -13,6 +13,7 @@ export default async function Navbar() {
   const navLinks: NavLink[] = [
     { label: t('home'), href: '/' },
     { label: t('about'), href: '/#about' },
+    { label: t('team'), href: '/#team' },
     { label: t('projects'), href: '/projects' },
     { label: t('contact'), href: '/contact' },
   ];

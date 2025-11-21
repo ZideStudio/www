@@ -11,7 +11,7 @@ export const Team = () => {
   const t = useTranslations('home.team');
 
   return (
-    <div className="flex flex-col items-center justify-around px-10 lg:px-20">
+    <div id="team" className="flex flex-col items-center justify-around px-10 lg:px-20">
       <div className="flex flex-col items-center justify-center space-y-3">
         <Tag>{t('tag')}</Tag>
         <Title id="about">{t('title')}</Title>
