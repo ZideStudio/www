@@ -21,9 +21,9 @@ export const PageBanner = ({ title, descriptionEn, descriptionFr, imagePath, tag
 
   return (
     <section className="relative h-96 w-full">
-      <div className="absolute inset-0 bg-cover bg-fixed bg-center bg-no-repeat" style={{ backgroundImage: `url('${imagePath}')` }} />
+      <div className="absolute inset-0 bg-cover bg-fixed bg-center bg-no-repeat blur-[2px]" style={{ backgroundImage: `url('${imagePath}')` }} />
 
-      <div className="to-primary absolute inset-0 -bottom-1 bg-gradient-to-b from-transparent" />
+      <div className="to-primary absolute inset-0 -bottom-2 bg-gradient-to-b from-transparent" />
 
       <div className="text-text relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         {tag && <Tag>{tag}</Tag>}
