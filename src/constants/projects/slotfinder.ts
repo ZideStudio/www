@@ -10,6 +10,7 @@ export const slotFinderProject: Project = {
   releaseDate: {
     planned: new Date('2026-12-01'),
     articlePublished: new Date('2025-11-18'),
+    articleUpdated: new Date('2025-11-21'),
   },
   labels: ['Website', 'Event Planner', 'Time Management'],
   featuresEn: ['Optimal time slot suggestions', 'Event organization', 'Availability polls', 'Calendar integrations'],
@@ -43,8 +44,8 @@ export const slotFinderProject: Project = {
           contentEn: `
           <ul class="text-left space-y-1">
               <li>1. Create your event</li>
-              <li>2. Invite participants</li>
-              <li>3. Participants indicate their availability by selecting their time slots</li>
+              <li>2. Invite your friends</li>
+              <li>3. Participants indicate their availability by selecting their suitable time slots</li>
               <li>4. Slot Finder suggests the best time slots for the event</li>
               <li>5. Finalize scheduling by choosing the optimal time slot</li>
           </ul>
@@ -52,8 +53,8 @@ export const slotFinderProject: Project = {
           contentFr: `
           <ul class="text-left space-y-1">
               <li>1. Créer votre événement</li>
-              <li>2. Invitez les participants</li>
-              <li>3. Les participants indiquent leurs disponibilités en sélectionnant leurs horaires</li>
+              <li>2. Invitez vos amis</li>
+              <li>3. Les participants indiquent leurs disponibilités en sélectionnant leurs horaires convenables</li>
               <li>4. Slot Finder suggère les meilleurs créneaux horaires pour l'événement</li>
               <li>5. Finalisez la planification en choisissant le créneau horaire optimal</li>
           </ul>
@@ -79,6 +80,11 @@ export const slotFinderProject: Project = {
       titleFr: 'Fonctionnalités',
       content: [
         {
+          type: 'title',
+          contentEn: 'Creating Events',
+          contentFr: "Création d'Événements",
+        },
+        {
           type: 'paragraph',
           contentEn: "Let's take a concrete example to illustrate the features of Slot Finder, starting with the creation of your first event!",
           contentFr: 'Prenons un exemple concret pour illustrer les fonctionnalités de Slot Finder, en commençant par la création de votre premier événement !',
@@ -95,6 +101,11 @@ export const slotFinderProject: Project = {
           contentFr: "Une fois crée, vous pouvez inviter des participants en partageant un lien unique vers l'événement.",
         },
         {
+          type: 'title',
+          contentEn: 'Adding Availability',
+          contentFr: 'Ajout de Disponibilités',
+        },
+        {
           type: 'paragraph',
           contentEn:
             'Next, participants can indicate their availability by selecting time slots directly on the interactive calendar, or by clicking the button.',
@@ -108,6 +119,11 @@ export const slotFinderProject: Project = {
           altFr: 'Ajout de disponibilités',
         },
         {
+          type: 'title',
+          contentEn: 'Suggestion of Time Slots',
+          contentFr: 'Suggestion de Créneaux Horaires',
+        },
+        {
           type: 'paragraph',
           contentEn:
             "Once participants have submitted their availability, Slot Finder analyses the data and suggests the best time slots for the event based on everyone's availability.",
@@ -118,7 +134,12 @@ export const slotFinderProject: Project = {
           type: 'image',
           contentEn: 'https://i.imgur.com/Pub584s.png',
           altEn: 'Highlighting optimal slots',
-          altFr: 'Mise en évidence des créneaux optimaux',
+          altFr: 'Mise en évidence des créneaux',
+        },
+        {
+          type: 'title',
+          contentEn: 'Participants View',
+          contentFr: 'Vue des Participants',
         },
         {
           type: 'paragraph',
@@ -130,6 +151,11 @@ export const slotFinderProject: Project = {
           contentEn: 'https://i.imgur.com/jZZdCJ3.png',
           altEn: 'Participants view',
           altFr: 'Vue des participants',
+        },
+        {
+          type: 'title',
+          contentEn: 'Conclusion',
+          contentFr: 'Conclusion',
         },
         {
           type: 'paragraph',

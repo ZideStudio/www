@@ -9,13 +9,14 @@ export const cryptiPicsProject: Project = {
   descriptionFr:
     'Un site web pour partager des informations de manière sécurisée et anonyme. Propose un pastebin sécurisé, un outil de chiffrement sur les images et un outil de stéganographie sur les images.',
   releaseDate: {
-    planned: new Date('2025-12-01'),
+    planned: new Date('2027-01-01'),
     articlePublished: new Date('2025-03-16'),
+    articleUpdated: new Date('2025-11-21'),
   },
   labels: ['Website', 'Cryptography', 'Secure pastebin'],
   featuresEn: ['Secure pastebin', 'Cryptography tool on pictures', 'Steganography tool on pictures'],
   featuresFr: ['Pastebin sécurisé', 'Outil de chiffrement sur les images', 'Outil de stéganographie sur les images'],
-  status: ProjectStatus.IN_PROGRESS,
+  status: ProjectStatus.PAUSED,
   target: ProjectTarget.EVERYONE,
   type: ProjectType.WEBSITE,
   isOpenSource: false,
@@ -84,10 +85,9 @@ export const cryptiPicsProject: Project = {
         },
         {
           type: 'paragraph',
-          contentEn:
-            'This cryptography tool will be the very first online service from CryptiPics <u>launching by the end of 2025</u>. Stay tuned on our social media channels for updates.',
+          contentEn: 'This cryptography tool will be the very first online service from CryptiPics. Stay tuned on our social media channels for updates.',
           contentFr:
-            "Cet outil cryptographique sera le premier service en ligne de CryptiPics à être <u>lancé à la fin de l'année 2025</u>. Restez à l'écoute sur nos réseaux sociaux pour les mises à jour.",
+            "Cet outil cryptographique sera le premier service en ligne de CryptiPics à être. Restez à l'écoute sur nos réseaux sociaux pour les mises à jour.",
         },
       ],
     },
@@ -123,8 +123,8 @@ export const cryptiPicsProject: Project = {
         },
         {
           type: 'paragraph',
-          contentEn: 'This pastebin tool will be released after the image encryption service, which is <u>scheduled for the end of 2025.</u>',
-          contentFr: "Ce pastebin sécurisé sera disponible après le service de chiffrement d'images, qui est <u>prévu pour la fin de 2025.</u>",
+          contentEn: 'This pastebin tool will be released after the image encryption service.',
+          contentFr: "Ce pastebin sécurisé sera disponible après le service de chiffrement d'images.",
         },
         {
           type: 'paragraph',
@@ -168,8 +168,8 @@ export const cryptiPicsProject: Project = {
         },
         {
           type: 'paragraph',
-          contentEn: 'This more ambitious tool is set to <u>launch in 2026</u>, so stay tuned to our social media channels!',
-          contentFr: "Cet outil plus ambitieux sera <u>lancé en 2026</u>, restez à l'écoute sur nos réseaux sociaux !",
+          contentEn: 'This more ambitious tool will be released much later; stay tuned on our social media channels!',
+          contentFr: "Cet outil plus ambitieux sera lancé bien plus tard, restez à l'écoute sur nos réseaux sociaux !",
         },
       ],
     },

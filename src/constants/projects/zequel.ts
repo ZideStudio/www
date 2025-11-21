@@ -8,8 +8,8 @@ export const zequelProject: Project = {
   descriptionEn: 'SQL client software, with a lot of features and a simple intuitive interface.',
   descriptionFr: 'Logiciel client SQL, avec de nombreuses fonctionnalités et une interface intuitive simple.',
   releaseDate: {
-    planned: new Date('2027-01-01'),
     articlePublished: new Date('2025-03-16'),
+    articleUpdated: new Date('2025-11-21'),
   },
   labels: ['SQL Client', 'Database Management', 'Software'],
   featuresEn: ['Free software', 'Database management', 'Folder organization'],
@@ -31,9 +31,9 @@ export const zequelProject: Project = {
         },
         {
           type: 'paragraph',
-          contentEn: "We won't say more for the moment. This project is still under development and will be <u>launched in beta version in 2027!</u>",
+          contentEn: "We won't say more for the moment. This project is on a temporary development pause to prioritize other projects.",
           contentFr:
-            'Nous ne pouvons pas vous en dire plus pour le moment. Ce projet est toujours en développement et sera <u>lancé en version bêta en 2027 !</u>',
+            "Nous ne pouvons pas vous en dire plus pour le moment. Ce projet est en pause de développement temporairement pour priviléger d'autres projets.",
         },
       ],
     },
