@@ -3,6 +3,7 @@
 import Ad from '@components/Ad';
 import { Button } from '@components/Button';
 import { Title } from '@components/Title';
+import { DISCORD_URL } from '@constants/discord';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,7 +18,7 @@ export const Footer = () => {
           <Title className="!text-3xl">{t('discord.title')}</Title>
           <p>{t('discord.description')}</p>
         </div>
-        <Button href="https://discord.gg/45DXQZGpEP" target="_blank" icon="arrow-right" primary>
+        <Button href={DISCORD_URL} target="_blank" icon="arrow-right" primary>
           {t('discord.join')}
         </Button>
       </div>
@@ -67,7 +68,7 @@ export const Footer = () => {
             </li>
             <li className="mt-2 flex flex-row items-center space-x-3">
               <i className="pi pi-discord" style={{ fontSize: '1rem' }} />
-              <Link href="https://discord.gg/45DXQZGpEP" className="text-blue-400" target="_blank" rel="noopener noreferrer">
+              <Link href={DISCORD_URL} className="text-blue-400" target="_blank" rel="noopener noreferrer">
                 Zide Discord
               </Link>
             </li>
@@ -80,9 +81,19 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="border-text/10 flex flex-row justify-center space-x-2 border-t py-2">
-        <p className="text-start">© 2024-{new Date().getFullYear()} Zide.</p>
-        <p className="text-start">All rights reserved.</p>
+      <div className="border-text/10 mx-5 flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t py-4 text-sm md:mx-24">
+        <div className="flex space-x-4">
+          <p className="text-start">© 2024-{new Date().getFullYear()} Zide.</p>
+          <p className="text-start">All rights reserved.</p>
+        </div>
+        <div className="flex space-x-4">
+          <Link href="/privacy-policy" className="text-gray-400 hover:text-gray-300 hover:underline">
+            {t('legalLinks.privacy')}
+          </Link>
+          <Link href="/terms-of-service" className="text-gray-400 hover:text-gray-300 hover:underline">
+            {t('legalLinks.terms')}
+          </Link>
+        </div>
       </div>
     </footer>
   );

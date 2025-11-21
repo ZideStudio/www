@@ -1,3 +1,4 @@
+import { DISCORD_URL } from '@constants/discord';
 import Link from 'next/link';
 
 interface SocialLinksProps {
@@ -9,7 +10,7 @@ export function SocialLinks({ className = '', showLabels = false }: SocialLinksP
   const socialLinks = [
     {
       name: 'Discord',
-      href: 'https://discord.gg/45DXQZGpEP',
+      href: DISCORD_URL,
       icon: 'pi pi-discord',
     },
     {
