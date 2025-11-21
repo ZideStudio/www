@@ -2,10 +2,18 @@ import type { Project, ProjectStatus } from '@models/project.model';
 import { autoVersionManagerProject } from './projects/autoversionmanager';
 import { commitIssueParserProject } from './projects/commitissueparser';
 import { cryptiPicsProject } from './projects/cryptipics';
+import { slotFinderProject } from './projects/slotfinder';
 import { wakfuThemeProject } from './projects/wakfutheme';
 import { zequelProject } from './projects/zequel';
 
-export const PROJECTS: Project[] = [autoVersionManagerProject, wakfuThemeProject, commitIssueParserProject, cryptiPicsProject, zequelProject];
+export const PROJECTS: Project[] = [
+  autoVersionManagerProject,
+  wakfuThemeProject,
+  commitIssueParserProject,
+  cryptiPicsProject,
+  zequelProject,
+  slotFinderProject,
+];
 
 export const projectStatusLabels: Record<ProjectStatus, { label: string; color: string }> = {
   PLANNED: {

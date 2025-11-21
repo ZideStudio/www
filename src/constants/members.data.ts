@@ -25,4 +25,12 @@ export const MEMBERS: Member[] = [
     pictureUrl: 'https://avatars.githubusercontent.com/u/90752990?v=4',
     githubUrl: 'https://github.com/ElisaROGGE',
   },
+  {
+    id: 3,
+    name: 'GuillaumeKESTEMAN',
+    roleEn: 'Full-Stack Developer',
+    roleFr: 'Développeur Full-Stack',
+    pictureUrl: 'https://avatars.githubusercontent.com/u/81412571?v=4',
+    githubUrl: 'https://github.com/GuillaumeKESTEMAN',
+  },
 ];
