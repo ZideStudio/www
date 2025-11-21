@@ -3,6 +3,7 @@
 import BackgroundGrid from '@components/BackgroundGrid';
 import { Button } from '@components/Button';
 import { Tag } from '@components/Tag';
+import { DISCORD_URL } from '@constants/discord';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -40,11 +41,11 @@ export const Landing = () => {
             </span>
             <p className="max-w-xl text-sm font-semibold text-gray-400 md:text-lg">{t('description')}</p>
             <div className="flex-row space-x-5 pt-5">
-              <Button href="/projects" icon="angle-right" className="animate-pulse" primary>
-                {t('projects.view_projects')}
+              <Button href={DISCORD_URL} className="animate-pulse" icon="discord" primary>
+                {t('discord')}
               </Button>
-              <Button href="#about" icon="building-columns">
-                {t('story')}
+              <Button href="/projects" icon="angle-right">
+                {t('projects.view_projects')}
               </Button>
             </div>
           </div>
