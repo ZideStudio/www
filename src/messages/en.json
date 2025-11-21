@@ -45,6 +45,7 @@
     "home": "Home",
     "about": "About Us",
     "projects": "Projects",
+    "contact": "Contact",
     "open_github": "Open GitHub"
   },
   "projects": {
@@ -195,6 +196,25 @@
     "terminationDesc": "These terms may change. The update date is shown at the top of the page.",
     "contactTitle": "Contact",
     "contactDesc": "contact@zide.fr - Response within 5 days"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact us for any questions or suggestions",
+    "form": {
+      "title_label": "Title",
+      "title_placeholder": "Subject of your message",
+      "comment_label": "Comment",
+      "comment_placeholder": "Your message...",
+      "send": "Send",
+      "required": "Required field"
+    },
+    "info": "Your mail application opens with the pre-filled message",
+    "success": {
+      "title": "Thank you for writing to us",
+      "message": "Your message has been successfully prepared in your email application. Please remember to send the email so that we receive it!",
+      "back_home": "Back to home",
+      "send_another": "Send another email"
+    }
   },
   "toast": {
     "copy_url": "URL copied to clipboard!"

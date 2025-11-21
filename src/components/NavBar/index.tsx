@@ -14,6 +14,7 @@ export default async function Navbar() {
     { label: t('home'), href: '/' },
     { label: t('about'), href: '/#about' },
     { label: t('projects'), href: '/projects' },
+    { label: t('contact'), href: '/contact' },
   ];
 
   return <NavbarClient navLinks={navLinks} languageSelector={<LanguageSelector />} />;
