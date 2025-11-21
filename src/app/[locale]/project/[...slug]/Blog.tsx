@@ -2,11 +2,14 @@
 
 import type { Locale } from '@/i18n/config';
 import { createSlug } from '@/utils/slug';
+import { ClickableImage } from '@components/ClickableImage';
 import { CodeBlock } from '@components/CodeBlock';
+import { ImageModal } from '@components/ImageModal';
 import { PROJECTS } from '@constants/projects.data';
 import type { PageContent, Project } from '@models/project.model';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { BlogDetails } from './BlogDetails';
 import { ProjectNavigation } from './ProjectNavigation';
@@ -30,6 +33,7 @@ type BlogProps = {
 export const Blog = ({ project, page }: BlogProps) => {
   const t = useTranslations();
   const currentLocale = useLocale() as Locale;
+  const [enlargedImage, setEnlargedImage] = useState<{ src: string; alt?: string } | null>(null);
 
   const copyTitleUrl = async (event: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => {
     try {
@@ -38,6 +42,14 @@ export const Blog = ({ project, page }: BlogProps) => {
     } catch (err) {
       console.error('Copy failed:', err);
     }
+  };
+
+  const openImageModal = (src: string, alt?: string) => {
+    setEnlargedImage({ src, alt });
+  };
+
+  const closeImageModal = () => {
+    setEnlargedImage(null);
   };
 
   const pages: Page[] = project.pages.map((page) => {
@@ -126,12 +138,7 @@ export const Blog = ({ project, page }: BlogProps) => {
           )}
           {/* eslint-disable-next-line react/no-danger */}
           {content.type === 'paragraph' && <div dangerouslySetInnerHTML={{ __html: content.content }} />}
-          {content.type === 'image' && (
-            <div className="flex flex-col items-center space-y-3">
-              <img src={content.content} alt={content.alt} className="rounded-xl" />
-              {content.alt && <p className="text-text/50 text-sm">{content.alt}</p>}
-            </div>
-          )}
+          {content.type === 'image' && <ClickableImage src={content.content} alt={content.alt} onImageClick={openImageModal} />}
           {content.type === 'code' && (
             <div className="flex flex-col items-center space-y-3">
               <CodeBlock content={content.content} />
@@ -146,6 +153,8 @@ export const Blog = ({ project, page }: BlogProps) => {
         <ProjectNavigation currentProjectIndex={PROJECTS.findIndex((p) => p.slug === project.slug)} />
         <BlogDetails project={project} />
       </div>
+
+      <ImageModal image={enlargedImage} onClose={closeImageModal} />
     </div>
   );
 };
