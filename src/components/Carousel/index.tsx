@@ -112,7 +112,9 @@ export const Carousel = <T,>({ items, renderItem, speed = 5000 }: CarouselProps<
     return () => {
       clearTimeout(id);
       window.removeEventListener('resize', measure);
-      imgs.forEach((img) => img.removeEventListener('load', measure));
+      imgs.forEach((img) => {
+        img.removeEventListener('load', measure);
+      });
     };
   }, [items, extendedItems, numVisible]);
 
