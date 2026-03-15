@@ -5,9 +5,9 @@ export const MEMBER_FEEDBACKS: MemberFeedback[] = [
   {
     member: memberService.getById(1),
     messageEn:
-      'Hey, I am Jules!<br/>As a passionate developer, I create all kinds of applications in my spare time, without pressure or deadlines.<br/>Just for the pleasure of coding and sharing my projects with everyone!',
+      'Hey, my name’s Jules! I’m a long-time developer who creates all sorts of apps in my spare time, with no pressure and no deadlines. I just do it for the sheer joy of coding and sharing my projects with everyone!',
     messageFr:
-      "Hey, je m'appelle Jules!<br/>Développeur passionné, je crée des applications de tout type pendant mon temps libre, sans pression, sans deadlines.<br/>Juste par plaisir de coder et de partager mes projets à tous!",
+      "Hey, je m'appelle Jules! Développeur de longue date, je crée des applications de tout type pendant mon temps libre, sans pression, sans deadlines. Juste par plaisir de coder et de partager mes projets à tous!",
   },
   {
     member: memberService.getById(2),
@@ -15,6 +15,20 @@ export const MEMBER_FEEDBACKS: MemberFeedback[] = [
       "Hi, my name is Elisa! I'm a front-end developer who likes to design small projects that reflect my hobbies and interests, mixing technology and creativity.",
     messageFr:
       "Salut ! Je m'appelle Elisa ! Développeuse orientée front-end, j’aime concevoir de petits projets qui reflètent mes loisirs et mes centres d’intérêts, en mêlant technique et créativité.",
+  },
+  {
+    member: memberService.getById(3),
+    messageEn:
+      'Hello, my name is Guillaume and I’m a front-end developer. I’m really interested in best practices, optimisation, accessibility and so on. This allows me to push myself in my projects, both personal and professional!',
+    messageFr:
+      "Hello, Je m'appelle Guillaume et suis un développeur front-end. Je m'intéresse beaucoup aux bonnes pratiques, optimisations, accessibilité et autre. Cela me permet de me challenger dans mes projets, autant en perso qu'en pro !",
+  },
+  {
+    member: memberService.getById(4),
+    messageEn:
+      "Hi, I'm Hugo! I'm a full-stack developer who loves to keep learning and take on the challenge of innovative projects. I'm always on the lookout for new discoveries, and that's what I love most about this job.",
+    messageFr:
+      "Hello moi c'est Hugo ! Développeur full-stack, j'aime apprendre en continue et me challenger sur des projets innovants. Je suis toujours en quête de nouvelles découvertes et c'est ce que j'aime le plus dans ce métier.",
   },
   {
     member: memberService.getById(0),

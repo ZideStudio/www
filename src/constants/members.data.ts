@@ -33,4 +33,12 @@ export const MEMBERS: Member[] = [
     pictureUrl: 'https://avatars.githubusercontent.com/u/81412571?v=4',
     githubUrl: 'https://github.com/GuillaumeKESTEMAN',
   },
+  {
+    id: 4,
+    name: 'VAYR_hugo',
+    roleEn: 'Full-Stack Developer',
+    roleFr: 'Développeur Full-Stack',
+    pictureUrl: 'https://avatars.githubusercontent.com/u/77483277?v=4',
+    githubUrl: 'https://github.com/sartek430',
+  },
 ];
