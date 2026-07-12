@@ -28,7 +28,7 @@ export const MemberCard = ({ feedback }: MemberCardProps) => {
   };
 
   return (
-    <div className="bg-secondary group border-primary hover:border-text text-text flex h-auto min-h-[16rem] w-full max-w-full flex-col space-y-5 overflow-hidden overflow-y-auto rounded-xl border pt-4 pr-4 pb-8 pl-4 sm:overflow-visible sm:pt-5 sm:pr-5 sm:pb-12 sm:pl-5">
+    <div className="bg-secondary group border-primary hover:border-text text-text flex min-h-[16rem] w-full max-w-full flex-col space-y-5 overflow-hidden overflow-y-auto rounded-xl border pt-4 pr-4 pb-8 pl-4 sm:overflow-visible sm:pt-5 sm:pr-5 sm:pb-12 sm:pl-5">
       <div
         className={`flex w-full max-w-full flex-col items-center sm:flex-row sm:items-start sm:space-x-3 ${feedback.member.githubUrl ? 'cursor-pointer' : ''}`}
         onClick={openGithub}
@@ -38,16 +38,15 @@ export const MemberCard = ({ feedback }: MemberCardProps) => {
         <div className="flex w-full max-w-full flex-col items-center sm:items-start">
           <div className="flex w-full max-w-full flex-row items-center justify-center space-x-2 sm:justify-start">
             {feedback.member.githubUrl && <i className="pi pi-github text-text/50" />}
-            <p className="w-full max-w-full truncate text-center text-xl break-words sm:text-left">{feedback.member.name}</p>
+            <p className="w-full max-w-full truncate text-center text-lg break-words sm:text-left">{feedback.member.name}</p>
           </div>
-          <p className="text-text/25 w-full max-w-full truncate text-center text-lg break-words sm:text-left">{role}</p>
+          <p className="text-text/25 w-full max-w-full truncate text-center text-base break-words sm:text-left">{role}</p>
         </div>
       </div>
       <div className="relative flex min-h-[3rem] w-full max-w-full items-start">
         <QuoteSvg className="absolute -top-2 -left-3 h-6 w-6" />
         <p className="text-text z-5 w-full max-w-full break-words" style={{ wordBreak: 'break-word' }} dangerouslySetInnerHTML={{ __html: message }} />
       </div>
-      <div className="pointer-events-none" style={{ height: '2.5rem' }} />
     </div>
   );
 };

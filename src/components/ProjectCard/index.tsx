@@ -17,7 +17,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const t = useTranslations('projects');
 
   return (
-    <div className="bg-secondary group border-primary hover:border-text flex h-auto min-h-[25rem] w-full max-w-full flex-col overflow-hidden rounded-xl border">
+    <div className="bg-secondary group border-primary hover:border-text flex min-h-[25rem] w-full max-w-full flex-col overflow-hidden rounded-xl border">
       <Link href={`/project/${project.slug}`}>
         <img
           src={`/assets/projects/${project.slug}.png`}
