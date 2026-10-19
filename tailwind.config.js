@@ -24,6 +24,7 @@ module.exports = {
         gridfade: 'rgba(255, 255, 255, 0.03)',
       },
       fontFamily: {
+        sans: ['var(--font-space-grotesk)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         article: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       },
       fontSize: {

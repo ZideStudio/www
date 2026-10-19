@@ -6,7 +6,8 @@ import { ScrollBar } from '@components/ScrollBar';
 import ScrollToTop from '@components/ScrollToTop';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import 'primeicons/primeicons.css';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
@@ -16,9 +17,11 @@ import { tailwindColors } from '../../constants/tailwindColors';
 import { locales } from '../../i18n/config';
 import '../globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const spaceGrotesk = localFont({
+  src: '../../fonts/SpaceGrotesk-Variable.ttf',
+  variable: '--font-space-grotesk',
+  weight: '300 700',
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
@@ -78,7 +81,7 @@ export default async function RootLayout({
         <meta name="google-site-verification" content="oSycr6s-tbcxcGBjTexUhsgH0NinsvxBXBhOokbBPRk" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7960999043141760" crossOrigin="anonymous" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${spaceGrotesk.variable} ${geistMono.variable} antialiased`}>
         <PrimeReactProvider>
           <NextIntlClientProvider messages={messages} locale={locale}>
             <Toaster
