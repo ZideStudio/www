@@ -52,30 +52,40 @@ export const Landing = () => {
           <div className="flex flex-col items-center md:mt-0">
             <motion.div
               className="antiSelect relative h-48 w-80 text-white md:h-64 md:w-[27.4rem]"
-              initial={{ opacity: 0, scale: 0.8, y: -50 }}
-              animate={{
-                opacity: 1,
-                scale: [1, 1.025, 1],
-                rotate: [0, 1, 0],
-              }}
+              initial={{ opacity: 0, scale: 0.3, rotate: -12, filter: 'brightness(3) blur(12px)' }}
+              animate={{ opacity: 1, scale: 1, rotate: 0, filter: 'brightness(1) blur(0px)' }}
               transition={{
-                opacity: { duration: 2, ease: 'easeOut' },
-                scale: {
+                type: 'spring',
+                stiffness: 260,
+                damping: 14,
+                mass: 0.8,
+                opacity: { duration: 0.2, ease: 'easeOut' },
+                filter: { duration: 0.45, ease: 'easeOut' },
+              }}
+            >
+              <motion.div
+                className="relative h-full w-full"
+                animate={{
+                  scale: [1, 1.025, 1],
+                  rotate: [0, 1, 0],
+                }}
+                transition={{
                   duration: 10,
+                  delay: 0.8,
                   repeat: Number.POSITIVE_INFINITY,
                   repeatType: 'mirror',
                   ease: 'easeInOut',
-                },
-              }}
-            >
-              <Image
-                src="/assets/logo/zide_complete.png"
-                alt="ZIDE"
-                fill
-                className="antiSelect object-contain"
-                sizes="(max-width: 768px) 320px, 438px"
-                priority
-              />
+                }}
+              >
+                <Image
+                  src="/assets/logo/zide_complete.png"
+                  alt="ZIDE"
+                  fill
+                  className="antiSelect object-contain"
+                  sizes="(max-width: 768px) 320px, 438px"
+                  priority
+                />
+              </motion.div>
             </motion.div>
             <h1 className="sr-only">Zide</h1>
 

@@ -3,7 +3,7 @@ import { tailwindColors } from '@constants/tailwindColors';
 import { type HTMLProps, useEffect, useState } from 'react';
 import defaultTailwindColors from 'tailwindcss/colors';
 
-const { activeprimary, gridfade } = tailwindColors;
+const { activeprimary, activesecondary, gridfade } = tailwindColors;
 
 interface BackgroundGridProps {
   interactible?: boolean;
@@ -40,7 +40,15 @@ const BackgroundGrid = ({
     </svg>
   `;
 
+  const svgSweep = `
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='${activesecondary}' stroke-width='${strokeWidth}' fill-opacity='0.4'>
+      <path d='M 0 0 L 200 200'/>
+      <path d='M 200 0 L 0 200'/>
+    </svg>
+  `;
+
   const svgDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  const svgDataUrlSweep = `data:image/svg+xml;utf8,${encodeURIComponent(svgSweep)}`;
   const svgDataUrlStatic = `data:image/svg+xml;utf8,${encodeURIComponent(svgStatic)}`;
 
   useEffect(() => {
@@ -74,16 +82,26 @@ const BackgroundGrid = ({
   return (
     <div style={{ zIndex: 0 }}>
       {interactible ? (
-        <div
-          className="pointer-events-none absolute inset-0 h-full"
-          style={{
-            backgroundImage: `url("${svgDataUrl}")`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: cellSize,
-            maskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, ${defaultTailwindColors.white}, transparent 70%)` : undefined,
-            WebkitMaskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, ${defaultTailwindColors.white}, transparent 70%)` : undefined,
-          }}
-        />
+        <>
+          <div
+            className="pointer-events-none absolute inset-0 h-full"
+            style={{
+              backgroundImage: `url("${svgDataUrl}")`,
+              backgroundRepeat: 'repeat',
+              backgroundSize: cellSize,
+              maskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, ${defaultTailwindColors.white}, transparent 70%)` : undefined,
+              WebkitMaskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, ${defaultTailwindColors.white}, transparent 70%)` : undefined,
+            }}
+          />
+          <div
+            className="grid-sweep pointer-events-none absolute inset-0 h-full"
+            style={{
+              backgroundImage: `url("${svgDataUrlSweep}")`,
+              backgroundRepeat: 'repeat',
+              backgroundSize: cellSize,
+            }}
+          />
+        </>
       ) : (
         <div
           className="absolute h-full w-full"

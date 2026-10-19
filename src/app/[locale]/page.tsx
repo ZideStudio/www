@@ -26,7 +26,7 @@ export default async function Page() {
       <Landing />
 
       <div className="bg-primary relative">
-        <Marquee pauseOnClick className="absolute -top-20 z-20 overflow-y-hidden text-9xl font-bold uppercase select-none">
+        <Marquee speed={25} pauseOnClick className="absolute -top-20 z-20 overflow-y-hidden text-9xl font-bold uppercase select-none">
           {[t('banner.webapps'), t('banner.softwares'), t('banner.cli'), t('banner.extensions')].map((item, index) => {
             let textGradient: string;
             let dotGradient: string;
