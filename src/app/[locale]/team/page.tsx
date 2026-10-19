@@ -1,21 +1,27 @@
+import type { Locale } from '@/i18n/config';
 import { PageHeader } from '@components/PageHeader';
+import { buildPageMetadata } from '@utils/seo';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Members } from './members';
 
-export const metadata: Metadata = {
-  title: 'Team',
-  description: 'Meet the developers behind Zide',
-  openGraph: {
-    title: 'Team',
-    description: 'Meet the developers behind Zide',
-    url: `https://zide.fr/team`,
-    siteName: 'Zide',
-    locale: 'en_US',
-    alternateLocale: ['fr_FR'],
-    type: 'website',
-  },
+type PageProps = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seo.team' });
+
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: '/team',
+    title: t('title'),
+    description: t('description'),
+    image: 'https://zide.fr/assets/background/team.jpg',
+  });
+}
 
 export default function TeamPage() {
   const t = useTranslations('team');

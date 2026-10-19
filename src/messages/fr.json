@@ -13,16 +13,26 @@
       "cli": "des outils CLI",
       "softwares": "des logiciels",
       "extensions": "des extensions",
-      "projects": "votre prochaine idée?",
-      "tag": "Notre travail",
-      "title": "Projets en vedette",
-      "description": "Une sélection de projets que nous avons développés via Zide"
+      "projects": "votre prochaine idée?"
     },
     "banner": {
       "webapps": "sites web",
       "cli": "outils CLI",
       "softwares": "logiciels",
       "extensions": "extensions"
+    },
+    "featured": {
+      "tag": "Projet à l'honneur",
+      "image_alt": "Interface de Slot Finder : un calendrier interactif affichant les disponibilités de chacun",
+      "description": "Slot Finder est un site web qui simplifie la planification de vos événements entre amis : il propose automatiquement les créneaux horaires optimaux, ceux qui conviennent à tout le monde.",
+      "love": "Le projet est en cours de développement, c'est un projet que nous aimons beaucoup. Nous aimerions en créer d'autres dans cet esprit : simples, utiles et réalisés avec soin. Suivez son avancée et dites-nous ce que vous aimeriez y voir sur nos réseaux !",
+      "discover": "Découvrir Slot Finder"
+    },
+    "others": {
+      "tag": "À découvrir",
+      "title": "Nos autres projets",
+      "description": "Voici une sélection aléatoire de ce que nous construisons d'autre chez Zide.",
+      "filter_hint": "Envie de tout voir ? Rendez-vous sur la page des projets pour les filtrer par statut, type ou public visé. Certains projets ne sont pas destinés au grand public mais aux développeurs, la liste complète vous aidera à trouver ce qui vous convient."
     }
   },
   "about": {
@@ -34,7 +44,8 @@
       "tag": "À propos de nous",
       "zide": "Zide est un collectif de développeurs passionnés qui créent des outils innovants, destinés aussi bien à des développeurs qu'au grand public.",
       "team": "Notre objectif est de créer un réseau de développeurs motivées qui souhaitent créer des projets pertinents ou contribuer à ceux d'autres personnes pendant leur temps libre. Nous invitons toutes les personnes intéressées par la programmation à rejoindre notre communauté et à partager vos idées avec nous !",
-      "product": "Nous concevons principalement des produits numériques intuitifs, efficaces et hautement personnalisables. Conçus pour simplifier l'expérience utilisateur tout en permettant des flux de travail performants."
+      "product": "Nous concevons principalement des produits numériques intuitifs, efficaces et hautement personnalisables. Conçus pour simplifier l'expérience utilisateur tout en permettant des flux de travail performants.",
+      "language": "Pour le moment, l'équipe communique en français. Avec le temps, nous internationaliserons plus amplement la structure."
     },
     "languages": {
       "tag": "Sous le capot",
@@ -67,7 +78,8 @@
       "released": "Publié",
       "planned": "Prévu",
       "planned_for": "Prévu pour le",
-      "target": "Cible"
+      "target": "Cible",
+      "planned_for_month": "Prévu pour"
     },
     "key-features": "Fonctionnalités Principales",
     "install": "Installer",
@@ -86,7 +98,8 @@
       "planned": "Planifié",
       "in_progress": "En Cours",
       "paused": "En Pause",
-      "released": "Publié"
+      "released": "Publié",
+      "deprecated": "Déprécié"
     },
     "type": {
       "website": "Site web",
@@ -231,5 +244,19 @@
   },
   "toast": {
     "copy_url": "URL copiée dans le presse-papiers !"
+  },
+  "seo": {
+    "home": {
+      "title": "Zide",
+      "description": "Simplicité digitale, efficacité totale. Nous développons des applications open-source pour vous aider à gagner en efficacité."
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Zide est un collectif de développeurs passionnés qui créent des outils innovants, pour les développeurs comme pour le grand public."
+    },
+    "team": {
+      "title": "Notre équipe",
+      "description": "Rencontrez les développeurs derrière Zide : des bénévoles passionnés de programmation qui construisent des projets open-source ensemble."
+    }
   }
 }

@@ -13,16 +13,26 @@
       "cli": "CLI tools",
       "softwares": "softwares",
       "extensions": "extensions",
-      "projects": "your next idea?",
-      "tag": "Our Work",
-      "title": "Featured projects",
-      "description": "A selection of projects we have developed through Zide"
+      "projects": "your next idea?"
     },
     "banner": {
       "webapps": "websites",
       "cli": "CLI tools",
       "softwares": "softwares",
       "extensions": "extensions"
+    },
+    "featured": {
+      "tag": "Project spotlight",
+      "image_alt": "Slot Finder interface: an interactive calendar showing everyone's availability",
+      "description": "Slot Finder is a website that simplifies planning events with your friends: it automatically suggests the optimal time slots, the ones that suit everyone.",
+      "love": "The project is in development, and it's one we love dearly. We would like to build more tools in the same spirit: simple, useful and made with care. Follow its progress and tell us on our social networks what you would like to see!",
+      "discover": "Discover Slot Finder"
+    },
+    "others": {
+      "tag": "More to explore",
+      "title": "Our other projects",
+      "description": "Here is a random selection of what else we are building at Zide.",
+      "filter_hint": "Want to see everything? Head to the projects page to filter them by status, type or audience. Some projects are not meant for the general public but for developers, so the full list will help you find what suits you."
     }
   },
   "about": {
@@ -34,7 +44,8 @@
       "tag": "About Us",
       "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
       "team": "Our aim is to build a network of motivated people who want to create relevant projects or contribute to those of others in their free time. We welcome anyone interested in programming to join our community and share their ideas with us!",
-      "product": "We mainly craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows."
+      "product": "We mainly craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows.",
+      "language": "For now, the team communicates in French. Over time, we will make the structure more international."
     },
     "languages": {
       "tag": "Under the hood",
@@ -67,7 +78,8 @@
       "released": "Released",
       "planned": "Planned",
       "planned_for": "Planned for",
-      "target": "Target"
+      "target": "Target",
+      "planned_for_month": "Planned for"
     },
     "key-features": "Key Features",
     "install": "Install",
@@ -86,7 +98,8 @@
       "planned": "Planned",
       "in_progress": "In Progress",
       "paused": "Paused",
-      "released": "Released"
+      "released": "Released",
+      "deprecated": "Deprecated"
     },
     "type": {
       "website": "Website",
@@ -231,5 +244,19 @@
   },
   "toast": {
     "copy_url": "URL copied to clipboard!"
+  },
+  "seo": {
+    "home": {
+      "title": "Zide",
+      "description": "Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public."
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Meet the developers behind Zide: volunteers passionate about programming who build open-source projects together."
+    }
   }
 }

@@ -1,22 +1,22 @@
+import type { Locale } from '@/i18n/config';
 import { PageHeader } from '@components/PageHeader';
+import { buildPageMetadata } from '@utils/seo';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Languages } from './languages';
 import { Presentation } from './presentation';
 
-export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public',
-  openGraph: {
-    title: 'About Us',
-    description: 'Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public',
-    url: `https://zide.fr/about`,
-    siteName: 'Zide',
-    locale: 'en_US',
-    alternateLocale: ['fr_FR'],
-    type: 'website',
-  },
+type PageProps = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seo.about' });
+
+  return buildPageMetadata({ locale: locale as Locale, path: '/about', title: t('title'), description: t('description') });
+}
 
 export default function AboutPage() {
   const t = useTranslations('about');

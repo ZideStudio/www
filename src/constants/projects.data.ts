@@ -30,6 +30,10 @@ export const projectStatusLabels: Record<ProjectStatus, { label: string; color: 
     label: 'Paused',
     color: 'bg-black/50',
   },
+  DEPRECATED: {
+    label: 'Deprecated',
+    color: 'bg-black/50',
+  },
   RELEASED: {
     label: '🎉 Released',
     color: 'bg-green-500',

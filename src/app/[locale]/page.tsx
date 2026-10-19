@@ -1,28 +1,22 @@
+import type { Locale } from '@/i18n/config';
+import { buildPageMetadata } from '@utils/seo';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Marquee from 'react-fast-marquee';
+import { HomeFeaturedProject } from './home/featured';
 import { Landing } from './home/landing';
-import { HomeProjects } from './home/projects';
+import { HomeOtherProjects } from './home/others';
 
-export const metadata: Metadata = {
-  title: 'Zide',
-  description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
-  openGraph: {
-    title: 'Zide',
-    description: 'Digital simplicity, greater efficiency. We develop open-source applications to help you improve your efficiency',
-    url: `https://zide.fr`,
-    siteName: 'Zide',
-    images: [
-      {
-        url: `https://zide.fr/assets/logo/zide_complete.png`,
-        alt: 'Zide',
-      },
-    ],
-    locale: 'en_US',
-    alternateLocale: ['fr_FR'],
-    type: 'website',
-  },
+type PageProps = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seo.home' });
+
+  return buildPageMetadata({ locale: locale as Locale, path: '', title: t('title'), description: t('description') });
+}
 
 export default async function Page() {
   const t = await getTranslations('home');
@@ -55,7 +49,8 @@ export default async function Page() {
         </Marquee>
 
         <div className="flex flex-col space-y-40 md:my-16">
-          <HomeProjects />
+          <HomeFeaturedProject />
+          <HomeOtherProjects />
         </div>
       </div>
     </div>

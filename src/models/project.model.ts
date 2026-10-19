@@ -20,6 +20,8 @@ export type Project = {
   target: ProjectTarget;
   type: ProjectType;
   isOpenSource: boolean;
+  /** Optional wordmark, only used on the home page for now. */
+  logo?: string;
   link?: {
     github?: string;
     website?: string;
@@ -44,6 +46,7 @@ export enum ProjectStatus {
   IN_PROGRESS = 'IN_PROGRESS',
   PAUSED = 'PAUSED',
   PLANNED = 'PLANNED',
+  DEPRECATED = 'DEPRECATED',
 }
 
 export enum ProjectTarget {

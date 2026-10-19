@@ -24,6 +24,10 @@ export const Presentation = () => {
           <h2 className="text-text">{t('zide')}</h2>
           <p className="text-text">{t('team')}</p>
           <p className="text-text">{t('product')}</p>
+          <p className="border-text/10 bg-secondary text-text/75 flex items-start gap-3 rounded-xl border p-4 text-sm">
+            <i className="pi pi-language text-activesecondary mt-0.5 shrink-0 text-lg" />
+            <span>{t('language')}</span>
+          </p>
         </div>
       </div>
     </div>

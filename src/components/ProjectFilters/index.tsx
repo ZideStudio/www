@@ -56,6 +56,9 @@ export const ProjectFilters = ({ setNameAction, setTargetAction, setStatusAction
         case ProjectStatus.PLANNED:
           icon = 'calendar-clock';
           break;
+        case ProjectStatus.DEPRECATED:
+          icon = 'ban';
+          break;
         default:
           break;
       }
