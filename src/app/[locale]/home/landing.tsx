@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Typewriter } from 'react-simple-typewriter';
+import { ScrollIndicator } from './scroll-indicator';
 
 export const Landing = () => {
   const t = useTranslations('home');
@@ -115,6 +116,7 @@ export const Landing = () => {
           </div>
         </div>
       </div>
+      <ScrollIndicator />
       <div className="relative">
         <div className="to-primary pointer-events-none absolute bottom-0 z-0 h-20 w-full bg-gradient-to-b from-transparent" />
       </div>
