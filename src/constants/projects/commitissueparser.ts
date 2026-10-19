@@ -8,6 +8,7 @@ const { activesecondary } = tailwindColors;
 export const commitIssueParserProject: Project = {
   title: 'Commit Issue Parser',
   slug: 'commit-issue-parser',
+  mainColor: '#FF6463',
   descriptionEn:
     'This Raycast extension allows you to parse your issue urls (such as Jira, GitHub and GitLab) to provide you with a commit name and description that you can use with Git!',
   descriptionFr:

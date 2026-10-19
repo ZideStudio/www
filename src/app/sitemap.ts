@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: 'https://zide.fr/#team',
+      url: 'https://zide.fr/team',
       lastModified: '2025-11-21',
       changeFrequency: 'monthly',
       priority: 0.9,

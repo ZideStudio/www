@@ -3,6 +3,7 @@ import type { Member } from './member.model';
 export type Project = {
   title: string;
   slug: string;
+  mainColor: string;
   pages: ProjectPage[];
   descriptionEn: string;
   descriptionFr: string;

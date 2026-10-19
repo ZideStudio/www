@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import Marquee from 'react-fast-marquee';
 import { Landing } from './home/landing';
 import { HomeProjects } from './home/projects';
-import { Team } from './home/team';
 
 export const metadata: Metadata = {
   title: 'Zide',
@@ -57,7 +56,6 @@ export default async function Page() {
 
         <div className="flex flex-col space-y-40 md:my-16">
           <HomeProjects />
-          <Team />
         </div>
       </div>
     </div>

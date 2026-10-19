@@ -5,6 +5,7 @@ import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model
 export const cryptiPicsProject: Project = {
   title: 'CryptiPics',
   slug: 'cryptipics',
+  mainColor: '#3A74B9',
   descriptionEn: 'A website for sharing information securely and anonymously. Features secure pastebin, cryptography tool and steganography.',
   descriptionFr:
     'Un site web pour partager des informations de manière sécurisée et anonyme. Propose un pastebin sécurisé, un outil de chiffrement sur les images et un outil de stéganographie sur les images.',
@@ -174,5 +175,5 @@ export const cryptiPicsProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
-  contributors: [memberService.getById(1), memberService.getById(2)],
+  contributors: [memberService.getById(1), memberService.getById(2), memberService.getById(3)],
 };

@@ -1,4 +1,4 @@
-import { PageBanner } from '@components/PageBanner';
+import { PageHeader } from '@components/PageHeader';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Projects } from './client';
@@ -22,7 +22,7 @@ export default function Page() {
 
   return (
     <div className="text-text">
-      <PageBanner
+      <PageHeader
         title={t('banner.title')}
         descriptionEn={t('banner.description')}
         descriptionFr={t('banner.description')}

@@ -5,6 +5,7 @@ import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model
 export const zequelProject: Project = {
   title: 'Zequel',
   slug: 'zequel',
+  mainColor: '#E48E00',
   descriptionEn: 'SQL client software, with a lot of features and a simple intuitive interface.',
   descriptionFr: 'Logiciel client SQL, avec de nombreuses fonctionnalités et une interface intuitive simple.',
   releaseDate: {

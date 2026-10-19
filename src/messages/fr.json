@@ -23,11 +23,6 @@
       "cli": "outils CLI",
       "softwares": "logiciels",
       "extensions": "extensions"
-    },
-    "team": {
-      "tag": "Notre Équipe",
-      "title": "Rencontrez l'équipe",
-      "description": "Développeurs passionnés par la programmation et les projets innovants"
     }
   },
   "about": {
@@ -43,10 +38,21 @@
       "description": "Les langages, les frameworks et les outils avec lesquels nous avons l'habitude de travailler. Nous sommes ouverts à toutes les solutions adaptées aux besoins du projet."
     }
   },
+  "team": {
+    "banner": {
+      "title": "Notre équipe",
+      "description": "Voici les personnes qui font vivre Zide : des développeurs passionnés par la programmation et les projets innovants."
+    },
+    "join": {
+      "title": "Envie de rejoindre l'équipe ?",
+      "description": "Vous êtes développeur ? Contribuez aux projets de Zide ou partagez les vôtres. <discord>Rejoignez-nous sur Discord</discord> ou <contact>contactez-nous par mail</contact>, nous serons ravis d'échanger avec vous !"
+    },
+    "worked_on": "A travaillé sur"
+  },
   "navbar": {
     "home": "Accueil",
     "about": "À propos",
-    "team": "Équipe",
+    "team": "L'équipe",
     "projects": "Projets",
     "contact": "Contact",
     "open_github": "Ouvrir GitHub"

@@ -23,11 +23,6 @@
       "cli": "CLI tools",
       "softwares": "softwares",
       "extensions": "extensions"
-    },
-    "team": {
-      "tag": "Our Team",
-      "title": "Meet the team",
-      "description": "Developers passionate about programming and innovative projects"
     }
   },
   "about": {
@@ -43,10 +38,21 @@
       "description": "The languages, frameworks and tools we are used to working with. We are open to all solutions adapted to project needs."
     }
   },
+  "team": {
+    "banner": {
+      "title": "Our team",
+      "description": "Meet the people who bring Zide to life: developers passionate about programming and innovative projects."
+    },
+    "join": {
+      "title": "Want to join the team?",
+      "description": "Are you a developer? Contribute to Zide's projects or share your own. <discord>Join us on Discord</discord> or <contact>contact us by email</contact>, we'd love to hear from you!"
+    },
+    "worked_on": "Worked on"
+  },
   "navbar": {
     "home": "Home",
     "about": "About Us",
-    "team": "Team",
+    "team": "The Team",
     "projects": "Projects",
     "contact": "Contact",
     "open_github": "Open GitHub"

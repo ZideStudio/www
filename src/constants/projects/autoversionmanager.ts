@@ -5,6 +5,7 @@ import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model
 export const autoVersionManagerProject: Project = {
   title: 'Auto Version Manager',
   slug: 'avm',
+  mainColor: '#555',
   descriptionEn: 'A CLI to manage your versions managers automatically. Compatible with NVM, GVM, Rustup, and more!',
   descriptionFr: 'Un CLI pour gérer automatiquement vos gestionnaires de versions. Compatible avec NVM, GVM, Rustup, et plus encore !',
   releaseDate: {

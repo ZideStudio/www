@@ -1,7 +1,7 @@
 'use client';
 
 import { PROJECTS } from '@constants/projects.data';
-import { PROJECT_STATUS } from '@constants/projectStatus';
+import { compareProjectsByNewest, compareProjectsByStatus } from '@utils/project';
 
 export type ProjectFilter = {
   name?: string;
@@ -35,30 +35,17 @@ export const useProjects = ({ filters }: UseProjectsProps) => {
 
   // sorting
   if (filters.sort === 'oldest') {
-    projects = projects.sort((a, b) => {
-      const aDate = a.releaseDate?.date ?? a.releaseDate?.planned ?? 0;
-      const bDate = b.releaseDate?.date ?? b.releaseDate?.planned ?? 0;
-      return Number(aDate) - Number(bDate);
-    });
+    projects = projects.sort((a, b) => compareProjectsByNewest(b, a));
   } else if (filters.sort === 'alphabetical') {
     projects = projects.sort((a, b) => a.title.localeCompare(b.title));
   } else if (filters.sort === 'reverseAlphabetical') {
     projects = projects.sort((a, b) => b.title.localeCompare(a.title));
   } else {
-    projects = projects.sort((a, b) => {
-      const aDate = a.releaseDate?.date ?? a.releaseDate?.planned ?? 0;
-      const bDate = b.releaseDate?.date ?? b.releaseDate?.planned ?? 0;
-      return Number(bDate) - Number(aDate);
-    });
+    projects = projects.sort(compareProjectsByNewest);
   }
 
   if (!filters.status) {
-    projects = projects.sort((a, b) => {
-      const aStatusIndex = PROJECT_STATUS.indexOf(a.status);
-      const bStatusIndex = PROJECT_STATUS.indexOf(b.status);
-
-      return aStatusIndex - bStatusIndex;
-    });
+    projects = projects.sort(compareProjectsByStatus);
   }
 
   return {

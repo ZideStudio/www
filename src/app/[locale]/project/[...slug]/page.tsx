@@ -1,5 +1,5 @@
 import Ad from '@components/Ad';
-import { PageBanner } from '@components/PageBanner';
+import { PageHeader } from '@components/PageHeader';
 import { PROJECTS } from '@constants/projects.data';
 import type { Project } from '@models/project.model';
 import type { Metadata } from 'next';
@@ -64,7 +64,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div className="text-text">
-      <PageBanner
+      <PageHeader
         title={project.title}
         descriptionEn={project.descriptionEn}
         descriptionFr={project.descriptionFr}

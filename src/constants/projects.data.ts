@@ -5,6 +5,7 @@ import { cryptiPicsProject } from './projects/cryptipics';
 import { slotFinderProject } from './projects/slotfinder';
 import { wakfuThemeProject } from './projects/wakfutheme';
 import { zequelProject } from './projects/zequel';
+import { zideFrProject } from './projects/zidefr';
 
 export const PROJECTS: Project[] = [
   autoVersionManagerProject,
@@ -13,6 +14,7 @@ export const PROJECTS: Project[] = [
   cryptiPicsProject,
   zequelProject,
   slotFinderProject,
+  zideFrProject,
 ];
 
 export const projectStatusLabels: Record<ProjectStatus, { label: string; color: string }> = {

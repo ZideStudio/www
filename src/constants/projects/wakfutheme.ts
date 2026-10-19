@@ -5,6 +5,7 @@ import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model
 export const wakfuThemeProject: Project = {
   title: 'Wakfu Theme (Zed IDE)',
   slug: 'wakfu-theme',
+  mainColor: '#112',
   descriptionEn: 'A dark and clear theme that allows you to customise your IDE, compatible with Zed.',
   descriptionFr: 'Un thème sombre et clair qui vous permet de personnaliser votre IDE, compatible avec Zed.',
   releaseDate: {

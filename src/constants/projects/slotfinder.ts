@@ -5,6 +5,7 @@ import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model
 export const slotFinderProject: Project = {
   title: 'Slot Finder',
   slug: 'slotfinder',
+  mainColor: '#E72775',
   descriptionEn: 'No more endless discussions to find a date: let us suggest the best times that suit everyone.',
   descriptionFr: 'Fini les discussions interminables pour trouver une date: laissez-nous vous proposer les meilleurs créneaux communs.',
   releaseDate: {
@@ -186,5 +187,5 @@ export const slotFinderProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
-  contributors: [memberService.getById(1), memberService.getById(3), memberService.getById(2), memberService.getById(4)],
+  contributors: [memberService.getById(1), memberService.getById(2), memberService.getById(3), memberService.getById(4)],
 };
