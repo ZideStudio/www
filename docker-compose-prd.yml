@@ -8,6 +8,7 @@ services:
     container_name: zide-website-prd
     image: $IMAGE_NAME
     restart: unless-stopped
+    env_file: .env
     networks:
       - zide-traefik-n
     labels:

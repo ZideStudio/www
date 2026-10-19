@@ -8,6 +8,7 @@ services:
     container_name: zide-website-stg
     image: $IMAGE_NAME
     restart: unless-stopped
+    env_file: .env
     labels:
       - 'traefik.enable=true'
       - 'traefik.docker.network=zide-traefik-n'

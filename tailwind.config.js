@@ -17,6 +17,7 @@ module.exports = {
         activesecondary: '#06AEF7',
         text: '#ECEEEF',
         toast: '#333333',
+        danger: '#EF4444',
         quote: '#323232',
         scrollbar: '#38BDF8',
         heading: 'hsl(196, 100%, 56%)',

@@ -10,9 +10,10 @@ type ButtonProps = {
   href?: string;
   target?: string;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 };
 
-export const Button = ({ children, className, icon, iconClassName, primary, onClick, href, target, type = 'button' }: ButtonProps) => {
+export const Button = ({ children, className, icon, iconClassName, primary, onClick, href, target, type = 'button', disabled }: ButtonProps) => {
   const childrenWithIcon = (
     <>
       {children}
@@ -24,7 +25,8 @@ export const Button = ({ children, className, icon, iconClassName, primary, onCl
     return (
       <button
         type={type}
-        className={`ring-offset-background inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold whitespace-nowrap transition-all duration-300 select-none hover:scale-105 md:px-8 ${className ? className : !primary ? 'bg-primary text-text border-text border' : ''} ${primary ? 'bg-text border-primary text-primary border' : ''}`}
+        disabled={disabled}
+        className={`ring-offset-background inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold whitespace-nowrap transition-all duration-300 select-none hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 md:px-8 ${className ? className : !primary ? 'bg-primary text-text border-text border' : ''} ${primary ? 'bg-text border-primary text-primary border' : ''}`}
         onClick={onClick}
       >
         {childrenWithIcon}
