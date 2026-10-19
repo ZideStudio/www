@@ -14,7 +14,7 @@ export const Team = () => {
     <div id="team" className="flex flex-col items-center justify-around px-10 lg:px-20">
       <div className="flex flex-col items-center justify-center space-y-3">
         <Tag>{t('tag')}</Tag>
-        <Title id="about">{t('title')}</Title>
+        <Title>{t('title')}</Title>
         <p className="text-text">{t('description')}</p>
       </div>
 

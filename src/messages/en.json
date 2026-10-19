@@ -24,6 +24,13 @@
       "softwares": "softwares",
       "extensions": "extensions"
     },
+    "team": {
+      "tag": "Our Team",
+      "title": "Meet the team",
+      "description": "Developers passionate about programming and innovative projects"
+    }
+  },
+  "about": {
     "presentation": {
       "tag": "About Us",
       "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
@@ -34,11 +41,6 @@
       "tag": "Under the hood",
       "title": "Languages we like",
       "description": "The languages, frameworks and tools we are used to working with. We are open to all solutions adapted to project needs."
-    },
-    "team": {
-      "tag": "Our Team",
-      "title": "Meet the team",
-      "description": "Developers passionate about programming and innovative projects"
     }
   },
   "navbar": {

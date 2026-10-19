@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Marquee from 'react-fast-marquee';
 import { Landing } from './home/landing';
-import { Languages } from './home/languages';
-import { Presentation } from './home/presentation';
 import { HomeProjects } from './home/projects';
 import { Team } from './home/team';
 
@@ -58,9 +56,7 @@ export default async function Page() {
         </Marquee>
 
         <div className="flex flex-col space-y-40 md:my-16">
-          <Presentation />
           <HomeProjects />
-          <Languages />
           <Team />
         </div>
       </div>
