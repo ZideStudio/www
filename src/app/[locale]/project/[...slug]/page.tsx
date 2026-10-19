@@ -1,7 +1,9 @@
+import type { Locale } from '@/i18n/config';
 import Ad from '@components/Ad';
 import { PageHeader } from '@components/PageHeader';
 import { PROJECTS } from '@constants/projects.data';
 import type { Project } from '@models/project.model';
+import { buildPageMetadata, SITE_URL } from '@utils/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Blog } from './Blog';
@@ -14,7 +16,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const projectSlug = slug[0];
 
   const project: Project | undefined = PROJECTS.find((project) => project.slug === projectSlug);
@@ -26,29 +28,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  return {
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: `/project/${project.slug}`,
     title: project.title,
-    description: project.descriptionEn,
-    openGraph: {
-      title: project.title,
-      description: project.descriptionEn,
-      url: `https://zide.fr/projects/${projectSlug}`,
-      siteName: 'Zide',
-      images: [
-        {
-          url: `https://zide.fr/assets/projects/${project.slug}.png`,
-          alt: project.title,
-        },
-      ],
-      locale: 'en_US',
-      alternateLocale: ['fr_FR'],
-      type: 'website',
-    },
-  };
+    description: locale === 'fr' ? project.descriptionFr : project.descriptionEn,
+    image: `${SITE_URL}/assets/projects/${project.slug}.png`,
+  });
 }
 
 type PageProps = {
-  params: Promise<{ slug: string[] }>;
+  params: Promise<{ locale: string; slug: string[] }>;
 };
 
 export default async function Page({ params }: PageProps) {

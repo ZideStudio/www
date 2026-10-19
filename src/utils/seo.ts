@@ -3,7 +3,7 @@ import { locales } from '@/i18n/config';
 import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://zide.fr';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/logo/zide_complete.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/og/zide_banner.png`;
 
 const OPEN_GRAPH_LOCALES: Record<Locale, string> = {
   en: 'en_US',
