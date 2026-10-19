@@ -26,6 +26,10 @@
     }
   },
   "about": {
+    "banner": {
+      "title": "About Us",
+      "description": "Discover the collective behind Zide: passionate developers building tools that make a difference for developers and the general public alike."
+    },
     "presentation": {
       "tag": "About Us",
       "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",

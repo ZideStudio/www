@@ -26,6 +26,10 @@
     }
   },
   "about": {
+    "banner": {
+      "title": "À propos de nous",
+      "description": "Découvrez le collectif derrière Zide : des développeurs passionnés qui créent des outils utiles aussi bien aux développeurs qu'au grand public."
+    },
     "presentation": {
       "tag": "À propos de nous",
       "zide": "Zide est un collectif de développeurs passionnés qui créent des outils innovants, destinés aussi bien à des développeurs qu'au grand public.",

@@ -27,7 +27,6 @@ export default function TeamPage() {
         descriptionEn={t('banner.description')}
         descriptionFr={t('banner.description')}
         imagePath="/assets/background/team.jpg"
-        variant="light"
       />
       <Members />
     </div>
