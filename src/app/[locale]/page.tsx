@@ -26,7 +26,11 @@ export default async function Page() {
       <Landing />
 
       <div className="bg-primary relative">
-        <Marquee speed={25} pauseOnClick className="absolute -top-20 z-20 overflow-y-hidden text-9xl font-bold uppercase select-none">
+        <Marquee
+          speed={25}
+          pauseOnClick
+          className="absolute -top-10 z-20 overflow-y-hidden text-7xl font-bold uppercase select-none sm:-top-14 sm:text-8xl md:-top-20 md:text-9xl"
+        >
           {[t('banner.webapps'), t('banner.softwares'), t('banner.cli'), t('banner.extensions')].map((item, index) => {
             let textGradient: string;
             let dotGradient: string;
@@ -41,14 +45,14 @@ export default async function Page() {
             return (
               // eslint-disable-next-line react/no-array-index-key
               <div key={index} className="flex flex-row justify-center align-middle">
-                <p className={`bebas-neue-regular ${textGradient} ml-5 bg-gradient-to-r bg-clip-text text-transparent`}>{item}</p>
-                <i className={`pi pi-circle-fill ${dotGradient} my-auto ml-5 text-3xl`} />
+                <p className={`bebas-neue-regular ${textGradient} ml-3 bg-gradient-to-r bg-clip-text text-transparent sm:ml-5`}>{item}</p>
+                <i className={`pi pi-circle-fill ${dotGradient} my-auto ml-3 text-xl sm:ml-5 sm:text-2xl md:text-3xl`} />
               </div>
             );
           })}
         </Marquee>
 
-        <div className="flex flex-col space-y-40 md:my-16">
+        <div className="flex flex-col space-y-24 pt-10 md:my-16 md:space-y-40 md:pt-0">
           <HomeFeaturedProject />
           <HomeOtherProjects />
         </div>
