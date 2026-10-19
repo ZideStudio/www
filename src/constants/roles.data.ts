@@ -9,8 +9,8 @@ export const ROLES: Record<MemberRole, RoleLabels> = {
   [MemberRole.FOUNDER]: {
     labelEn: 'Zide Founder',
     labelFr: {
-      [MemberGender.MALE]: 'Fondateur Zide',
-      [MemberGender.FEMALE]: 'Fondatrice Zide',
+      [MemberGender.MALE]: 'Fondateur de Zide',
+      [MemberGender.FEMALE]: 'Fondatrice de Zide',
     },
   },
   [MemberRole.FULL_STACK_DEVELOPER]: {

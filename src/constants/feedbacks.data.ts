@@ -5,9 +5,9 @@ export const MEMBER_FEEDBACKS: MemberFeedback[] = [
   {
     member: memberService.getById(1),
     messageEn:
-      'Hey, my name’s Jules! I’m a long-time developer, I love creating all kinds of apps in my spare time, with no pressure or deadlines. Just for the joy of sharing my ideas with everyone!',
+      'Hei, my name’s Jules! I love creating all kinds of apps in my spare time. All with no pressure or deadlines, just for the joy of sharing my ideas with everyone!',
     messageFr:
-      "Hey, je m'appelle Jules ! Créer des applications de tout type pendant mon temps libre me plait. Cela sans pression ni deadlines, juste par plaisir de partager mes idées avec tous !",
+      "Hei, je m'appelle Jules ! J'adore créer des applications de tout type pendant mon temps libre. Tout ça sans pression ni deadlines, juste par plaisir de partager mes idées à tous !",
   },
   {
     member: memberService.getById(2),
