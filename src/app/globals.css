@@ -34,7 +34,7 @@ body {
   height: 7px;
   right: 0;
   top: 0;
-  background: #38bdf8;
+  background: theme(colors.scrollbar);
   border-radius: 50%;
 }
 
@@ -46,11 +46,11 @@ body {
   transform: translate(-50%, 0%);
   width: 7px;
   height: var(--p);
-  background: linear-gradient(0deg, #38bdf8, transparent);
+  background: linear-gradient(0deg, theme(colors.scrollbar), transparent);
 }
 
 .heading {
-  color: hsl(196, 100%, 56%);
+  color: theme(colors.heading);
   text-decoration: underline;
   margin-bottom: 0.9rem;
 }

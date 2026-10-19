@@ -51,7 +51,7 @@ export const Landing = () => {
           </div>
           <div className="flex flex-col items-center md:mt-0">
             <motion.div
-              className="antiSelect text-text relative h-48 w-80 md:h-64 md:w-[27.4rem]"
+              className="antiSelect relative h-48 w-80 text-white md:h-64 md:w-[27.4rem]"
               initial={{ opacity: 0, scale: 0.8, y: -50 }}
               animate={{
                 opacity: 1,
@@ -67,7 +67,6 @@ export const Landing = () => {
                   ease: 'easeInOut',
                 },
               }}
-              style={{ color: 'white' }}
             >
               <Image
                 src="/assets/logo/zide_complete.png"

@@ -11,6 +11,8 @@ import 'primeicons/primeicons.css';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import { Toaster } from 'react-hot-toast';
+import defaultTailwindColors from 'tailwindcss/colors';
+import { tailwindColors } from '../../constants/tailwindColors';
 import { locales } from '../../i18n/config';
 import '../globals.css';
 
@@ -83,8 +85,8 @@ export default async function RootLayout({
               toastOptions={{
                 style: {
                   border: '10px',
-                  background: '#333',
-                  color: '#fff',
+                  background: tailwindColors.toast,
+                  color: defaultTailwindColors.white,
                 },
               }}
             />

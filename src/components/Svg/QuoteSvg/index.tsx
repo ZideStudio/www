@@ -4,7 +4,14 @@ type QuoteSvgProps = {
 };
 
 export const QuoteSvg = ({ className }: QuoteSvgProps) => (
-  <svg className={className} fill="#323232" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enableBackground="new 0 0 40 40">
+  <svg
+    className={['fill-quote', className].filter(Boolean).join(' ')}
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 40 40"
+    enableBackground="new 0 0 40 40"
+  >
     <g display="none">
       <path
         display="inline"

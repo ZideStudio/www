@@ -16,6 +16,11 @@ module.exports = {
         activeprimary: '#00579F',
         activesecondary: '#06AEF7',
         text: '#ECEEEF',
+        toast: '#333333',
+        quote: '#323232',
+        scrollbar: '#38BDF8',
+        heading: 'hsl(196, 100%, 56%)',
+        gridfade: 'rgba(255, 255, 255, 0.03)',
       },
       fontFamily: {
         article: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],

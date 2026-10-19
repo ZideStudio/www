@@ -1,5 +1,9 @@
 'use client';
+import { tailwindColors } from '@constants/tailwindColors';
 import { type HTMLProps, useEffect, useState } from 'react';
+import defaultTailwindColors from 'tailwindcss/colors';
+
+const { activeprimary, gridfade } = tailwindColors;
 
 interface BackgroundGridProps {
   interactible?: boolean;
@@ -12,7 +16,7 @@ interface BackgroundGridProps {
 
 const BackgroundGrid = ({
   interactible,
-  defaultColor = '#00579F',
+  defaultColor = activeprimary,
   cellSize = '5px',
   strokeWidth = '5px',
   fade = true,
@@ -30,7 +34,7 @@ const BackgroundGrid = ({
   `;
 
   const svgStatic = `
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='white' stroke-width='${strokeWidth}' fill-opacity='0.4'>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='${defaultTailwindColors.white}' stroke-width='${strokeWidth}' fill-opacity='0.4'>
       <path d='M 0 0 L 200 200'/>
       <path d='M 200 0 L 0 200'/>
     </svg>
@@ -76,8 +80,8 @@ const BackgroundGrid = ({
             backgroundImage: `url("${svgDataUrl}")`,
             backgroundRepeat: 'repeat',
             backgroundSize: cellSize,
-            maskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, white, transparent 70%)` : undefined,
-            WebkitMaskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, white, transparent 70%)` : undefined,
+            maskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, ${defaultTailwindColors.white}, transparent 70%)` : undefined,
+            WebkitMaskImage: fade ? `radial-gradient(circle at ${maskX}% ${maskY}%, ${defaultTailwindColors.white}, transparent 70%)` : undefined,
           }}
         />
       ) : (
@@ -87,8 +91,8 @@ const BackgroundGrid = ({
             backgroundImage: `url("${svgDataUrlStatic}")`,
             backgroundRepeat: 'repeat',
             backgroundSize: cellSize,
-            maskImage: `linear-gradient(to bottom, white 1%, rgba(255, 255, 255, 3%) 100%)`,
-            WebkitMaskImage: `linear-gradient(to bottom, white 1%, rgba(255, 255, 255, 3%) 100%)`,
+            maskImage: `linear-gradient(to bottom, ${defaultTailwindColors.white} 1%, ${gridfade} 100%)`,
+            WebkitMaskImage: `linear-gradient(to bottom, ${defaultTailwindColors.white} 1%, ${gridfade} 100%)`,
             opacity: 1,
             filter: 'opacity(0.1)',
           }}

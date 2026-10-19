@@ -1,6 +1,9 @@
 import memberService from '@/services/member';
+import { tailwindColors } from '@constants/tailwindColors';
 import type { Project } from '@models/project.model';
 import { ProjectStatus, ProjectTarget, ProjectType } from '@models/project.model';
+
+const { activesecondary } = tailwindColors;
 
 export const commitIssueParserProject: Project = {
   title: 'Commit Issue Parser',
@@ -57,10 +60,8 @@ export const commitIssueParserProject: Project = {
         },
         {
           type: 'paragraph',
-          contentEn:
-            'Install <a style="color: #06AEF7;" href="https://www.raycast.com" target="_blank">Raycast</a> and the <a style="color: #06AEF7;" href="https://www.raycast.com/julesjuul/commit-issue-parser" target="_blank">Commit Issue Parser</a> extension. You can then define a keyboard shortcut to launch the extension quickly.',
-          contentFr:
-            'Installer <a style="color: #06AEF7;" href="https://www.raycast.com" target="_blank">Raycast</a> et l\'extension <a style="color: #06AEF7;" href="https://www.raycast.com/julesjuul/commit-issue-parser" target="_blank">Commit Issue Parser</a>. Vous pouvez ensuite définir un racourci clavier pour lancer l\'extension rapidement.',
+          contentEn: `Install <a style="color: ${activesecondary};" href="https://www.raycast.com" target="_blank">Raycast</a> and the <a style="color: ${activesecondary};" href="https://www.raycast.com/julesjuul/commit-issue-parser" target="_blank">Commit Issue Parser</a> extension. You can then define a keyboard shortcut to launch the extension quickly.`,
+          contentFr: `Installer <a style="color: ${activesecondary};" href="https://www.raycast.com" target="_blank">Raycast</a> et l'extension <a style="color: ${activesecondary};" href="https://www.raycast.com/julesjuul/commit-issue-parser" target="_blank">Commit Issue Parser</a>. Vous pouvez ensuite définir un racourci clavier pour lancer l'extension rapidement.`,
         },
         {
           type: 'paragraph',
