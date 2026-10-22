@@ -52,18 +52,19 @@
       "tag": "Projet à l'honneur",
       "image_alt": "Interface de Slot Finder : un calendrier interactif affichant les disponibilités de chacun",
       "description": "Slot Finder est un site web en cours de développement, qui a pour but de simplifier la planification de vos événements entre amis : il propose automatiquement les créneaux horaires optimaux, ceux qui conviennent à tout le monde.",
-      "discover": "Découvrir Slot Finder"
+      "discover": "Découvrir Slot Finder",
+      "in_development": "Projet en cours de développement"
     },
     "others": {
       "tag": "À découvrir",
       "title": "Nos autres projets",
-      "description": "Voici une sélection aléatoire de ce que nous construisons d'autre chez Zide.",
+      "description": "Voici une sélection de ce que nous avons construit chez Zide.",
       "filter_hint": "Envie de tout voir ? Rendez-vous sur la page des projets pour les filtrer par statut, type ou public visé. Certains projets ne sont pas destinés au grand public mais aux développeurs, la liste complète vous aidera à trouver ce qui vous convient."
     },
     "explore": {
       "tag": "Et maintenant ?",
       "title": "Continuez l'exploration",
-      "description": "Découvrez qui se cache derrière Zide, parcourez l'ensemble de nos projets ou écrivez-nous directement.",
+      "description": "Découvrez qui se cache derrière Zide ou parcourez l'ensemble de nos projets.",
       "links": {
         "about": {
           "title": "À propos",
@@ -76,10 +77,6 @@
         "projects": {
           "title": "Nos projets",
           "description": "Tous nos projets, à filtrer par statut, type ou public visé."
-        },
-        "contact": {
-          "title": "Contactez-nous",
-          "description": "Une question, une idée ou envie de nous rejoindre ? Écrivez-nous."
         }
       }
     }
@@ -98,7 +95,7 @@
     },
     "languages": {
       "tag": "Sous le capot",
-      "title": "Les langages que nous apprécions",
+      "title": "Notre Stack",
       "description": "Les langages, les frameworks et les outils avec lesquels nous avons l'habitude de travailler. Nous sommes ouverts à toutes les solutions adaptées aux besoins du projet."
     }
   },

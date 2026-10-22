@@ -52,18 +52,19 @@
       "tag": "Project spotlight",
       "image_alt": "Slot Finder interface: an interactive calendar showing everyone's availability",
       "description": "Slot Finder is a website under development that aims to simplify planning events with your friends: it automatically suggests the optimal time slots, the ones that suit everyone.",
-      "discover": "Discover Slot Finder"
+      "discover": "Discover Slot Finder",
+      "in_development": "Project under development"
     },
     "others": {
       "tag": "More to explore",
       "title": "Our other projects",
-      "description": "Here is a random selection of what else we are building at Zide.",
+      "description": "Here is a selection of what we have built at Zide.",
       "filter_hint": "Want to see everything? Head to the projects page to filter them by status, type or audience. Some projects are not meant for the general public but for developers, so the full list will help you find what suits you."
     },
     "explore": {
       "tag": "What's next?",
       "title": "Keep exploring",
-      "description": "Find out who is behind Zide, browse all of our projects or reach out to us directly.",
+      "description": "Find out who is behind Zide or browse all of our projects.",
       "links": {
         "about": {
           "title": "About us",
@@ -76,10 +77,6 @@
         "projects": {
           "title": "Our projects",
           "description": "All of our projects, filterable by status, type or audience."
-        },
-        "contact": {
-          "title": "Contact us",
-          "description": "A question, an idea or want to join us? Drop us a line."
         }
       }
     }
@@ -98,7 +95,7 @@
     },
     "languages": {
       "tag": "Under the hood",
-      "title": "Languages we like",
+      "title": "Our Stack",
       "description": "The languages, frameworks and tools we are used to working with. We are open to all solutions adapted to project needs."
     }
   },

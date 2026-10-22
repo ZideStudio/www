@@ -22,7 +22,7 @@ export const HomeExplore = () => {
         </Reveal>
       </div>
 
-      <ul className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {HOME_EXPLORE_LINKS.map(({ key, icon, href }, index) => (
           <li key={key} className="flex">
             <Reveal delay={index * 0.1} className="flex w-full">

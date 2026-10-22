@@ -8,7 +8,6 @@ import { Title } from '@components/Title';
 import { FEATURED_PROJECT_SLUG } from '@constants/featuredProject';
 import { PROJECTS } from '@constants/projects.data';
 import { usePrefersReducedMotion } from '@hooks/usePrefersReducedMotion';
-import { getFormattedDate } from '@utils/date';
 import { getProjectBackgroundPath } from '@utils/project';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -30,7 +29,6 @@ export const HomeFeaturedProject = () => {
   if (!project) return null;
 
   const features = locale === 'fr' ? project.featuresFr : project.featuresEn;
-  const plannedDate = project.releaseDate.planned ? getFormattedDate(project.releaseDate.planned, 'MMMM YYYY', locale) : undefined;
 
   return (
     <section ref={sectionRef} className="relative overflow-x-clip px-5 md:px-24">
@@ -95,12 +93,10 @@ export const HomeFeaturedProject = () => {
                 </li>
               ))}
             </ul>
-            {plannedDate && (
-              <p className="text-text/60 mt-4 text-sm font-semibold">
-                <i className="pi pi-calendar mr-2" />
-                {tProjects('summary.planned_for_month')} {plannedDate}
-              </p>
-            )}
+            <p className="text-text/60 mt-4 text-sm font-semibold">
+              <i className="pi pi-code mr-2" />
+              {t('in_development')}
+            </p>
           </Reveal>
 
           <Reveal direction="up" delay={0.4} className="flex flex-row flex-wrap gap-4 pt-2">

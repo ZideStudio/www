@@ -21,7 +21,7 @@ export const HomeOtherProjects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    const candidates = PROJECTS.filter(({ slug, status }) => slug !== FEATURED_PROJECT_SLUG && status !== ProjectStatus.DEPRECATED);
+    const candidates = PROJECTS.filter(({ slug, status }) => slug !== FEATURED_PROJECT_SLUG && status === ProjectStatus.RELEASED);
     setProjects(shuffle(candidates).slice(0, OTHER_PROJECTS_COUNT));
   }, []);
 

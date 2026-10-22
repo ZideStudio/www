@@ -13,5 +13,4 @@ export const HOME_EXPLORE_LINKS = [
   { key: 'about', icon: 'info-circle', href: '/about' },
   { key: 'team', icon: 'users', href: '/team' },
   { key: 'projects', icon: 'th-large', href: '/projects' },
-  { key: 'contact', icon: 'envelope', href: '/contact' },
 ] as const;
