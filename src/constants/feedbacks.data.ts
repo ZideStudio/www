@@ -30,4 +30,11 @@ export const MEMBER_FEEDBACKS: MemberFeedback[] = [
     messageFr:
       "Hello moi c'est Hugo ! Développeur full-stack, j'aime apprendre en continue et me challenger sur des projets innovants. Je suis toujours en quête de nouvelles découvertes et c'est ce que j'aime le plus dans ce métier.",
   },
+  {
+    member: memberService.getById(5),
+    messageEn:
+      "Hi, my name is Rémi! I'm a Graphic Designer & Social Media Manager, I create visuals and bring them to life. Making beautiful things is great. Making beautiful things that engage a community and serve your goals is the heart of my job!",
+    messageFr:
+      "Salut moi c'est Rémi, Graphic Designer & Social Media Manager, je crée des visuels et je les fais vivre. Faire du beau, c'est bien. Faire du beau qui engage une communauté et sert vos objectifs, c'est le cœur de mon métier !",
+  },
 ];

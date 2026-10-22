@@ -13,11 +13,11 @@ export const ROLES: Record<MemberRole, RoleLabels> = {
       [MemberGender.FEMALE]: 'Fondatrice de Zide',
     },
   },
-  [MemberRole.FULL_STACK_DEVELOPER]: {
-    labelEn: 'Full-Stack Developer',
+  [MemberRole.BACKEND_DEVELOPER]: {
+    labelEn: 'Backend Developer',
     labelFr: {
-      [MemberGender.MALE]: 'Développeur Full-Stack',
-      [MemberGender.FEMALE]: 'Développeuse Full-Stack',
+      [MemberGender.MALE]: 'Développeur Backend',
+      [MemberGender.FEMALE]: 'Développeuse Backend',
     },
   },
   [MemberRole.FRONTEND_DEVELOPER]: {
@@ -25,6 +25,20 @@ export const ROLES: Record<MemberRole, RoleLabels> = {
     labelFr: {
       [MemberGender.MALE]: 'Développeur Front-end',
       [MemberGender.FEMALE]: 'Développeuse Front-end',
+    },
+  },
+  [MemberRole.PRODUCT_MANAGER]: {
+    labelEn: 'Product Manager',
+    labelFr: {
+      [MemberGender.MALE]: 'Product Manager',
+      [MemberGender.FEMALE]: 'Product Manager',
+    },
+  },
+  [MemberRole.COMMUNICATION_DESIGNER]: {
+    labelEn: 'Communication & Design Consultant',
+    labelFr: {
+      [MemberGender.MALE]: 'Consultant Communication & Design',
+      [MemberGender.FEMALE]: 'Consultante Communication & Design',
     },
   },
 };

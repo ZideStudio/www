@@ -1,7 +1,9 @@
 export enum MemberRole {
   FOUNDER = 'FOUNDER',
-  FULL_STACK_DEVELOPER = 'FULL_STACK_DEVELOPER',
   FRONTEND_DEVELOPER = 'FRONTEND_DEVELOPER',
+  BACKEND_DEVELOPER = 'BACKEND_DEVELOPER',
+  PRODUCT_MANAGER = 'PRODUCT_MANAGER',
+  COMMUNICATION_DESIGNER = 'COMMUNICATION_DESIGNER',
 }
 
 export enum MemberGender {
@@ -14,7 +16,7 @@ export type Member = {
   name: string;
   gender: MemberGender;
   roles: MemberRole[];
-  githubUrl?: string;
+  socialUrl?: string;
   pictureUrl: string;
 };
 

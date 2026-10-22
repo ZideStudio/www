@@ -188,5 +188,5 @@ export const slotFinderProject: Project = {
     },
   ],
   authors: [memberService.getById(1)],
-  contributors: [memberService.getById(1), memberService.getById(2), memberService.getById(3), memberService.getById(4)],
+  contributors: [memberService.getById(1), memberService.getById(2), memberService.getById(3), memberService.getById(4), memberService.getById(5)],
 };

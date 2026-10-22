@@ -9,8 +9,8 @@ type AvatarGroupProps = {
 
 export const AvatarGroup = ({ members, size = 'large', tooltipPosition = 'bottom', displayLimit = 5 }: AvatarGroupProps) => {
   const openGithub = (author: Member) => {
-    if (!author.githubUrl) return;
-    window.open(author.githubUrl, '_blank');
+    if (!author.socialUrl) return;
+    window.open(author.socialUrl, '_blank');
   };
 
   const tooltipClasses =

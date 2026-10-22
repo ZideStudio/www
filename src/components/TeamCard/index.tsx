@@ -43,10 +43,10 @@ export const TeamCard = ({ feedback, projects }: TeamCardProps) => {
   return (
     <div className="bg-secondary group border-primary hover:border-text flex min-h-[25rem] w-full max-w-full flex-col rounded-xl border">
       <a
-        href={member.githubUrl}
+        href={member.socialUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`relative block min-h-56 w-full flex-1 overflow-hidden rounded-t-xl ${member.githubUrl ? 'cursor-pointer' : ''}`}
+        className={`relative block min-h-56 w-full flex-1 overflow-hidden rounded-t-xl ${member.socialUrl ? 'cursor-pointer' : ''}`}
       >
         <img
           src={member.pictureUrl}
