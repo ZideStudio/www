@@ -20,6 +20,7 @@ export const zideFrProject: Project = {
   target: ProjectTarget.EVERYONE,
   type: ProjectType.WEBSITE,
   isOpenSource: true,
+  logo: '/assets/projects/zide-fr/logo.png',
   link: {
     website: 'https://zide.fr',
     github: 'https://github.com/ZideStudio/www',

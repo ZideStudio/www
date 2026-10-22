@@ -20,7 +20,7 @@ export const slotFinderProject: Project = {
   target: ProjectTarget.EVERYONE,
   type: ProjectType.WEBSITE,
   isOpenSource: true,
-  logo: '/assets/projects/slotfinder-logo.png',
+  logo: '/assets/projects/slotfinder/logo.png',
   link: {
     github: 'https://github.com/ZideStudio/SlotFinder',
   },

@@ -1,8 +1,11 @@
 import type { Locale } from '@/i18n/config';
 import { PageHeader } from '@components/PageHeader';
 import { PROJECTS } from '@constants/projects.data';
+import { tailwindColors } from '@constants/tailwindColors';
 import type { Project } from '@models/project.model';
 import { ProjectStatus } from '@models/project.model';
+import { getReadableColorOnDark } from '@utils/color';
+import { getProjectBackgroundPath } from '@utils/project';
 import { buildPageMetadata, SITE_URL } from '@utils/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -34,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/project/${project.slug}`,
     title: project.title,
     description: locale === 'fr' ? project.descriptionFr : project.descriptionEn,
-    image: `${SITE_URL}/assets/projects/${project.slug}.png`,
+    image: `${SITE_URL}${getProjectBackgroundPath(project.slug)}`,
   });
 }
 
@@ -59,7 +62,10 @@ export default async function Page({ params }: PageProps) {
         title={project.title}
         descriptionEn={project.descriptionEn}
         descriptionFr={project.descriptionFr}
-        imagePath={`/assets/projects/${project.slug}.png`}
+        imagePath={getProjectBackgroundPath(project.slug)}
+        logoPath={project.logo}
+        color={getReadableColorOnDark(project.mainColor, tailwindColors.primary, tailwindColors.text)}
+        dimBackground
       />
       <div className="mt-3 flex flex-col space-y-10 px-3 md:flex-row md:justify-between md:space-y-0 md:px-10">
         <Blog project={project} page={projectPage} />

@@ -20,6 +20,7 @@ export const cryptiPicsProject: Project = {
   target: ProjectTarget.EVERYONE,
   type: ProjectType.WEBSITE,
   isOpenSource: false,
+  logo: '/assets/projects/cryptipics/logo.png',
   link: {
     github: 'https://github.com/ZideStudio/CryptiPics',
   },

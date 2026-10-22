@@ -9,6 +9,7 @@ import { FEATURED_PROJECT_SLUG } from '@constants/featuredProject';
 import { PROJECTS } from '@constants/projects.data';
 import { usePrefersReducedMotion } from '@hooks/usePrefersReducedMotion';
 import { getFormattedDate } from '@utils/date';
+import { getProjectBackgroundPath } from '@utils/project';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -48,7 +49,7 @@ export const HomeFeaturedProject = () => {
             transition={{ type: 'spring', stiffness: 200, damping: 20 }}
           >
             <Image
-              src={`/assets/projects/${project.slug}.png`}
+              src={getProjectBackgroundPath(project.slug)}
               alt={t('image_alt')}
               width={1900}
               height={1428}

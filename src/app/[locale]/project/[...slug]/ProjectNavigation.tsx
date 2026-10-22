@@ -1,4 +1,5 @@
 import { PROJECTS } from '@constants/projects.data';
+import { getProjectBackgroundPath } from '@utils/project';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -24,7 +25,7 @@ export const ProjectNavigation = ({ currentProjectIndex }: ProjectNavigationProp
         href={`/project/${previousProject.slug}`}
       >
         <div className="border-text/10 relative h-16 max-w-32 overflow-hidden rounded-md border">
-          <img src={`/assets/projects/${previousProject.slug}.png`} alt={previousProject.slug} className="h-full w-full object-cover" />
+          <img src={getProjectBackgroundPath(previousProject.slug)} alt={previousProject.slug} className="h-full w-full object-cover" />
         </div>
         <div className="min-w-0 flex-1 text-left">
           <div className="group-hover:text-activesecondary mb-1 text-xs transition-all">{t('previous')}</div>
@@ -43,7 +44,7 @@ export const ProjectNavigation = ({ currentProjectIndex }: ProjectNavigationProp
           <div className="truncate text-sm font-medium text-ellipsis">{nextProject.title}</div>
         </div>
         <div className="border-text/10 relative h-16 max-w-32 overflow-hidden rounded-md border">
-          <img src={`/assets/projects/${nextProject.slug}.png`} alt={nextProject.slug} className="h-full w-full object-cover" />
+          <img src={getProjectBackgroundPath(nextProject.slug)} alt={nextProject.slug} className="h-full w-full object-cover" />
         </div>
       </Link>
     </div>

@@ -10,3 +10,7 @@ export const compareProjectsByStatus = (a: Project, b: Project) => PROJECT_STATU
 
 export const getDeprecationNote = (project: Pick<Project, 'deprecationNoteEn' | 'deprecationNoteFr'>, locale: Locale) =>
   locale === 'fr' && project.deprecationNoteFr ? project.deprecationNoteFr : project.deprecationNoteEn;
+
+export const getProjectAssetPath = (slug: string, file: string) => `/assets/projects/${slug}/${file}`;
+
+export const getProjectBackgroundPath = (slug: string) => getProjectAssetPath(slug, 'background.png');

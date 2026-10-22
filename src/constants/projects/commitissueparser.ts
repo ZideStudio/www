@@ -25,6 +25,7 @@ export const commitIssueParserProject: Project = {
   target: ProjectTarget.DEVELOPERS,
   type: ProjectType.EXTENSION,
   isOpenSource: true,
+  logo: '/assets/projects/commit-issue-parser/logo.png',
   link: {
     github: 'https://github.com/ZideStudio/CommitIssueParser',
     customInstallButton:
