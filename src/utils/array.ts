@@ -1,4 +1,3 @@
-/** Returns a shuffled copy of the array (Fisher-Yates). */
 export const shuffle = <T>(items: T[]): T[] => {
   const result = [...items];
 

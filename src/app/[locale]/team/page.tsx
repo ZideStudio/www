@@ -1,6 +1,6 @@
 import type { Locale } from '@/i18n/config';
 import { PageHeader } from '@components/PageHeader';
-import { buildPageMetadata } from '@utils/seo';
+import { buildPageMetadata, SITE_URL } from '@utils/seo';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: '/team',
     title: t('title'),
     description: t('description'),
-    image: 'https://zide.fr/assets/background/team.jpg',
+    image: `${SITE_URL}/assets/og/team.jpg`,
   });
 }
 

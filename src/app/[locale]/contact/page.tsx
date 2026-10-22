@@ -22,7 +22,7 @@ export default function ContactPage() {
 
   return (
     <div className="text-text flex flex-col">
-      <PageHeader title={t('title')} descriptionEn={t('description')} descriptionFr={t('description')} imagePath="/assets/background/contact.png" />
+      <PageHeader title={t('title')} descriptionEn={t('description')} descriptionFr={t('description')} imagePath="/assets/background/contact.jpg" />
       <ContactForm />
     </div>
   );

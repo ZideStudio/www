@@ -1,6 +1,6 @@
 import type { Locale } from '@/i18n/config';
 import { PageHeader } from '@components/PageHeader';
-import { buildPageMetadata } from '@utils/seo';
+import { buildPageMetadata, SITE_URL } from '@utils/seo';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -15,7 +15,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seo.about' });
 
-  return buildPageMetadata({ locale: locale as Locale, path: '/about', title: t('title'), description: t('description') });
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: '/about',
+    title: t('title'),
+    description: t('description'),
+    image: `${SITE_URL}/assets/og/about.png`,
+  });
 }
 
 export default function AboutPage() {
@@ -27,7 +33,7 @@ export default function AboutPage() {
         title={t('banner.title')}
         descriptionEn={t('banner.description')}
         descriptionFr={t('banner.description')}
-        imagePath="/assets/background/about.avif"
+        imagePath="/assets/background/about.jpg"
       />
       <div className="flex flex-col space-y-40">
         <Presentation />

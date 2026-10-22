@@ -10,10 +10,8 @@ const OPEN_GRAPH_LOCALES: Record<Locale, string> = {
   fr: 'fr_FR',
 };
 
-/** Absolute URL of a page for the given locale (`path` is '' for the home page). */
 export const getLocalizedUrl = (locale: Locale, path = '') => `${SITE_URL}/${locale}${path}`;
 
-/** Canonical + hreflang alternates for a page that exists in every locale. */
 export const getLanguageAlternates = (path = '') => ({
   ...Object.fromEntries(locales.map((locale) => [locale, getLocalizedUrl(locale, path)])),
   'x-default': getLocalizedUrl('en', path),
