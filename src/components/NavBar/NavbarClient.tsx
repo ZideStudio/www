@@ -1,8 +1,8 @@
 'use client';
 
+import { useMobileMenu } from '@hooks/useMobileMenu';
 import { useScroll } from '@hooks/useScroll';
 import type { NavLink } from '@models/navlink.model';
-import { useState } from 'react';
 import { DesktopNav } from './DesktopNav';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
@@ -15,7 +15,7 @@ interface NavbarClientProps {
 
 export function NavbarClient({ navLinks, languageSelector }: NavbarClientProps) {
   const scrolled = useScroll(10);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isMobileMenuOpen: mobileMenuOpen, setMobileMenuOpen } = useMobileMenu();
 
   return (
     <>

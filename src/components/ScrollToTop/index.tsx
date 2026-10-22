@@ -1,13 +1,16 @@
 'use client';
 
+import { useMobileMenu } from '@hooks/useMobileMenu';
 import { useEffect, useState } from 'react';
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { isMobileMenuOpen } = useMobileMenu();
+  const isVisible = isScrolled && !isMobileMenuOpen;
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
+      setIsScrolled(window.scrollY > 300);
     };
 
     window.addEventListener('scroll', toggleVisibility, { passive: true });
