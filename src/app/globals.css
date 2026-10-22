@@ -92,3 +92,7 @@ body {
     display: none;
   }
 }
+
+body:not(.recaptcha-badge-visible) .grecaptcha-badge {
+  visibility: hidden;
+}

@@ -13,9 +13,15 @@ declare global {
 
 const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 const SCRIPT_ID = 'recaptcha-enterprise';
+const BADGE_VISIBLE_CLASS = 'recaptcha-badge-visible';
 
 export const useRecaptcha = (action: string) => {
   const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.add(BADGE_VISIBLE_CLASS);
+    return () => document.body.classList.remove(BADGE_VISIBLE_CLASS);
+  }, []);
 
   useEffect(() => {
     if (!SITE_KEY) {
