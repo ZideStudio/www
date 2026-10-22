@@ -1,8 +1,9 @@
 import type { Locale } from '@/i18n/config';
+import { HOME_CONTENT_ID } from '@constants/home';
 import { buildPageMetadata } from '@utils/seo';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import Marquee from 'react-fast-marquee';
+import { Banner } from './home/banner';
 import { HomeFeaturedProject } from './home/featured';
 import { Landing } from './home/landing';
 import { HomeOtherProjects } from './home/others';
@@ -18,39 +19,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({ locale: locale as Locale, path: '', title: t('title'), description: t('description') });
 }
 
-export default async function Page() {
-  const t = await getTranslations('home');
-
+export default function Page() {
   return (
-    <div>
+    <div className="home-snap">
       <Landing />
 
-      <div className="bg-primary relative">
-        <Marquee
-          speed={25}
-          pauseOnClick
-          className="absolute -top-10 z-20 overflow-y-hidden text-7xl font-bold uppercase select-none sm:-top-14 sm:text-8xl md:-top-20 md:text-9xl"
-        >
-          {[t('banner.webapps'), t('banner.softwares'), t('banner.cli'), t('banner.extensions')].map((item, index) => {
-            let textGradient: string;
-            let dotGradient: string;
-            if (index % 2 === 0) {
-              textGradient = 'from-text to-text/75';
-              dotGradient = 'text-text/75';
-            } else {
-              textGradient = 'from-text/75 to-text';
-              dotGradient = 'text-text';
-            }
-
-            return (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={index} className="flex flex-row justify-center align-middle">
-                <p className={`bebas-neue-regular ${textGradient} ml-3 bg-gradient-to-r bg-clip-text text-transparent sm:ml-5`}>{item}</p>
-                <i className={`pi pi-circle-fill ${dotGradient} my-auto ml-3 text-xl sm:ml-5 sm:text-2xl md:text-3xl`} />
-              </div>
-            );
-          })}
-        </Marquee>
+      <div id={HOME_CONTENT_ID} className="bg-primary relative snap-start -scroll-mt-9 scroll-mb-[500vh] sm:-scroll-mt-12 md:-scroll-mt-16">
+        <Banner />
 
         <div className="flex flex-col space-y-24 pt-10 md:my-16 md:space-y-40 md:pt-0">
           <HomeFeaturedProject />

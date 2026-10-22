@@ -5,6 +5,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Home: all-or-nothing snap between the landing and the banner, snap stops are set on the home sections */
+html:has(.home-snap) {
+  scroll-snap-type: y mandatory;
+}
+
 :root {
   --font-family: var(--font-space-grotesk), sans-serif;
 }

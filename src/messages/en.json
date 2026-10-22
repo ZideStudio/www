@@ -17,10 +17,12 @@
       "projects": "your next idea?"
     },
     "banner": {
-      "webapps": "websites",
-      "cli": "CLI tools",
-      "softwares": "softwares",
-      "extensions": "extensions"
+      "website": "website",
+      "application": "application",
+      "free_time": "free time",
+      "volunteers": "volunteers",
+      "simplicity": "simplicity",
+      "efficiency": "efficiency"
     },
     "featured": {
       "tag": "Project spotlight",

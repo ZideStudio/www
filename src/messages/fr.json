@@ -17,10 +17,12 @@
       "projects": "votre prochaine idée?"
     },
     "banner": {
-      "webapps": "sites web",
-      "cli": "outils CLI",
-      "softwares": "logiciels",
-      "extensions": "extensions"
+      "website": "site web",
+      "application": "application",
+      "free_time": "temps libre",
+      "volunteers": "volontaires",
+      "simplicity": "simplicité",
+      "efficiency": "efficacité"
     },
     "featured": {
       "tag": "Projet à l'honneur",

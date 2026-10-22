@@ -15,7 +15,7 @@ export const Landing = () => {
 
   return (
     <>
-      <div className="antiSelect relative flex flex-col items-center justify-center px-5 pt-10 pb-20 md:mb-0 md:h-[calc(100vh-3rem)] md:py-0">
+      <div className="antiSelect relative flex min-h-[calc(100svh-4rem-1px-(4.5rem+1.25rem)/2)] snap-start scroll-mt-32 flex-col items-center justify-center px-5 py-4 sm:min-h-[calc(100svh-4rem-1px-(6rem+1.5rem)/2)] md:min-h-[calc(100svh-5rem-1px-(8rem+1.875rem)/2)] md:py-0">
         <BackgroundGrid interactible />
 
         <div className="z-10 flex w-full flex-col-reverse items-center md:flex-row md:justify-around">
@@ -52,7 +52,7 @@ export const Landing = () => {
           </div>
           <div className="flex flex-col items-center md:mt-0">
             <motion.div
-              className="antiSelect relative h-40 w-64 text-white sm:h-48 sm:w-80 md:h-64 md:w-[27.4rem]"
+              className="antiSelect relative h-40 w-64 text-white sm:h-48 sm:w-80 md:h-44 md:w-72 lg:h-64 lg:w-[27.4rem]"
               initial={{ opacity: 0, scale: 0.3, rotate: -12, filter: 'brightness(3) blur(12px)' }}
               animate={{ opacity: 1, scale: 1, rotate: 0, filter: 'brightness(1) blur(0px)' }}
               transition={{
@@ -115,8 +115,8 @@ export const Landing = () => {
             )}
           </div>
         </div>
+        <ScrollIndicator />
       </div>
-      <ScrollIndicator />
       <div className="relative">
         <div className="to-primary pointer-events-none absolute bottom-0 z-0 h-20 w-full bg-gradient-to-b from-transparent" />
       </div>
