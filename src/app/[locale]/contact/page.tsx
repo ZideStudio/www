@@ -21,7 +21,7 @@ export default function ContactPage() {
   const t = useTranslations('contact');
 
   return (
-    <div className="text-text flex flex-col pb-16 md:pb-24">
+    <div className="text-text flex flex-col">
       <PageHeader title={t('title')} descriptionEn={t('description')} descriptionFr={t('description')} imagePath="/assets/background/contact.png" />
       <ContactForm />
     </div>

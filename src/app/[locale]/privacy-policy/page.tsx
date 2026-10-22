@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
   const t = useTranslations('privacyPolicy');
 
   return (
-    <main className="text-text container mx-auto px-4 py-8">
+    <main className="text-text container mx-auto px-4 pt-8">
       <Title className="mb-8 text-center text-4xl">{t('title')}</Title>
 
       <div className="prose prose-invert mx-auto max-w-4xl">

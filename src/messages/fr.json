@@ -24,11 +24,34 @@
       "simplicity": "simplicité",
       "efficiency": "efficacité"
     },
+    "about": {
+      "tag": "Le collectif",
+      "title": "Qu'est-ce que Zide ?",
+      "logo_alt": "Logo de Zide",
+      "description": "Zide est un collectif de volontaires qui conçoit des produits utiles, pensés pour vous faire gagner du temps et de la productivité au quotidien.",
+      "points": {
+        "volunteers": {
+          "title": "Ouvert à tous",
+          "description": "Développeurs ou non, toute personne qui souhaite contribuer à la création de produits a sa place."
+        },
+        "free_time": {
+          "title": "Sur notre temps libre",
+          "description": "Chacun participe bénévolement, à son rythme, en dehors de ses obligations."
+        },
+        "useful": {
+          "title": "Des produits utiles",
+          "description": "Des outils simples qui vous font gagner du temps et de la productivité."
+        },
+        "language": {
+          "title": "En français, pour l'instant",
+          "description": "L'équipe communique en français, une ouverture à l'international viendra avec le temps."
+        }
+      }
+    },
     "featured": {
       "tag": "Projet à l'honneur",
       "image_alt": "Interface de Slot Finder : un calendrier interactif affichant les disponibilités de chacun",
-      "description": "Slot Finder est un site web qui simplifie la planification de vos événements entre amis : il propose automatiquement les créneaux horaires optimaux, ceux qui conviennent à tout le monde.",
-      "love": "Le projet est en cours de développement, c'est un projet que nous aimons beaucoup. Nous aimerions en créer d'autres dans cet esprit : simples, utiles et réalisés avec soin. Suivez son avancée et dites-nous ce que vous aimeriez y voir sur nos réseaux !",
+      "description": "Slot Finder est un site web en cours de développement, qui a pour but de simplifier la planification de vos événements entre amis : il propose automatiquement les créneaux horaires optimaux, ceux qui conviennent à tout le monde.",
       "discover": "Découvrir Slot Finder"
     },
     "others": {
@@ -36,6 +59,29 @@
       "title": "Nos autres projets",
       "description": "Voici une sélection aléatoire de ce que nous construisons d'autre chez Zide.",
       "filter_hint": "Envie de tout voir ? Rendez-vous sur la page des projets pour les filtrer par statut, type ou public visé. Certains projets ne sont pas destinés au grand public mais aux développeurs, la liste complète vous aidera à trouver ce qui vous convient."
+    },
+    "explore": {
+      "tag": "Et maintenant ?",
+      "title": "Continuez l'exploration",
+      "description": "Découvrez qui se cache derrière Zide, parcourez l'ensemble de nos projets ou écrivez-nous directement.",
+      "links": {
+        "about": {
+          "title": "À propos",
+          "description": "Notre histoire, notre façon de travailler et les technologies que nous utilisons."
+        },
+        "team": {
+          "title": "Notre équipe",
+          "description": "Les personnes qui font vivre Zide et les projets sur lesquels elles travaillent."
+        },
+        "projects": {
+          "title": "Nos projets",
+          "description": "Tous nos projets, à filtrer par statut, type ou public visé."
+        },
+        "contact": {
+          "title": "Contactez-nous",
+          "description": "Une question, une idée ou envie de nous rejoindre ? Écrivez-nous."
+        }
+      }
     }
   },
   "about": {
@@ -45,10 +91,10 @@
     },
     "presentation": {
       "tag": "À propos de nous",
-      "zide": "Zide est un collectif de développeurs passionnés qui créent des outils innovants, destinés aussi bien à des développeurs qu'au grand public.",
-      "team": "Notre objectif est de créer un réseau de développeurs motivées qui souhaitent créer des projets pertinents ou contribuer à ceux d'autres personnes pendant leur temps libre. Nous invitons toutes les personnes intéressées par la programmation à rejoindre notre communauté et à partager vos idées avec nous !",
-      "product": "Nous concevons principalement des produits numériques intuitifs, efficaces et hautement personnalisables. Conçus pour simplifier l'expérience utilisateur tout en permettant des flux de travail performants.",
-      "language": "Pour le moment, l'équipe communique en français. Avec le temps, nous internationaliserons plus amplement la structure."
+      "zide": "Zide est un collectif de volontaires qui conçoit des produits utiles, pensés pour vous faire gagner du temps et de la productivité au quotidien.",
+      "team": "Le collectif est ouvert à tous : développeurs ou non, toute personne qui souhaite contribuer à la création de produits a sa place. Chacun participe bénévolement, sur son temps libre et à son rythme. Une idée de projet ou envie de nous rejoindre ? Venez en discuter avec nous !",
+      "product": "Nous concevons des outils simples, utiles et réalisés avec soin : sites web, logiciels, outils CLI ou extensions, avec un seul objectif, vous simplifier le quotidien.",
+      "language": "L'équipe communique en français pour l'instant, une ouverture à l'international viendra avec le temps."
     },
     "languages": {
       "tag": "Sous le capot",
@@ -144,8 +190,8 @@
   "footer": {
     "collective": {
       "category": "Collectif",
-      "title": "Zide est un collectif de développeurs qui crée des outils innovants pour tous.",
-      "description": "Animés par la passion et la curiosité, nous créons des produits numériques intuitifs, efficaces et hautement personnalisables, conçus pour simplifier l'expérience de l'utilisateur tout en exploitant des flux de travail efficaces."
+      "title": "Zide est un collectif de volontaires qui crée des produits utiles pour tous.",
+      "description": "Développeurs ou non, nous concevons sur notre temps libre des outils simples qui vous font gagner du temps et de la productivité au quotidien."
     },
     "services": {
       "category": "Services",

@@ -76,7 +76,7 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 pt-16">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-text mb-4 text-4xl font-bold">{t('success.title')}</h2>
           <p className="text-text/70 mb-8 text-lg break-words">{t('success.message', { email })}</p>
@@ -95,7 +95,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 pt-16">
       <div className="mx-auto max-w-2xl">
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">

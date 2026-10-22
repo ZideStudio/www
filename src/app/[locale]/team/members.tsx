@@ -16,7 +16,7 @@ export const Members = () => {
   const joinFitsLastRow = MEMBER_FEEDBACKS.length % GRID_COLUMNS === 1;
 
   return (
-    <div className="mx-5 mt-4 pb-16 md:mx-24 md:pb-24">
+    <div className="mx-5 mt-4 md:mx-24">
       <section className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {MEMBER_FEEDBACKS.map((feedback) => (
           <TeamCard

@@ -22,7 +22,7 @@ export default function AboutPage() {
   const t = useTranslations('about');
 
   return (
-    <div className="text-text flex flex-col space-y-20 pb-16 md:pb-24">
+    <div className="text-text flex flex-col space-y-20">
       <PageHeader
         title={t('banner.title')}
         descriptionEn={t('banner.description')}

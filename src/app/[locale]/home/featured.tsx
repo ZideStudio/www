@@ -82,9 +82,8 @@ export const HomeFeaturedProject = () => {
             <Title as="h2">{project.title}</Title>
           </Reveal>
 
-          <Reveal direction="right" delay={0.2} className="flex flex-col space-y-4">
+          <Reveal direction="right" delay={0.2}>
             <p className="text-text text-lg">{t('description')}</p>
-            <p className="text-text/75">{t('love')}</p>
           </Reveal>
 
           <Reveal direction="right" delay={0.3}>

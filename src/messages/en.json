@@ -24,11 +24,34 @@
       "simplicity": "simplicity",
       "efficiency": "efficiency"
     },
+    "about": {
+      "tag": "The collective",
+      "title": "What is Zide?",
+      "logo_alt": "Zide logo",
+      "description": "Zide is a collective of volunteers building useful products, designed to save you time and boost your everyday productivity.",
+      "points": {
+        "volunteers": {
+          "title": "Open to everyone",
+          "description": "Developers or not, anyone who wants to help create products is welcome."
+        },
+        "free_time": {
+          "title": "On our free time",
+          "description": "Everyone contributes voluntarily, at their own pace, alongside their other commitments."
+        },
+        "useful": {
+          "title": "Useful products",
+          "description": "Simple tools that save you time and make you more productive."
+        },
+        "language": {
+          "title": "In French, for now",
+          "description": "The team communicates in French; we will open up internationally over time."
+        }
+      }
+    },
     "featured": {
       "tag": "Project spotlight",
       "image_alt": "Slot Finder interface: an interactive calendar showing everyone's availability",
-      "description": "Slot Finder is a website that simplifies planning events with your friends: it automatically suggests the optimal time slots, the ones that suit everyone.",
-      "love": "The project is in development, and it's one we love dearly. We would like to build more tools in the same spirit: simple, useful and made with care. Follow its progress and tell us on our social networks what you would like to see!",
+      "description": "Slot Finder is a website under development that aims to simplify planning events with your friends: it automatically suggests the optimal time slots, the ones that suit everyone.",
       "discover": "Discover Slot Finder"
     },
     "others": {
@@ -36,6 +59,29 @@
       "title": "Our other projects",
       "description": "Here is a random selection of what else we are building at Zide.",
       "filter_hint": "Want to see everything? Head to the projects page to filter them by status, type or audience. Some projects are not meant for the general public but for developers, so the full list will help you find what suits you."
+    },
+    "explore": {
+      "tag": "What's next?",
+      "title": "Keep exploring",
+      "description": "Find out who is behind Zide, browse all of our projects or reach out to us directly.",
+      "links": {
+        "about": {
+          "title": "About us",
+          "description": "Our story, the way we work and the technologies we use."
+        },
+        "team": {
+          "title": "Our team",
+          "description": "The people behind Zide and the projects they work on."
+        },
+        "projects": {
+          "title": "Our projects",
+          "description": "All of our projects, filterable by status, type or audience."
+        },
+        "contact": {
+          "title": "Contact us",
+          "description": "A question, an idea or want to join us? Drop us a line."
+        }
+      }
     }
   },
   "about": {
@@ -45,10 +91,10 @@
     },
     "presentation": {
       "tag": "About Us",
-      "zide": "Zide is a collective of passionate developers building innovative tools, whether for fellow developers or for the general public.",
-      "team": "Our aim is to build a network of motivated people who want to create relevant projects or contribute to those of others in their free time. We welcome anyone interested in programming to join our community and share their ideas with us!",
-      "product": "We mainly craft digital products that are intuitive, efficient, and deeply customizable. Designed to simplify the user experience while enabling powerful workflows.",
-      "language": "For now, the team communicates in French. Over time, we will make the structure more international."
+      "zide": "Zide is a collective of volunteers building useful products, designed to save you time and boost your everyday productivity.",
+      "team": "The collective is open to everyone: developers or not, anyone who wants to help create products is welcome. Everyone contributes voluntarily, in their free time and at their own pace. Got a project idea or want to join us? Come and talk to us!",
+      "product": "We build simple, useful tools made with care: websites, software, CLI tools or extensions, with a single goal: making your everyday life easier.",
+      "language": "The team communicates in French for now; we will open up internationally over time."
     },
     "languages": {
       "tag": "Under the hood",
@@ -144,8 +190,8 @@
   "footer": {
     "collective": {
       "category": "Collective",
-      "title": "Zide is a software development collective creating innovative tools for everyone.",
-      "description": "Driven by passion and curiosity, We craft digital products that are intuitive, efficient and highly customizable, built to simplify the user experience while unlocking powerful workflows."
+      "title": "Zide is a collective of volunteers building useful products for everyone.",
+      "description": "Developers or not, we use our free time to build simple tools that save you time and boost your everyday productivity."
     },
     "services": {
       "category": "Services",
