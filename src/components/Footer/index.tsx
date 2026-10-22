@@ -1,6 +1,5 @@
 'use client';
 
-import Ad from '@components/Ad';
 import { Button } from '@components/Button';
 import { Title } from '@components/Title';
 import { DISCORD_URL } from '@constants/discord';
@@ -21,9 +20,6 @@ export const Footer = () => {
         <Button href={DISCORD_URL} target="_blank" icon="arrow-right" primary>
           {t('discord.join')}
         </Button>
-      </div>
-      <div className="my-10 flex min-h-32 w-full justify-center">
-        <Ad slot="5456387871" />
       </div>
 
       <div className="container mx-auto flex flex-col space-y-10 py-10 md:flex-row md:justify-between md:space-y-0">
