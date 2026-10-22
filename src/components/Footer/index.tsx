@@ -73,6 +73,12 @@ export const Footer = () => {
               </Link>
             </li>
             <li className="mt-2 flex flex-row items-center space-x-3">
+              <i className="pi pi-linkedin" style={{ fontSize: '1rem' }} />
+              <Link href="https://www.linkedin.com/company/zidefr" className="text-blue-400" target="_blank" rel="noopener noreferrer">
+                ZideFR LinkedIn
+              </Link>
+            </li>
+            <li className="mt-2 flex flex-row items-center space-x-3">
               <i className="pi pi-envelope" style={{ fontSize: '1rem' }} />
               <Link href="mailto:contact@zide.fr" className="text-blue-400">
                 contact@zide.fr
