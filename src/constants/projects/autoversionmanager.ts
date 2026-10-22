@@ -17,6 +17,9 @@ export const autoVersionManagerProject: Project = {
   featuresEn: ['Automatic version manager management', 'Bash and Zsh compatibility', 'Easy setup'],
   featuresFr: ['Gestion automatique des gestionnaires de versions', 'Compatibilité avec Bash et Zsh', 'Facile à configurer'],
   status: ProjectStatus.DEPRECATED,
+  deprecationNoteEn: 'AVM is no longer maintained because better solutions now exist, such as mise-en-place (mise.jdx.dev), which we strongly recommend!',
+  deprecationNoteFr:
+    "AVM n'est plus maintenu car il existe aujourd'hui de meilleures solutions telles que mise-en-place (mise.jdx.dev) que nous vous conseillons vivement !",
   target: ProjectTarget.DEVELOPERS,
   type: ProjectType.CLI,
   isOpenSource: true,

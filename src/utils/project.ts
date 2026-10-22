@@ -1,3 +1,4 @@
+import type { Locale } from '@/i18n/config';
 import { PROJECT_STATUS } from '@constants/projectStatus';
 import type { Project } from '@models/project.model';
 
@@ -6,3 +7,6 @@ const getProjectDate = (project: Project) => project.releaseDate?.date ?? projec
 export const compareProjectsByNewest = (a: Project, b: Project) => Number(getProjectDate(b)) - Number(getProjectDate(a));
 
 export const compareProjectsByStatus = (a: Project, b: Project) => PROJECT_STATUS.indexOf(a.status) - PROJECT_STATUS.indexOf(b.status);
+
+export const getDeprecationNote = (project: Pick<Project, 'deprecationNoteEn' | 'deprecationNoteFr'>, locale: Locale) =>
+  locale === 'fr' && project.deprecationNoteFr ? project.deprecationNoteFr : project.deprecationNoteEn;

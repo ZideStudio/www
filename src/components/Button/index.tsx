@@ -11,9 +11,10 @@ type ButtonProps = {
   target?: string;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  ref?: React.Ref<HTMLButtonElement>;
 };
 
-export const Button = ({ children, className, icon, iconClassName, primary, onClick, href, target, type = 'button', disabled }: ButtonProps) => {
+export const Button = ({ children, className, icon, iconClassName, primary, onClick, href, target, type = 'button', disabled, ref }: ButtonProps) => {
   const childrenWithIcon = (
     <>
       {children}
@@ -24,6 +25,7 @@ export const Button = ({ children, className, icon, iconClassName, primary, onCl
   if (!href) {
     return (
       <button
+        ref={ref}
         type={type}
         disabled={disabled}
         className={`ring-offset-background inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold whitespace-nowrap transition-all duration-300 select-none hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 md:px-8 ${className ? className : !primary ? 'bg-primary text-text border-text border' : ''} ${primary ? 'bg-text border-primary text-primary border' : ''}`}

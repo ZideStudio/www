@@ -4,7 +4,9 @@ import type { Locale } from '@/i18n/config';
 import { AvatarGroup } from '@components/AvatarGroup';
 import { Button } from '@components/Button';
 import type { Project } from '@models/project.model';
+import { ProjectStatus } from '@models/project.model';
 import { getFormattedDate } from '@utils/date';
+import { getDeprecationNote } from '@utils/project';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -33,10 +35,23 @@ export const Summary = ({ project }: SummaryProps) => {
     plannedDate = getFormattedDate(project.releaseDate.planned, 'LL', locale);
   }
 
+  const deprecationNote = getDeprecationNote(project, locale);
+
   return (
     <div className="text-text border-text/10 border-border bg-background sticky top-24 h-max space-y-6 rounded-xl border p-6 shadow-sm">
       <table className="border-text/10 w-full overflow-hidden rounded-xl border text-left">
         <tbody className="divide-text/10 divide-y">
+          {project.status === ProjectStatus.DEPRECATED && (
+            <tr>
+              <td colSpan={2} className="px-4 py-3">
+                <div className="flex flex-row items-center space-x-2 font-medium">
+                  <i className="pi pi-exclamation-triangle text-warning" aria-hidden="true" />
+                  <p>{t('summary.deprecated')}</p>
+                </div>
+                {deprecationNote && <p className="text-text/60 mt-2 text-sm break-words">{deprecationNote}</p>}
+              </td>
+            </tr>
+          )}
           <tr>
             <td className="px-4 py-3 font-medium">{t('summary.project')}</td>
             <td className="text-muted-foreground px-4 py-3">{project.title}</td>

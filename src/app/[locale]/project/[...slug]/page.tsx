@@ -2,10 +2,12 @@ import type { Locale } from '@/i18n/config';
 import { PageHeader } from '@components/PageHeader';
 import { PROJECTS } from '@constants/projects.data';
 import type { Project } from '@models/project.model';
+import { ProjectStatus } from '@models/project.model';
 import { buildPageMetadata, SITE_URL } from '@utils/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Blog } from './Blog';
+import { DeprecatedModal } from './DeprecatedModal';
 import { Summary } from './Summary';
 
 export async function generateStaticParams() {
@@ -65,6 +67,7 @@ export default async function Page({ params }: PageProps) {
           <Summary project={project} />
         </div>
       </div>
+      {project.status === ProjectStatus.DEPRECATED && <DeprecatedModal project={project} />}
     </div>
   );
 }

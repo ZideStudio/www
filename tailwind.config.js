@@ -18,6 +18,7 @@ module.exports = {
         text: '#ECEEEF',
         toast: '#333333',
         danger: '#EF4444',
+        warning: '#F59E0B',
         quote: '#323232',
         scrollbar: '#38BDF8',
         heading: 'hsl(196, 100%, 56%)',

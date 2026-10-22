@@ -80,7 +80,8 @@
       "planned": "Planned",
       "planned_for": "Planned for",
       "target": "Target",
-      "planned_for_month": "Planned for"
+      "planned_for_month": "Planned for",
+      "deprecated": "This project is no longer maintained"
     },
     "key-features": "Key Features",
     "install": "Install",
@@ -130,6 +131,12 @@
     "errors": {
       "not_found": "No projects found",
       "not_found_details": "Try changing your filters"
+    },
+    "deprecated_modal": {
+      "title": "Warning, this project is no longer maintained",
+      "description": "This means the information may no longer be accurate, and the product may no longer be usable today. A deprecated product is an abandoned project, because better solutions are now available.",
+      "back": "Back to projects list",
+      "acknowledge": "I understand"
     }
   },
   "footer": {

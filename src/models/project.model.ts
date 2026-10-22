@@ -17,10 +17,11 @@ export type Project = {
     articleUpdated?: Date;
   };
   status: ProjectStatus;
+  deprecationNoteEn?: string;
+  deprecationNoteFr?: string;
   target: ProjectTarget;
   type: ProjectType;
   isOpenSource: boolean;
-  /** Optional wordmark, only used on the home page for now. */
   logo?: string;
   link?: {
     github?: string;

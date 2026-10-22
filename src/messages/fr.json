@@ -80,7 +80,8 @@
       "planned": "Prévu",
       "planned_for": "Prévu pour le",
       "target": "Cible",
-      "planned_for_month": "Prévu pour"
+      "planned_for_month": "Prévu pour",
+      "deprecated": "Ce projet n'est plus maintenu"
     },
     "key-features": "Fonctionnalités Principales",
     "install": "Installer",
@@ -130,6 +131,12 @@
     "errors": {
       "not_found": "Aucun projet trouvé",
       "not_found_details": "Essayez de changer vos filtres"
+    },
+    "deprecated_modal": {
+      "title": "Attention, ce projet n'est plus maintenu",
+      "description": "Cela signifie que les informations ne sont peut-être plus correctes, et que le produit n'est peut-être plus utilisable aujourd'hui. Un produit déprécié est un projet abandonné car il existe actuellement d'autres solutions plus adaptées.",
+      "back": "Revenir à la liste des projets",
+      "acknowledge": "J'en ai conscience"
     }
   },
   "footer": {
